@@ -27,7 +27,7 @@ OBJ = $(patsubst %.cpp, $(ODIR)/%.o, $(SRC))
 # Makefile principale
 
 # Lista delle sotto-directory contenenti i Makefile da includere ed eseguire
-SUBDIRS := SUD/src SUD/CalcoloCovarianze/src SUD/CalcoloMedie/src TestGenerator/src
+SUBDIRS := SUD/src TestGenerator/src
 
 # Target predefinito: esegui tutti i Makefile nelle sotto-directory
 all:
@@ -37,6 +37,7 @@ all:
 	done
 	
 run:
+
 	TestGenerator/bin/main 
 	SUD/bin/main
 

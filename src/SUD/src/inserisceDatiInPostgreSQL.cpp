@@ -1,9 +1,9 @@
 #include "main.h"
 
 //Funzione per inserire dati in PostgreSQL
-void inserisciDatiInPostgreSQL(const std::map<std::string, std::vector<Dato>>& datiRaggrupati) {
+void inserisciDatiInPostgreSQL(const std::map<std::string, std::vector<Data>>& datiRaggrupati) {
     //Crea una conessione al databse 
-    PGconn *conn = PQconnectdb("dbname=dati_di_sensori user=Nastya password=nastyasql hostaddr=127.0.0.1 port=5432");
+    PGconn *conn = PQconnectdb("dbname=dati_di_sensors user=Nastya password=nastyasql hostaddr=127.0.0.1 port=5432");
 
     //Controlla se la connessione è avvenuta con sucesso
     if (PQstatus(conn) == CONNECTION_OK) {
@@ -21,11 +21,11 @@ void inserisciDatiInPostgreSQL(const std::map<std::string, std::vector<Dato>>& d
         //inserisce i dati nel database
         for (const auto& coppia : datiRaggrupati) {
             // const std::string& sensorID = coppia.first;
-            // const std::vector<Dato>& dati = coppia.second;
+            // const std::vector<Data>& dati = coppia.second;
 
-            for (const Dato& dato : coppia.second) {
+            for (const Data& dato : coppia.second) {
                 //Costruisci la query di inserimento
-                std::string query = "INSERT INTO tabella_dati (sensore_id, sample_time, value) VALUES ('" + dato.SensorID + "', '" + dato.sampleTime + "', '" + dato.value + "')";
+                std::string query = "INSERT INTO tabella_dati (sensor_id, sample_time, value) VALUES ('" + dato.sensorID + "', '" + dato.sampleTime + "', '" + dato.value + "')";
 
                 //Esegui la query
                 res = PQexec(conn, query.c_str());

@@ -17,15 +17,15 @@
 
 
 
-struct Dato {
+struct Data {
     std::string sampleTime;
-    std::string SensorID;
+    std::string sensorID;
     std::string value;
 };
 
 struct DatoPerFinestre {
     int sampleTime;
-    std::string SensorID;
+    std::string sensorID;
     double value;
 };
 
@@ -36,20 +36,20 @@ void salvaCovarianzeInPostgreSQL(const std::map<std::string, std::map<std::strin
 
 //std::map<std::string, std::map<std::string, double>> calcolaMatriceCovarianzaMedie(const std::map<std::string, double>& medie, const std::map<std::string, FinestraTemporale>& fineste);
 
-std::map<std::tuple<std::string, std::string, int, int>, double> calcolaMatriceCovarianza(const std::map<std::string, std::vector<DatoPerFinestre>>& finestre, std::vector<std::string> sensori);
+std::map<std::tuple<std::string, std::string, int, int>, double> calcolaMatriceCovarianza(const std::map<std::string, std::vector<DatoPerFinestre>>& finestre, std::vector<std::string> sensors);
 
-double calcolaCovarianzaTraSensori (const std::vector<double>& sensorX, const std::vector<double>& sensorY);
+double calcolaCovarianzaTrasensors (const std::vector<double>& sensorX, const std::vector<double>& sensorY);
 
 std::map<int, std::map<std::string, double>> mergeSensorData(const std::map<std::string, std::vector<DatoPerFinestre>>& finestre);
 
-std::map<std::string, std::vector<DatoPerFinestre>> creaFinestre(const std::map<std::string, std::vector<Dato>>& datiPerSensore);
+std::map<std::string, std::vector<DatoPerFinestre>> creaFinestre(const std::map<std::string, std::vector<Data>>& datiPersensor);
 
-void salvaMedieInPostgreSQL(const std::map<std::string, std::vector<std::tuple<int, int, double>>>& mediePerSensore);
+void salvaMedieInPostgreSQL(const std::map<std::string, std::vector<std::tuple<int, int, double>>>& mediePersensor);
 
 std::map<std::string, std::vector<std::tuple<int, int, double>>> calcolaMedie(const std::map<std::string, std::vector<DatoPerFinestre>>& finestre);
 
-void inserisciDatiInPostgreSQL(const std::map<std::string, std::vector<Dato>>& datiRaggrupati);
+void inserisciDatiInPostgreSQL(const std::map<std::string, std::vector<Data>>& datiRaggrupati);
 
-std::map<std::string, std::vector<Dato>> leggiDatiRedis(redisContext *context, const std::vector<std::string>& sensori);
+std::map<std::string, std::vector<Data>> readRedisData(redisContext *context, const std::vector<std::string>& sensors);
 
 #endif // MAIN_H

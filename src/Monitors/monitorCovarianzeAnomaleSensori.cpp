@@ -20,7 +20,7 @@ PGconn *connessioneAlDatabase() {
     return conn;
 }
 
-//Funzione per leggere la matrice di covarianza tra i sensori dal database
+//Funzione per leggere la matrice di covarianza tra i sensors dal database
 std::map<std::string, std::map<std::string, double>> leggiMatriceCovarianzaDalDatabase(PGconn *conn) {
     std::map<std::string, std::map<std::string, double>> matriceCovarianza;
 
@@ -38,33 +38,33 @@ std::map<std::string, std::map<std::string, double>> leggiMatriceCovarianzaDalDa
     if (righe == 0 ) {
         std::cout << "Nessun dato trovato nella tabella_covarianze." << std::endl;
     } else {
-        //std::cout << "Matrice di covarianza tra i sensori:" << std::endl;
+        //std::cout << "Matrice di covarianza tra i sensors:" << std::endl;
         for (int i = 0; i < righe; ++i) {
-            std::string sensoreID1 = PQgetvalue(result, i, 0);
-            std::string sensoreID2 = PQgetvalue(result, i, 1);
+            std::string sensorID1 = PQgetvalue(result, i, 0);
+            std::string sensorID2 = PQgetvalue(result, i, 1);
             const char *valoreStringa = PQgetvalue(result, i, 2);
 
             double valoreCovarianza = std::stod(valoreStringa);
             
-            //Verifica se la chiave sensoreID1 esiste nella mappa principale
-            auto it1 = matriceCovarianza.find(sensoreID1);
+            //Verifica se la chiave sensorID1 esiste nella mappa principale
+            auto it1 = matriceCovarianza.find(sensorID1);
             if (it1 != matriceCovarianza.end()) {
-                //Verifica se la chiave sensoreID" esiste nella mappa interna 
+                //Verifica se la chiave sensorID" esiste nella mappa interna 
                 auto& innerMap = it1->second;
-                auto it2 = innerMap.find(sensoreID2);
+                auto it2 = innerMap.find(sensorID2);
                 if (it2 != innerMap.end()) {
                     //Chiave trovata, sovrascrivi il valore
                     it2->second = valoreCovarianza;
                 } else {
                     // Chiave non trovata, inserisci una nuova coppia
-                    innerMap[sensoreID2] = valoreCovarianza;
+                    innerMap[sensorID2] = valoreCovarianza;
                 }
             } else {
                 //Chiave principale non trovata, crea una nuova mappa interna
-                matriceCovarianza[sensoreID1][sensoreID2] = valoreCovarianza;
+                matriceCovarianza[sensorID1][sensorID2] = valoreCovarianza;
             }
 
-            // std::cout << sensoreID1 << " " << sensoreID2 << " " << valoreCovarianza << std::endl;
+            // std::cout << sensorID1 << " " << sensorID2 << " " << valoreCovarianza << std::endl;
         }
     }
     PQclear(result);
@@ -74,7 +74,7 @@ std::map<std::string, std::map<std::string, double>> leggiMatriceCovarianzaDalDa
 
 // Funzione per rilevare covarianze anomale
 std::map<std::string, std::map<std::string, double>>  rilevaAnomalieCovarianza(const std::map<std::string, std::map<std::string, double>>& matriceCovarianza) {
-    std::map<std::string, std::map<std::string, double>> sensoriAnomali;
+    std::map<std::string, std::map<std::string, double>> sensorsAnomali;
 
     //Definisce una soglia per le covarianze anomale (si può adattare questo valore)
     double sogliaAnomalie = 1e-5;
@@ -83,26 +83,26 @@ std::map<std::string, std::map<std::string, double>>  rilevaAnomalieCovarianza(c
     //std::cout << "Covarianze anomale rilevate: " << std::endl;
 
     for (const auto& coppia1 : matriceCovarianza) {
-        const std::string& sensoreID1 = coppia1.first;
+        const std::string& sensorID1 = coppia1.first;
 
         for (const auto& coppia2 : coppia1.second) {
-            const std::string& sensoreID2 = coppia2.first;
+            const std::string& sensorID2 = coppia2.first;
             double covarianza = coppia2.second;
 
             //Si può addattare questa condizione in base alle esigenze 
             if (std::abs(covarianza) > sogliaAnomalie) {
-                // std::cout << "Coppia di sensori: " << sensoreID1 << " e " << sensoreID2 << ", Covarianza: " << covarianza << std::endl;
+                // std::cout << "Coppia di sensors: " << sensorID1 << " e " << sensorID2 << ", Covarianza: " << covarianza << std::endl;
 
-                //Aggiungi i sensori alla mappa dei sensori anomali
-                sensoriAnomali[sensoreID1][sensoreID2] = covarianza;
+                //Aggiungi i sensors alla mappa dei sensors anomali
+                sensorsAnomali[sensorID1][sensorID2] = covarianza;
             }
         }
     }
-    return sensoriAnomali;
+    return sensorsAnomali;
 }
 
-//Funzione per salvare i sensori anomali nel database PostgreSQL
-void salvaSensoriAnomaliInPostgreSQL(PGconn *conn,  const std::map<std::string, std::map<std::string, double>>& sensoriAnomali) {
+//Funzione per salvare i sensors anomali nel database PostgreSQL
+void salvasensorsAnomaliInPostgreSQL(PGconn *conn,  const std::map<std::string, std::map<std::string, double>>& sensorsAnomali) {
     //Inizia una transazione
     PGresult *res = PQexec(conn, "BEGIN");
     if (PQresultStatus(res) != PGRES_COMMAND_OK) {
@@ -113,15 +113,15 @@ void salvaSensoriAnomaliInPostgreSQL(PGconn *conn,  const std::map<std::string, 
     PQclear(res);
 
     //Itera sulla mappa e inserisce i dati nel database
-    for (const auto& coppia1 : sensoriAnomali) {
-        const std::string& sensoreID1 = coppia1.first;
+    for (const auto& coppia1 : sensorsAnomali) {
+        const std::string& sensorID1 = coppia1.first;
 
         for (const auto& coppia2 : coppia1.second) {
-            const std::string& sensoreID2 = coppia2.first;
+            const std::string& sensorID2 = coppia2.first;
             double anomalia = coppia2.second;
 
             //Costruisci la query di inserimento
-            std::string query = "INSERT INTO tabella_anomalie_covarianza (sensore_id1, sensore_id2, anomalia) VALUES ('" + sensoreID1 + "', '" + sensoreID2 + "', " + std::to_string(anomalia) + ")";
+            std::string query = "INSERT INTO tabella_anomalie_covarianza (sensor_id1, sensor_id2, anomalia) VALUES ('" + sensorID1 + "', '" + sensorID2 + "', " + std::to_string(anomalia) + ")";
 
             //Esegui la query
             res = PQexec(conn, query.c_str());
@@ -151,13 +151,13 @@ int main() {
         return 1;
     }
 
-    //Legge la matrice di covarianza tra i sensori al database
+    //Legge la matrice di covarianza tra i sensors al database
     std::map<std::string, std::map<std::string, double>> matriceCovarianza = leggiMatriceCovarianzaDalDatabase(conn);
 
     //Chaimo funzione di anomalie
-    std::map<std::string, std::map<std::string, double>> sensoriAnomali = rilevaAnomalieCovarianza(matriceCovarianza);
+    std::map<std::string, std::map<std::string, double>> sensorsAnomali = rilevaAnomalieCovarianza(matriceCovarianza);
 
-    salvaSensoriAnomaliInPostgreSQL(conn, sensoriAnomali);
+    salvasensorsAnomaliInPostgreSQL(conn, sensorsAnomali);
 
     //Chiudi la connessione al database
     PQfinish(conn);

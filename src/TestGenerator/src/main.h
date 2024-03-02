@@ -18,15 +18,15 @@
 #include <tuple>
 
 
-// Struttura per i dati letti dai sensori del tipo: Tempo di lettura, ID del sensore, Valore letto
+#define FILE_NAME_CSV "../Data/data1273117654.csv"
+
+// Struct for data read, in the format read time, sensor ID, read value.
 struct Data {
     std::string sampleTime;
     std::string sensorID;
     std::string value;
 };
 
-std::vector<Data> readFileCSV(const std::string& fileName);
-
-#define fileNameCSV "../../../Data/data1273117654.csv"
+bool readFileCSV(std::string fileName, std::vector<Data> &dataVector);
 
 #endif 

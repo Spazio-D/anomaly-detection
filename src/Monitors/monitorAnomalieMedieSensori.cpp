@@ -5,7 +5,7 @@
 
 //Funzione per connettersi al database PostgreSQL
 PGconn *connessioneAlDatabase() {
-    const char *connString = "dbname=dati_di_sensori user=Nastya password=nastyasql hostaddr=127.0.0.1 port=5432";
+    const char *connString = "dbname=dati_di_sensors user=Nastya password=nastyasql hostaddr=127.0.0.1 port=5432";
     PGconn *conn = PQconnectdb(connString);
 
     if (PQstatus(conn) != CONNECTION_OK) {
@@ -18,7 +18,7 @@ PGconn *connessioneAlDatabase() {
     return conn;
 }
 
-//Funzione per leggere i dati storici delle medie dei sensori dal database
+//Funzione per leggere i dati storici delle medie dei sensors dal database
 std::map<std::string, double> leggiDatiMedieDalDatabase(PGconn *conn) {
     std::map<std::string, double> medie;
 
@@ -35,13 +35,13 @@ std::map<std::string, double> leggiDatiMedieDalDatabase(PGconn *conn) {
     if (righe == 0) {
         std::cout << "Nessun dato trovato nella tabella_medie." << std::endl;
     } else {
-        //std::cout << "Dati storici delle medie dei sensori:" << std::endl;
+        //std::cout << "Dati storici delle medie dei sensors:" << std::endl;
         for (int i = 0; i < righe; ++i) {
             std::string sensorID = PQgetvalue(result, i, 0);
             double valoreMedio = std::stod(PQgetvalue(result, i, 1));
             medie[sensorID] = valoreMedio;
 
-            //std::cout << "Sensore ID: " << sensorID << ", Valore Medio: " << valoreMedio << std::endl;
+            //std::cout << "sensor ID: " << sensorID << ", Valore Medio: " << valoreMedio << std::endl;
         }
     }
     PQclear(result);
@@ -51,7 +51,7 @@ std::map<std::string, double> leggiDatiMedieDalDatabase(PGconn *conn) {
 
 //Funzione per rilevare anomalie sulla deviazione standard
 std::map<std::string, double> rilevaAnomalieMedie(const std::map<std::string, double>& medie) {
-    std::map<std::string, double> sensoriAnomali;
+    std::map<std::string, double> sensorsAnomali;
 
     //Calcola la media globale 
     double mediaGlobale = 0.0;
@@ -80,25 +80,25 @@ std::map<std::string, double> rilevaAnomalieMedie(const std::map<std::string, do
     //std::cout << "Anomalie rilevate: " << std::endl;
     for (const auto& coppia : medie) {
         if (std::abs(coppia.second - mediaGlobale) > sogliaAnomalie) {
-            //std::cout << "Sensore: " << coppia.first << ", Valore Medio: " << coppia.second << std::endl;
+            //std::cout << "sensor: " << coppia.first << ", Valore Medio: " << coppia.second << std::endl;
 
-            //Aggiunge il sensore anomalo alla mappa
-            sensoriAnomali[coppia.first] = coppia.second;
+            //Aggiunge il sensor anomalo alla mappa
+            sensorsAnomali[coppia.first] = coppia.second;
         }
     }
-    return sensoriAnomali;
+    return sensorsAnomali;
 }
 
 //Funzione per inviare le informazioni sulle anomali al database
-void inviaAnomalieAlDatabase(PGconn *conn, const std::map<std::string, double>& sensoriAnomali) {
-    for (const auto& coppia : sensoriAnomali) {
+void inviaAnomalieAlDatabase(PGconn *conn, const std::map<std::string, double>& sensorsAnomali) {
+    for (const auto& coppia : sensorsAnomali) {
         std::string query = "INSERT INTO tabella_anomalie_medie (sensorID, valoreAnomalo) VALUES ('" + coppia.first + "', " + std::to_string(coppia.second) + ")";
         PGresult *result = PQexec(conn, query.c_str());
 
         if (PQresultStatus(result) != PGRES_COMMAND_OK) {
             std::cerr << "errore durante l'inserimento dei dati sulle anomalie: " << PQerrorMessage(conn) << std::endl;
         } //else {
-        //     std::cout << "Dati sul sensore anomalo inseriti corretamente nel database." << std::endl;
+        //     std::cout << "Dati sul sensor anomalo inseriti corretamente nel database." << std::endl;
         // }
 
         PQclear(result);
@@ -113,19 +113,19 @@ int main() {
         return 1;
     }
 
-    //Legge i dati storici delle medie dei sensori dal database
+    //Legge i dati storici delle medie dei sensors dal database
     std::map<std::string, double> medie = leggiDatiMedieDalDatabase(conn);
 
     //Rileva anomalie rispetto al modello previsto
-    std::map<std::string, double> sensoriAnomali = rilevaAnomalieMedie(medie);
+    std::map<std::string, double> sensorsAnomali = rilevaAnomalieMedie(medie);
 
-    //Invia sensori con anomalie al database
-    inviaAnomalieAlDatabase(conn, sensoriAnomali);
+    //Invia sensors con anomalie al database
+    inviaAnomalieAlDatabase(conn, sensorsAnomali);
 
     // //Stampa le anomalie
     // std::cout << "Anomalie rilevate: " << std::endl;
-    // for (const auto& coppia : sensoriAnomali) {
-    //     std::cout << "Sensore: " << coppia.first << ", Valore Medio: " << coppia.second << std::endl;
+    // for (const auto& coppia : sensorsAnomali) {
+    //     std::cout << "sensor: " << coppia.first << ", Valore Medio: " << coppia.second << std::endl;
     // }
 
     //Chiude la connessione al database

@@ -4,14 +4,14 @@
 #include <map>
 #include </opt/homebrew/opt/libpq/include/libpq-fe.h>
 
-struct Dato {
+struct Data {
     std::string sampleTime;
     std::string sensorID;
     std::string value;
 };
 
 struct PeriodoMancante {
-    std::string sensore;
+    std::string sensor;
     std::string periodoInizio;
     std::string periodoFine;
 };
@@ -29,7 +29,7 @@ PGconn* connessioneAlDatabase() {
     }
 
     // // Query per la creazione della tabella se non esiste
-    // const char *createTableQuery = "CREATE TABLE IF NOT EXISTS tabella_periodi_mancanti (id SERIAL PRIMARY KEY, sensore VARCHAR(255) NOT NULL, periodo_inizio VARCHAR(255) NOT NULL, periodo_fine VARCHAR(255) NOT NULL)";
+    // const char *createTableQuery = "CREATE TABLE IF NOT EXISTS tabella_periodi_mancanti (id SERIAL PRIMARY KEY, sensor VARCHAR(255) NOT NULL, periodo_inizio VARCHAR(255) NOT NULL, periodo_fine VARCHAR(255) NOT NULL)";
     
     // PGresult *createTableResult = PQexec(conn, createTableQuery);
     // if (PQresultStatus(createTableResult) != PGRES_COMMAND_OK) {
@@ -45,53 +45,53 @@ PGconn* connessioneAlDatabase() {
 }
 
 //Funzione per leggere i dati dalla tabella_dati
-std::map<std::string, std::vector<Dato>> leggiDatiDaDatabase(PGconn* conn) {
-    std::map<std::string, std::vector<Dato>> datiPerSensore;
+std::map<std::string, std::vector<Data>> leggiDatiDaDatabase(PGconn* conn) {
+    std::map<std::string, std::vector<Data>> datiPersensor;
 
-    const char *query = "SELECT sensore_id, sample_time, value FROM tabella_dati";
+    const char *query = "SELECT sensor_id, sample_time, value FROM tabella_dati";
     PGresult *result = PQexec(conn, query);
 
     if (PQresultStatus(result) != PGRES_TUPLES_OK) {
         std::cerr << "Errore durante l'esecuzione della query: " << PQerrorMessage(conn) << std::endl;
         PQclear(result);
-        return datiPerSensore;
+        return datiPersensor;
     }
 
     int righe = PQntuples(result);
 
     for (int i = 0; i < righe; ++i) {
-        Dato dato;
+        Data dato;
         dato.sensorID = PQgetvalue(result, i, 0);
         dato.sampleTime = PQgetvalue(result, i, 1);
         dato.value = PQgetvalue(result, i, 2);
 
-        //Organizza i dati nella mappa in base al sensore 
-        datiPerSensore[dato.sensorID].push_back(dato);
+        //Organizza i dati nella mappa in base al sensor 
+        datiPersensor[dato.sensorID].push_back(dato);
     }
 
     PQclear(result);
 
-    return datiPerSensore;
+    return datiPersensor;
 }
 
 //Funzione per il monitor della mancanza di dati 
-std::vector<PeriodoMancante> monitorMancanzaDati(const std::map<std::string, std::vector<Dato>>& datiPerSensore) {
+std::vector<PeriodoMancante> monitorMancanzaDati(const std::map<std::string, std::vector<Data>>& datiPersensor) {
     //Definisce una soglia per la mancanza di dati (può essere adattata)
     int sogliaMancanzaDati = 10; //Ad esempio, si considera un periodo senza dati se mancano almeno 3 campioni consecutivi.
 
     std::vector<PeriodoMancante> periodiMancanti;
 
-    //Scorre ogni sensore nella mappa 
-    for (const auto& coppia : datiPerSensore) {
-        const std::string& sensore = coppia.first;
-        const std::vector<Dato>& dati = coppia.second;
+    //Scorre ogni sensor nella mappa 
+    for (const auto& coppia : datiPersensor) {
+        const std::string& sensor = coppia.first;
+        const std::vector<Data>& dati = coppia.second;
 
         //Verifica la mancanza di dati nella serie temporale
         int consecutiveMancanti = 0;
         std::string periodoInizio;
         bool inPeriodoMancante = false;
 
-        for (const Dato& dato : dati) {
+        for (const Data& dato : dati) {
             //Se il valore è 'NULL', incemente il conteggio di periodi consecutivi senza dati 
             if (dato.value == "NULL") {
                 if (!inPeriodoMancante) {
@@ -105,9 +105,9 @@ std::vector<PeriodoMancante> monitorMancanzaDati(const std::map<std::string, std
                 if (inPeriodoMancante) {
                     //Se sta uscendo da un periodo mancante, memorrizza le informazioni sul periodo mancante
                     if (consecutiveMancanti >= sogliaMancanzaDati) {
-                        //std::cout << "Allarme: Mancanza di dati nel sensore " << sensore << " dal periodo " << periodoInizio << " al periodo " << dato.sampleTime << std::endl;
+                        //std::cout << "Allarme: Mancanza di dati nel sensor " << sensor << " dal periodo " << periodoInizio << " al periodo " << dato.sampleTime << std::endl;
                         PeriodoMancante periodo;
-                        periodo.sensore = sensore;
+                        periodo.sensor = sensor;
                         periodo.periodoInizio = periodoInizio;
                         periodo.periodoFine = dato.sampleTime;
 
@@ -127,7 +127,7 @@ std::vector<PeriodoMancante> monitorMancanzaDati(const std::map<std::string, std
 //Funzione per inserire i periodi mancanti nel database
 void inserisciPeriodiMancantiInDatabase(PGconn* conn, const std::vector<PeriodoMancante>& periodiMancanti) {
     for (const PeriodoMancante& periodo : periodiMancanti) {
-        std::string query = "INSERT INTO tabella_periodi_mancanti (sensore, periodo_inizio, periodo_fine) VALUES ('" + periodo.sensore + "', '" + periodo.periodoInizio + "', '" + periodo.periodoFine + "')";
+        std::string query = "INSERT INTO tabella_periodi_mancanti (sensor, periodo_inizio, periodo_fine) VALUES ('" + periodo.sensor + "', '" + periodo.periodoInizio + "', '" + periodo.periodoFine + "')";
 
         PGresult* result = PQexec(conn, query.c_str());
 
@@ -147,10 +147,10 @@ int main() {
     }
 
     //Legge i dati dalla tabella_dati e organizzali in una mappa
-    std::map<std::string, std::vector<Dato>> datiPerSensore = leggiDatiDaDatabase(conn);
+    std::map<std::string, std::vector<Data>> datiPersensor = leggiDatiDaDatabase(conn);
 
     //Esegue il monitor per la rilevazione di mancanza di dati
-    std::vector<PeriodoMancante> periodiMancanti = monitorMancanzaDati(datiPerSensore);
+    std::vector<PeriodoMancante> periodiMancanti = monitorMancanzaDati(datiPersensor);
 
     //Chiama funzione per salvare periodi mancanti in database
     inserisciPeriodiMancantiInDatabase(conn, periodiMancanti);

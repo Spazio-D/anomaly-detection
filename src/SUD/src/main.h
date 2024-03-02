@@ -16,41 +16,22 @@
 #include <iomanip>
 #include <tuple>
 
+#define W 100
 
-
-struct Dato {
+// Struct for data read, in the format read time, sensor ID, read value.
+struct Data {
     std::string sampleTime;
-    std::string SensorID;
+    std::string sensorID;
     std::string value;
 };
 
-struct DatoPerFinestre {
-    int sampleTime;
-    std::string SensorID;
-    double value;
-};
 
-//Constanti
-#define W 100
+bool readRedisData(redisContext *context, std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataWithNull,  std::map<std::string, std::vector<Data>> &dataNoNull);
 
-void salvaCovarianzeInPostgreSQL(const std::map<std::string, std::map<std::string, double>>& matriceCovarianza);
+std::map<std::string, std::vector<Data>> createDataWindow(std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataNoNull, int wStart, int wEnd);
 
-//std::map<std::string, std::map<std::string, double>> calcolaMatriceCovarianzaMedie(const std::map<std::string, double>& medie, const std::map<std::string, FinestraTemporale>& fineste);
+std::map<std::string, double> averageValue(std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataWindowNoNull);
 
-std::map<std::tuple<std::string, std::string, int, int>, double> calcolaMatriceCovarianza(const std::map<std::string, std::vector<DatoPerFinestre>>& finestre, std::vector<std::string> sensori);
 
-double calcolaCovarianzaTraSensori (const std::vector<double>& sensorX, const std::vector<double>& sensorY);
-
-std::map<int, std::map<std::string, double>> mergeSensorData(const std::map<std::string, std::vector<DatoPerFinestre>>& finestre);
-
-std::map<std::string, std::vector<DatoPerFinestre>> creaFinestre(const std::map<std::string, std::vector<Dato>>& datiPerSensore);
-
-void salvaMedieInPostgreSQL(const std::map<std::string, std::vector<std::tuple<int, int, double>>>& mediePerSensore);
-
-std::map<std::string, std::vector<std::tuple<int, int, double>>> calcolaMedie(const std::map<std::string, std::vector<DatoPerFinestre>>& finestre);
-
-void inserisciDatiInPostgreSQL(const std::map<std::string, std::vector<Dato>>& datiRaggrupati);
-
-std::map<std::string, std::vector<Dato>> leggiDatiRedis(redisContext *context, const std::vector<std::string>& sensori);
 
 #endif // MAIN_H

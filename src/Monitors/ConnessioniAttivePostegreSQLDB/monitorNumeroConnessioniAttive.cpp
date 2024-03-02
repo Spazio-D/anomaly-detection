@@ -3,7 +3,7 @@
 
 //Funzione per connettersi al database PostgreSQL
 PGconn* connessioneAlDatabase() {
-    const char *connString = "dbname=dati_di_sensori user=Nastya password=nastyasql hostaddr=127.0.0.1 port=5432";
+    const char *connString = "dbname=dati_di_sensors user=Nastya password=nastyasql hostaddr=127.0.0.1 port=5432";
     PGconn *conn = PQconnectdb(connString);
 
     if (PQstatus(conn) != CONNECTION_OK) {
