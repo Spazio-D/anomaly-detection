@@ -30,6 +30,7 @@ int main() {
 
     freeReplyObject(reply_sensors);
 
+    std::sort(sensors.begin(), sensors.end());
 
     // Read data from Redis streams
     std::map<std::string, std::vector<Data>> dataWithNull;
@@ -41,8 +42,9 @@ int main() {
     // i<dataWithNull["SAC0"].size()- W + 1 -- IL VALORE GIUSTO (SOSTITUIRE IL PARAMETRO DI createDataWindow con W + i al posto di 5 + i)
     for(size_t i = 0; i<6 ; i++){
         
-        std::map<std::string, std::vector<Data>> dataWindowNoNull = createDataWindow(sensors, dataNoNull, i, 4 + i);
-        std::map<std::string, double> averages = averageValue(sensors, dataWindowNoNull);
+        std::map<std::string, std::vector<Data>> dataWindowNoNull = createDataWindow(dataNoNull, i, 4 + i);
+        std::map<std::string, double> averages = averageValue(dataWindowNoNull);
+        std::map<std::string, std::vector<double>> covariances = covarianceValue(sensors, dataWindowNoNull, averages);
 
     }
 

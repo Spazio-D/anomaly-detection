@@ -1,18 +1,15 @@
 #include "main.h"
 
-std::map<std::string, std::vector<Data>> createDataWindow(std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataNoNull, int wStart, int wEnd){
+std::map<std::string, std::vector<Data>> createDataWindow(std::map<std::string, std::vector<Data>> &dataNoNull, int wStart, int wEnd){
 
     std::map<std::string, std::vector<Data>> dataWindowNoNull;
 
-    for(std::string sensor : sensors){
-
-        if(dataNoNull.find(sensor) != dataNoNull.end()){
+    for(auto element : dataNoNull){
             
-            for(Data data : dataNoNull[sensor]){
+        for(Data data : dataNoNull[element.first]){
 
-                if(std::stoi(data.sampleTime) >= wStart && std::stod(data.sampleTime) <= wEnd ){
-                    dataWindowNoNull[sensor].push_back(data);
-                }
+            if(std::stoi(data.sampleTime) >= wStart && std::stod(data.sampleTime) <= wEnd ){
+                dataWindowNoNull[element.first].push_back(data);
             }
         }
     }
