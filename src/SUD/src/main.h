@@ -16,8 +16,9 @@
 #include <iomanip>
 #include <tuple>
 #include <limits>
+#include <cmath>
 
-#define W 100
+#define W 4
 
 // Struct for data read, in the format read time, sensor ID, read value.
 struct Data {
@@ -27,13 +28,13 @@ struct Data {
 };
 
 
-bool readRedisData(redisContext *context, std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataWithNull,  std::map<std::string, std::vector<Data>> &dataNoNull);
+bool readRedisData(redisContext *context, std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataVector);
 
-std::map<std::string, std::vector<Data>> createDataWindow(std::map<std::string, std::vector<Data>> &dataNoNull, int wStart, int wEnd);
+std::map<std::string, std::vector<Data>> createDataWindow(std::map<std::string, std::vector<Data>> &dataVector, int wStart, int wEnd);
 
-std::map<std::string, double> averageValue(std::map<std::string, std::vector<Data>> &dataWindowNoNull);
+std::map<std::string, double> averageValue(std::map<std::string, std::vector<Data>> &dataWindow);
 
-std::map<std::string, std::vector<double>> covarianceValue(std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataWindowNoNull, std::map<std::string, double> &averages);
+std::vector<std::vector<double>> covarianceValue(std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataWindow, std::map<std::string, double> &averages);
 
 
 

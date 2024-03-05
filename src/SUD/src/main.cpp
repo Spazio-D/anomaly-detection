@@ -33,18 +33,20 @@ int main() {
     std::sort(sensors.begin(), sensors.end());
 
     // Read data from Redis streams
-    std::map<std::string, std::vector<Data>> dataWithNull;
-    std::map<std::string, std::vector<Data>> dataNoNull;
-    if(!readRedisData(context, sensors, dataWithNull, dataNoNull)){
+    std::map<std::string, std::vector<Data>> dataVector;
+    if(!readRedisData(context, sensors, dataVector)){
         return 1;
     }
 
-    // i<dataWithNull["SAC0"].size()- W + 1 -- IL VALORE GIUSTO (SOSTITUIRE IL PARAMETRO DI createDataWindow con W + i al posto di 5 + i)
-    for(size_t i = 0; i<6 ; i++){
+    std::map<std::string, std::vector<Data>> dataWindow;
+    std::map<std::string, double> averages;
+    std::vector<std::vector<double>> covariances;
+
+    for(size_t i = 0; i<dataVector["SAC0"].size() - W + 1 ; i++){
         
-        std::map<std::string, std::vector<Data>> dataWindowNoNull = createDataWindow(dataNoNull, i, 4 + i);
-        std::map<std::string, double> averages = averageValue(dataWindowNoNull);
-        std::map<std::string, std::vector<double>> covariances = covarianceValue(sensors, dataWindowNoNull, averages);
+        dataWindow = createDataWindow(dataVector, i, W + i - 1);
+        averages = averageValue(dataWindow);
+        covariances = covarianceValue(sensors, dataWindow, averages);
 
     }
 

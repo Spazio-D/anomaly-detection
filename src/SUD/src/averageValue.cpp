@@ -1,22 +1,39 @@
 #include "main.h"
 
-std::map<std::string, double> averageValue(std::map<std::string, std::vector<Data>> &dataWindowNoNull){
+std::map<std::string, double> averageValue(std::map<std::string, std::vector<Data>> &dataWindow){
 
     std::map<std::string, double> averages;
+    double totalSum;
+    int numberOfValue;
+    double average;
 
-    for(auto element : dataWindowNoNull){
+    for(auto element : dataWindow){
 
-        double totalValue = 0;
-        int numberOfValue = dataWindowNoNull[element.first].size();
+        totalSum = 0;
+        numberOfValue = 0;
 
-        for(Data data : dataWindowNoNull[element.first]){
-            totalValue += std::stod(data.value);
+        for(Data data : dataWindow[element.first]){
+
+            if(data.value != "NULL"){
+                totalSum += std::stod(data.value);
+                numberOfValue++;
+            }
+
         }
 
-        double average = totalValue/numberOfValue;
-        averages[element.first] = average;
+        if(numberOfValue == 0){
 
-        std::cout << element.first << "\t" << average << std::endl;        
+            averages[element.first] = std::nan("");
+            std::cout << element.first << "\t" << "NaN" << std::endl;
+
+        }else{
+
+            average = totalSum/numberOfValue;
+            averages[element.first] = average;
+            std::cout << element.first << "\t" << average << std::endl;
+
+        }
+        
     }
 
     return averages;

@@ -1,18 +1,18 @@
 #include "main.h"
 
-std::map<std::string, std::vector<Data>> createDataWindow(std::map<std::string, std::vector<Data>> &dataNoNull, int wStart, int wEnd){
+std::map<std::string, std::vector<Data>> createDataWindow(std::map<std::string, std::vector<Data>> &dataVector, int wStart, int wEnd){
 
-    std::map<std::string, std::vector<Data>> dataWindowNoNull;
+    std::map<std::string, std::vector<Data>> dataWindow;
 
-    for(auto element : dataNoNull){
+    for(auto element : dataVector){
             
-        for(Data data : dataNoNull[element.first]){
+        for(Data data : dataVector[element.first]){
 
             if(std::stoi(data.sampleTime) >= wStart && std::stod(data.sampleTime) <= wEnd ){
-                dataWindowNoNull[element.first].push_back(data);
+                dataWindow[element.first].push_back(data);
             }
         }
     }
 
-    return dataWindowNoNull;
+    return dataWindow;
 }

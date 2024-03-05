@@ -29,7 +29,7 @@ all: $(OBJ) $(BDIR)/main
 #	$(MAKE) -C ../../../con2redis/src
 
 run:
-#	./delRedisDB.sh
+	./delRedisDB.sh
 	../bin/main
 
 $(ODIR)/%.o: %.cpp $(DEPS)
