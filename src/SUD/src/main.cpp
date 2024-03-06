@@ -69,21 +69,6 @@ int main() {
 
     }
 
-
-
-
-   
-    
-
-    //Chiama la funzione per salvare le medie nel database
-    //salvaMedieInPostgreSQL(mediePerSesnore);
-
-    //Chaiama la funzione per calcolare la matrice di covariaznza tra i sensors
-    ////////std::map<std::tuple<std::string, std::string, int, int>, double> matriceCovarianza =  calcolaMatriceCovarianza(finestre, sensors);
-
-
-    //Chiusura della conessione a Redis
     redisFree(context);
-
     return 0;
 }
