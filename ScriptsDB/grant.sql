@@ -5,8 +5,12 @@
 GRANT ALL PRIVILEGES ON DATABASE :dbname to :username ;
 
 
-ALTER TABLE TimeVar OWNER TO :username ;
-ALTER TABLE LogTable OWNER TO :username ;
+ALTER TABLE dataTable OWNER TO :username ;
+ALTER TABLE averageTable OWNER TO :username ;
+ALTER TABLE covarianceTable OWNER TO :username ;
+ALTER TABLE anomalyAverageTable OWNER TO :username ;
+ALTER TABLE anomalyCovarianceTable OWNER TO :username ;
+ALTER TABLE missingDataTable OWNER TO :username ;
 
 -- grant all privileges on all tables in schema public to :username ;
 -- grant all privileges on all sequences in schema public to :username ;

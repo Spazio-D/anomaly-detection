@@ -4,50 +4,50 @@
 \c :dbname 
 
 
--- Pick the one most appropriate for your application
--- CREATE DOMAIN TimePoint AS date ;
-create domain TimePoint as timestamp ;
--- create domain TimePoint as timestamp with time zone;
-
-CREATE DOMAIN  String4VarName AS VARCHAR(30) ;
-CREATE DOMAIN  String4Info as VARCHAR(200) ;
-
--- Pick the one most appropriate for your application
---CREATE DOMAIN VarType AS real ;
-create domain VarType as double precision ;
--- create domain VarType as int ;
-
-
-CREATE TYPE DomainType AS ENUM ('discrete', 'real', 'double');
-
-
-
-
-
--- Patient data that depend on time
--- Variables within time series (all have the same type)
-CREATE TABLE IF NOT EXISTS TimeVar (
-        vid serial PRIMARY KEY,     -- serial id for variable
-        pid int NOT NULL,           -- pid of process logged
-        sysname String4Info,        --- system containing logged variable
-        varname String4VarName NOT NULL,     -- variable name
-        vardomain DomainType NOT NULL,
-        varinfo String4Info NOT NULL
+CREATE TABLE IF NOT EXISTS dataTable(
+        sensorID VARCHAR(10) NOT NULL,
+        sampleTime INT NOT NULL,
+        value DOUBLE PRECISION,
+        PRIMARY KEY (sensorID, sampleTime)
 );
 
--- Timescaledb extension for time series
--- Do not forget to create timescaledb extension
--- CREATE EXTENSION timescaledb;
-
-CREATE TABLE IF NOT EXISTS LogTable (
-        nanosec bigint NOT NULL,		-- nanseconds after second
-        vid int NOT NULL,			-- variable id
-        varvalue VarType,                       -- variable value
-	loginfo String4Info,                    -- extra info
-        PRIMARY KEY (nanosec, vid),
-        CONSTRAINT vid_ref FOREIGN KEY(vid) REFERENCES TimeVar(vid)
+CREATE TABLE IF NOT EXISTS averageTable(
+        sensorID VARCHAR(10) NOT NULL,
+        value DOUBLE PRECISION,
+        firstSampleTime INT NOT NULL,
+        lastSampleTime INT NOT NULL,
+        PRIMARY KEY (sensorID, firstSampleTime)
 );
 
+CREATE TABLE IF NOT EXISTS covarianceTable(
+        sensorID1 VARCHAR(10) NOT NULL,
+        sensorID2 VARCHAR(10) NOT NULL,
+        value DOUBLE PRECISION,
+        firstSampleTime INT NOT NULL,
+        lastSampleTime INT NOT NULL,
+        PRIMARY KEY (sensorID1, sensorID2, firstSampleTime)
+);
 
+CREATE TABLE IF NOT EXISTS anomalyAverageTable(
+        sensorID VARCHAR(10) NOT NULL,
+        firstSampleTime INT NOT NULL,
+        isAnomaly BOOLEAN,
+        value DOUBLE PRECISION,
+        FOREIGN KEY (sensorID, firstSampleTime) REFERENCES averageTable(sensorID, firstSampleTime)
+);
 
+CREATE TABLE IF NOT EXISTS anomalyCovarianceTable(
+        sensorID1 VARCHAR(10) NOT NULL,
+        sensorID2 VARCHAR(10) NOT NULL,
+        firstSampleTime INT NOT NULL,
+        isAnomaly BOOLEAN,
+        value DOUBLE PRECISION,
+        FOREIGN KEY (sensorID1, sensorID2, firstSampleTime) REFERENCES covarianceTable(sensorID1, sensorID2, firstSampleTime)
+);
 
+CREATE TABLE IF NOT EXISTS missingDataTable(
+        sensorID VARCHAR(10) NOT NULL,
+        firstSampleTime INT NOT NULL,
+        lastSampleTime INT NOT NULL,
+        PRIMARY KEY (sensorID, firstSampleTime)
+);

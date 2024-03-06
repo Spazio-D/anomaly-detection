@@ -42,11 +42,30 @@ int main() {
     std::map<std::string, double> averages;
     std::vector<std::vector<double>> covariances;
 
+    PGconn *conn = PQconnectdb("dbname=anomalydetection user=ned password=47002 hostaddr=127.0.0.1 port=5432");
+    if (PQstatus(conn) != CONNECTION_OK) {
+        std::cerr << "Errore nella connessione a PostgreSQL: " << PQerrorMessage(conn) << std::endl;
+        PQfinish(conn);
+        return 1;
+    }
+
+    if (!saveDataInPostgreSQL(dataVector, conn)){
+        return 1;
+    }
+
     for(size_t i = 0; i<dataVector["SAC0"].size() - W + 1 ; i++){
         
         dataWindow = createDataWindow(dataVector, i, W + i - 1);
         averages = averageValue(dataWindow);
         covariances = covarianceValue(sensors, dataWindow, averages);
+
+        if(!saveAverageInPostgreSQL(averages, i, conn)){
+            return false;
+        }
+        
+        if(!saveCovarianceInPostgreSQL(covariances, i, conn)){
+            return false;
+        }
 
     }
 

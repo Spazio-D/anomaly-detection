@@ -1,2 +1,2 @@
-\set dbname anomalyDetection
+\set dbname anomalydetection
 \set username ned
