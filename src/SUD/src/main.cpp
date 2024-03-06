@@ -53,9 +53,9 @@ int main() {
         return 1;
     }
 
-    for(size_t i = 0; i<dataVector["SAC0"].size() - W + 1 ; i++){
+    for(size_t i = 0; i<dataVector["SAC0"].size() - W+1 ; i++){
         
-        dataWindow = createDataWindow(dataVector, i, W + i - 1);
+        dataWindow = createDataWindow(dataVector, i, W + i-1);
         averages = averageValue(dataWindow);
         covariances = covarianceValue(sensors, dataWindow, averages);
 
