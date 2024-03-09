@@ -50,6 +50,6 @@ std::map<std::string, std::vector<std::tuple<int, int, double>>> calcolaMedie(co
 
 void inserisciDatiInPostgreSQL(const std::map<std::string, std::vector<Data>>& datiRaggrupati);
 
-std::map<std::string, std::vector<Data>> readRedisData(redisContext *context, const std::vector<std::string>& sensors);
+std::map<std::string, std::vector<Data>> readDataRedis(redisContext *context, const std::vector<std::string>& sensors);
 
 #endif // MAIN_H

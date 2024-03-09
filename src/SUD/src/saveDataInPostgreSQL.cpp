@@ -2,15 +2,7 @@
 
 bool saveDataInPostgreSQL(std::map<std::string, std::vector<Data>> &dataVector, PGconn *conn){
 
-    PGresult *res = PQexec(conn, "BEGIN");
-
-    if (PQresultStatus(res) != PGRES_COMMAND_OK) {
-        std::cerr << "Errore durante l'inizio della transazione: " << PQresultErrorMessage(res) << std::endl;
-        PQclear(res);
-        return false;
-    }
-
-    PQclear(res);       
+    PGresult *res;    
 
     for (auto element : dataVector) {
         for (Data data : dataVector[element.first]) {
@@ -28,13 +20,5 @@ bool saveDataInPostgreSQL(std::map<std::string, std::vector<Data>> &dataVector, 
         }
     }
 
-    //Concludi la transazione
-    res = PQexec(conn, "COMMIT");
-    if (PQresultStatus(res) != PGRES_COMMAND_OK) {
-        std::cerr << "Errore durante la conclusione della transazione: " << PQresultErrorMessage(res) << std::endl;
-        return false;
-    }
-    
-    PQclear(res);
     return true;
 }

@@ -34,7 +34,7 @@ int main() {
 
     // Read data from Redis streams
     std::map<std::string, std::vector<Data>> dataVector;
-    if(!readRedisData(context, sensors, dataVector)){
+    if(!readDataRedis(context, sensors, dataVector)){
         return 1;
     }
 

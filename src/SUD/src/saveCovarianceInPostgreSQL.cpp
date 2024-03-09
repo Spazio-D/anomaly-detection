@@ -2,17 +2,9 @@
 
 bool saveCovarianceInPostgreSQL(std::vector<std::vector<double>> &covariances, size_t firstSampleTime, PGconn *conn){
 
-    PGresult *res = PQexec(conn, "BEGIN");
-
-    if (PQresultStatus(res) != PGRES_COMMAND_OK) {
-        std::cerr << "Errore durante l'inizio della transazione: " << PQresultErrorMessage(res) << std::endl;
-        PQclear(res);
-        return false;
-    }
-
-    PQclear(res);       
-
+    PGresult *res;      
     std::string value;
+    
     for (size_t i=0; i<covariances.size(); i++) {
         for (size_t j=0; j<covariances[i].size(); j++) {
 
@@ -32,16 +24,10 @@ bool saveCovarianceInPostgreSQL(std::vector<std::vector<double>> &covariances, s
                 PQclear(res);
                 return false;
             }
+
             PQclear(res);
         }
     }
 
-    //Concludi la transazione
-    res = PQexec(conn, "COMMIT");
-    if (PQresultStatus(res) != PGRES_COMMAND_OK) {
-        std::cerr << "Errore durante la conclusione della transazione: " << PQresultErrorMessage(res) << std::endl;
-        return false;
-    }
-    PQclear(res);
     return true;
 }

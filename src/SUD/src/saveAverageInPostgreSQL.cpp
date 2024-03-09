@@ -2,22 +2,13 @@
 
 bool saveAverageInPostgreSQL(std::map<std::string, double> &averages, size_t firstSampleTime, PGconn *conn){
 
-    PGresult *res = PQexec(conn, "BEGIN");
-
-    if (PQresultStatus(res) != PGRES_COMMAND_OK) {
-        std::cerr << "Errore durante l'inizio della transazione: " << PQresultErrorMessage(res) << std::endl;
-        PQclear(res);
-        return false;
-    }
-
-    PQclear(res);       
-
+    PGresult *res;
     std::string value;
+    
     for (auto average : averages) {
         
         std::cout << average.second << std::endl;
         if(std::isnan(average.second)){
-            
             value = "NULL";
         }else{
             value = std::to_string(average.second);
@@ -33,16 +24,10 @@ bool saveAverageInPostgreSQL(std::map<std::string, double> &averages, size_t fir
             PQclear(res);
             return false;
         }
+        
         PQclear(res);
     
     }
 
-    //Concludi la transazione
-    res = PQexec(conn, "COMMIT");
-    if (PQresultStatus(res) != PGRES_COMMAND_OK) {
-        std::cerr << "Errore durante la conclusione della transazione: " << PQresultErrorMessage(res) << std::endl;
-        return false;
-    }
-    PQclear(res);
     return true;
 }

@@ -1,7 +1,7 @@
 #include "main.h"
 
 // Legge i dati dalle stream Redis e li mappa in due variabili, una completa e una contentente solo i valori diversi da NULL
-bool readRedisData(redisContext *context, std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataVector){
+bool readDataRedis(redisContext *context, std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataVector){
 
     Data data;
 

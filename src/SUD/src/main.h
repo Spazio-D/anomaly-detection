@@ -28,7 +28,7 @@ struct Data {
 };
 
 
-bool readRedisData(redisContext *context, std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataVector);
+bool readDataRedis(redisContext *context, std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataVector);
 
 std::map<std::string, std::vector<Data>> createDataWindow(std::map<std::string, std::vector<Data>> &dataVector, int wStart, int wEnd);
 
