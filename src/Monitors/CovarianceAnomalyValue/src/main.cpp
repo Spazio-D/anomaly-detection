@@ -11,16 +11,11 @@ int main() {
 
     // Read data from the database
     std::map<std::string, std::vector<Data>> dataVector;
-    std::map<std::string, std::vector<Average>> averages;
-    if(!readDataSQL(dataVector, averages, conn)){
+    std::vector<std::vector<Covariance>> covariances;
+    if(!readDataSQL(dataVector, covariances, conn)){
         return 1;
     }
 
-    // Calculate the presence of anomalies
-    detectAnomaly(dataVector, averages);
-
-    // write the results to the database
 
     return 0;
-
 }

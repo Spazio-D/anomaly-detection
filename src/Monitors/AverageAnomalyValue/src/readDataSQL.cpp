@@ -1,6 +1,6 @@
 #include "main.h"
 
-bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, double> averages, PGconn *conn){
+bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages, PGconn *conn){
 
     PGresult *resSensorsID = PQexec(conn, "SELECT DISTINCT sensorID FROM datatable ORDER BY sensorID;");
 
@@ -15,7 +15,8 @@ bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<
     std::string query;
     PGresult *resSensorData;
     Data data;
-    std::string average;
+    Average average;
+    std::string check;
     for (int i = 0; i <PQntuples(resSensorsID); i++) {
 
         sensorID = PQgetvalue(resSensorsID, i, 0);
@@ -40,7 +41,7 @@ bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<
         }
 
         PQclear(resSensorData);
-        query = "SELECT value FROM averageTable WHERE sensorID = '" + sensorID + "'";
+        query = "SELECT value, firstSampleTime, lastSampleTime FROM averageTable WHERE sensorID = '" + sensorID + "'";
         resSensorData = PQexec(conn, query.c_str());
 
         if (PQresultStatus(resSensorData) != PGRES_TUPLES_OK) {
@@ -51,13 +52,25 @@ bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<
             return false;
         }
 
-        average = PQgetvalue(resSensorData, 0, 0);
-        if(average == ""){
-            averages[sensorID] = std::nan("");
-        }else{
-            averages[sensorID] = std::stod(average);
+        std::vector<Average> averageVector;
+
+        for(int j = 0; j < PQntuples(resSensorData); j++){
+            
+            average.sensorID = sensorID;
+            check = PQgetvalue(resSensorData, j, 0);
+            if(check == ""){
+                average.value = std::nan("");
+            }else{
+                average.value = std::stod(check);
+            }
+            average.firstSampleTime = std::stoi(PQgetvalue(resSensorData, j, 1));
+            average.lastSampleTime = std::stoi(PQgetvalue(resSensorData, j, 2));
+            averageVector.push_back(average);
+            std::cout << "sensorID:" << average.sensorID << " value:" << average.value << " firstSampleTime:" << average.firstSampleTime << " lastSampleTime:" << average.lastSampleTime << std::endl;
+
         }
 
+        averages[sensorID] = averageVector;
         PQclear(resSensorData);
         
     }

@@ -26,17 +26,15 @@ struct Data {
     std::string value;
 };
 
-struct Average {
-    std::string sensorID;
+struct Covariance {
+    std::string sensorID1;
+    std::string sensorID2;
     double value;
     int firstSampleTime;
     int lastSampleTime;
-    bool isAnomaly;
 };
 
-bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages, PGconn *conn);
-
-void detectAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages);
+bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::vector<std::vector<Covariance>> &covariances, PGconn *conn);
 
 
 #endif // MAIN_H

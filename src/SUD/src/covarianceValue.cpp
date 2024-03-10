@@ -12,7 +12,7 @@ std::vector<std::vector<double>> covarianceValue(std::vector<std::string> &senso
 
         sensor1 = sensors[i];
 
-        for(size_t j = i; j<sensors.size(); j++){
+        for(size_t j = 0; j<sensors.size(); j++){
 
             sensor2 = sensors[j];
             numberOfValue = 0;
