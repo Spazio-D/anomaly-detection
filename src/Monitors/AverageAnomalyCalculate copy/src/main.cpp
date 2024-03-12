@@ -13,14 +13,19 @@ int main() {
     std::map<std::string, std::vector<Data>> dataVector;
     std::map<std::string, std::vector<Average>> averages;
     if(!readDataSQL(dataVector, averages, conn)){
+        PQfinish(conn);
         return 1;
     }
-
-    // Calculate the presence of anomalies
+    
+    // Detect the presence of anomalies
     detectAnomaly(dataVector, averages);
 
     // write the results to the database
+    if(!saveAnomalySQL(averages, dataVector, conn)){
+        PQfinish(conn);
+        return 1;
+    }
 
+    PQfinish(conn);
     return 0;
-
 }

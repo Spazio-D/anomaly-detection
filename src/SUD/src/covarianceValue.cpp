@@ -32,12 +32,12 @@ std::vector<std::vector<double>> covarianceValue(std::vector<std::string> &senso
             if(numberOfValue == 0){
 
                 covariances[i][j] = std::nan("");
-                std::cout << sensor1 + " " + sensor2 + " NaN" << std::endl;
+                //std::cout << sensor1 + " " + sensor2 + " NaN" << std::endl;
 
             }else{
 
                 covariances[i][j] = totalSum/(numberOfValue - 1);
-                std::cout << sensor1 + " " + sensor2 + " " << totalSum/(numberOfValue - 1) << std::endl;
+                //std::cout << sensor1 + " " + sensor2 + " " << totalSum/(numberOfValue - 1) << std::endl;
                 
             }
 

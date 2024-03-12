@@ -16,7 +16,7 @@ PGconn *connessioneAlDatabase() {
         return nullptr;
     }
 
-    std::cout << "Connessione al database PostgreSQL riuscita." << std::endl;
+    //std::cout << "Connessione al database PostgreSQL riuscita." << std::endl;
     return conn;
 }
 
@@ -36,9 +36,9 @@ std::map<std::string, std::map<std::string, double>> leggiMatriceCovarianzaDalDa
     int righe = PQntuples(result);
 
     if (righe == 0 ) {
-        std::cout << "Nessun dato trovato nella tabella_covarianze." << std::endl;
+        //std::cout << "Nessun dato trovato nella tabella_covarianze." << std::endl;
     } else {
-        //std::cout << "Matrice di covarianza tra i sensors:" << std::endl;
+        ////std::cout << "Matrice di covarianza tra i sensors:" << std::endl;
         for (int i = 0; i < righe; ++i) {
             std::string sensorID1 = PQgetvalue(result, i, 0);
             std::string sensorID2 = PQgetvalue(result, i, 1);
@@ -64,7 +64,7 @@ std::map<std::string, std::map<std::string, double>> leggiMatriceCovarianzaDalDa
                 matriceCovarianza[sensorID1][sensorID2] = valoreCovarianza;
             }
 
-            // std::cout << sensorID1 << " " << sensorID2 << " " << valoreCovarianza << std::endl;
+            // //std::cout << sensorID1 << " " << sensorID2 << " " << valoreCovarianza << std::endl;
         }
     }
     PQclear(result);
@@ -80,7 +80,7 @@ std::map<std::string, std::map<std::string, double>>  rilevaAnomalieCovarianza(c
     double sogliaAnomalie = 1e-5;
 
     //Rileva e segnala le covarianze anomale
-    //std::cout << "Covarianze anomale rilevate: " << std::endl;
+    ////std::cout << "Covarianze anomale rilevate: " << std::endl;
 
     for (const auto& coppia1 : matriceCovarianza) {
         const std::string& sensorID1 = coppia1.first;
@@ -91,7 +91,7 @@ std::map<std::string, std::map<std::string, double>>  rilevaAnomalieCovarianza(c
 
             //Si può addattare questa condizione in base alle esigenze 
             if (std::abs(covarianza) > sogliaAnomalie) {
-                // std::cout << "Coppia di sensors: " << sensorID1 << " e " << sensorID2 << ", Covarianza: " << covarianza << std::endl;
+                // //std::cout << "Coppia di sensors: " << sensorID1 << " e " << sensorID2 << ", Covarianza: " << covarianza << std::endl;
 
                 //Aggiungi i sensors alla mappa dei sensors anomali
                 sensorsAnomali[sensorID1][sensorID2] = covarianza;

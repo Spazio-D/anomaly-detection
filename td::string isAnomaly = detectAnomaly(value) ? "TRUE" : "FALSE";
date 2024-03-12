@@ -1,0 +1,1796 @@
+ sensorid1 | sensorid2 | firstsampletime | isanomaly |   value    
+-----------+-----------+-----------------+-----------+------------
+ SAC0      | SAC0      |               1 | f         |           
+ SAC0      | SAC0      |               2 | f         |           
+ SAC0      | SAC0      |               4 | f         |           
+ SAC0      | SAC0      |               5 | f         |           
+ SAC0      | SAC0      |               6 | f         |           
+ SAC0      | SAC1      |               1 | f         |           
+ SAC0      | SAC1      |               2 | f         |           
+ SAC0      | SAC1      |               3 | f         |           
+ SAC0      | SAC1      |               4 | f         |           
+ SAC0      | SAC1      |               6 | f         |           
+ SAC0      | SAC2      |               0 | f         |           
+ SAC0      | SAC2      |               1 | f         |           
+ SAC0      | SAC2      |               3 | f         |           
+ SAC0      | SAC2      |               4 | f         |           
+ SAC0      | SAC2      |               5 | f         |           
+ SAC0      | SAC3      |               0 | f         |           
+ SAC0      | SAC3      |               1 | f         |           
+ SAC0      | SAC3      |               2 | f         |           
+ SAC0      | SAC3      |               3 | f         |           
+ SAC0      | SAC3      |               5 | f         |           
+ SAC0      | SAC3      |               6 | f         |           
+ SAC0      | SAC4      |               0 | f         |           
+ SAC0      | SAC4      |               2 | f         |           
+ SAC0      | SAC4      |               3 | f         |           
+ SAC0      | SAC4      |               4 | f         |           
+ SAC0      | SAC4      |               6 | f         |           
+ SAC0      | SAC5      |               0 | f         |           
+ SAC0      | SAC5      |               1 | f         |           
+ SAC0      | SAC5      |               2 | f         |           
+ SAC0      | SAC5      |               4 | f         |           
+ SAC0      | SAC5      |               5 | f         |           
+ SAC0      | SAC5      |               6 | f         |           
+ SAC0      | SAC6      |               1 | f         |           
+ SAC0      | SAC6      |               2 | f         |           
+ SAC0      | SAC6      |               3 | f         |           
+ SAC0      | SAC6      |               5 | f         |           
+ SAC0      | SAC6      |               6 | f         |           
+ SAC0      | SAC7      |               0 | f         |           
+ SAC0      | SAC7      |               1 | f         |           
+ SAC0      | SAC7      |               3 | f         |           
+ SAC0      | SAC7      |               4 | f         |           
+ SAC0      | SAC7      |               5 | f         |           
+ SAC0      | SAC8      |               0 | f         |           
+ SAC0      | SAC8      |               1 | f         |           
+ SAC0      | SAC8      |               2 | f         |           
+ SAC0      | SAC8      |               4 | f         |           
+ SAC0      | SAC8      |               5 | f         |           
+ SAC0      | SAC8      |               6 | f         |           
+ SAC0      | SAC9      |               0 | f         |           
+ SAC0      | SAC9      |               2 | f         |           
+ SAC0      | SAC9      |               3 | f         |           
+ SAC0      | SAC9      |               4 | f         |           
+ SAC0      | SAC9      |               6 | f         |           
+ SAC0      | SAC10     |               0 | f         |           
+ SAC0      | SAC10     |               1 | f         |           
+ SAC0      | SAC10     |               3 | f         |           
+ SAC0      | SAC10     |               4 | f         |           
+ SAC0      | SAC10     |               5 | f         |           
+ SAC0      | SAC10     |               6 | f         |           
+ SAC0      | SAC11     |               1 | f         |           
+ SAC0      | SAC11     |               2 | f         |           
+ SAC0      | SAC11     |               3 | f         |           
+ SAC0      | SAC11     |               5 | f         |           
+ SAC0      | SAC11     |               6 | f         |           
+ SAC0      | SAC12     |               0 | f         |           
+ SAC0      | SAC12     |               2 | f         |           
+ SAC0      | SAC12     |               3 | f         |           
+ SAC0      | SAC12     |               4 | f         |           
+ SAC0      | SAC12     |               5 | f         |           
+ SAC0      | SAC13     |               0 | f         |           
+ SAC0      | SAC13     |               1 | f         |           
+ SAC0      | SAC13     |               2 | f         |           
+ SAC0      | SAC13     |               4 | f         |           
+ SAC0      | SAC13     |               5 | f         |           
+ SAC0      | SAC13     |               6 | f         |           
+ SAC0      | SAC14     |               1 | f         |           
+ SAC0      | SAC14     |               2 | f         |           
+ SAC0      | SAC14     |               3 | f         |           
+ SAC0      | SAC14     |               4 | f         |           
+ SAC0      | SAC14     |               6 | f         |           
+ SAC0      | SAC15     |               0 | f         |           
+ SAC0      | SAC15     |               1 | f         |           
+ SAC0      | SAC15     |               3 | f         |           
+ SAC0      | SAC15     |               4 | f         |           
+ SAC0      | SAC15     |               5 | f         |           
+ SAC1      | SAC0      |               0 | f         |           
+ SAC1      | SAC0      |               1 | f         |           
+ SAC1      | SAC0      |               2 | f         |           
+ SAC1      | SAC0      |               3 | f         |           
+ SAC1      | SAC0      |               5 | f         |           
+ SAC1      | SAC0      |               6 | f         |           
+ SAC1      | SAC1      |               0 | f         |           
+ SAC1      | SAC1      |               2 | f         |           
+ SAC1      | SAC1      |               3 | f         |           
+ SAC1      | SAC1      |               4 | f         |           
+ SAC1      | SAC1      |               6 | f         |           
+ SAC1      | SAC2      |               0 | f         |           
+ SAC1      | SAC2      |               1 | f         |           
+ SAC1      | SAC2      |               2 | f         |           
+ SAC1      | SAC2      |               4 | f         |           
+ SAC1      | SAC2      |               5 | f         |           
+ SAC1      | SAC2      |               6 | f         |           
+ SAC1      | SAC3      |               1 | f         |           
+ SAC1      | SAC3      |               2 | f         |           
+ SAC1      | SAC3      |               3 | f         |           
+ SAC1      | SAC3      |               5 | f         |           
+ SAC1      | SAC10     |               4 | f         |           
+ SAC1      | SAC10     |               5 | f         |           
+ SAC1      | SAC10     |               6 | f         |           
+ SAC1      | SAC11     |               1 | f         |           
+ SAC1      | SAC11     |               2 | f         |           
+ SAC1      | SAC11     |               3 | f         |           
+ SAC1      | SAC11     |               5 | f         |           
+ SAC1      | SAC11     |               6 | f         |           
+ SAC1      | SAC12     |               0 | f         |           
+ SAC1      | SAC12     |               1 | f         |           
+ SAC1      | SAC12     |               3 | f         |           
+ SAC1      | SAC12     |               4 | f         |           
+ SAC1      | SAC12     |               5 | f         |           
+ SAC1      | SAC13     |               0 | f         |           
+ SAC1      | SAC13     |               1 | f         |           
+ SAC1      | SAC13     |               2 | f         |           
+ SAC1      | SAC13     |               4 | f         |           
+ SAC1      | SAC13     |               5 | f         |           
+ SAC1      | SAC13     |               6 | f         |           
+ SAC1      | SAC14     |               0 | f         |           
+ SAC1      | SAC14     |               2 | f         |           
+ SAC1      | SAC14     |               3 | f         |           
+ SAC1      | SAC14     |               4 | f         |           
+ SAC1      | SAC14     |               6 | f         |           
+ SAC1      | SAC15     |               0 | f         |           
+ SAC1      | SAC15     |               1 | f         |           
+ SAC1      | SAC15     |               3 | f         |           
+ SAC1      | SAC15     |               4 | f         |           
+ SAC1      | SAC15     |               5 | f         |           
+ SAC1      | SAC15     |               6 | f         |           
+ SAC2      | SAC0      |               1 | f         |           
+ SAC2      | SAC0      |               2 | f         |           
+ SAC2      | SAC0      |               3 | f         |           
+ SAC2      | SAC0      |               5 | f         |           
+ SAC2      | SAC0      |               6 | f         |           
+ SAC2      | SAC1      |               0 | f         |           
+ SAC2      | SAC1      |               2 | f         |           
+ SAC2      | SAC1      |               3 | f         |           
+ SAC2      | SAC1      |               4 | f         |           
+ SAC2      | SAC1      |               5 | f         |           
+ SAC2      | SAC2      |               0 | t         |   1.824071
+ SAC2      | SAC2      |               1 | t         |   0.008659
+ SAC2      | SAC2      |               3 | t         |   0.040942
+ SAC2      | SAC2      |               4 | t         |   0.062719
+ SAC2      | SAC2      |               5 | t         |   0.005685
+ SAC2      | SAC2      |               6 | t         |   0.139128
+ SAC2      | SAC3      |               0 | f         |           
+ SAC2      | SAC3      |               2 | f         |           
+ SAC2      | SAC3      |               3 | f         |           
+ SAC2      | SAC3      |               4 | f         |           
+ SAC2      | SAC3      |               6 | f         |           
+ SAC2      | SAC4      |               0 | t         |  10.108369
+ SAC2      | SAC4      |               1 | t         |   0.783792
+ SAC2      | SAC4      |               3 | t         |   -0.34721
+ SAC2      | SAC4      |               4 | t         |    1.38049
+ SAC2      | SAC4      |               5 | t         |   0.045037
+ SAC2      | SAC4      |               6 | t         |   0.035064
+ SAC2      | SAC5      |               0 | f         |           
+ SAC2      | SAC5      |               2 | t         |   2.361687
+ SAC2      | SAC5      |               3 | t         |    0.03075
+ SAC2      | SAC5      |               4 | t         |   0.130649
+ SAC2      | SAC5      |               6 | t         |   0.651036
+ SAC2      | SAC6      |               0 | f         |           
+ SAC2      | SAC6      |               1 | f         |           
+ SAC2      | SAC6      |               2 | f         |           
+ SAC2      | SAC6      |               3 | f         |           
+ SAC2      | SAC6      |               5 | f         |           
+ SAC2      | SAC6      |               6 | f         |           
+ SAC2      | SAC7      |               1 | t         |     0.0019
+ SAC2      | SAC7      |               2 | t         |   2.287525
+ SAC2      | SAC7      |               3 | t         |   0.053861
+ SAC2      | SAC7      |               4 | t         |    0.01064
+ SAC2      | SAC7      |               6 | t         |     1.2486
+ SAC2      | SAC8      |               0 | t         |   1.613177
+ SAC2      | SAC8      |               1 | t         |   0.060384
+ SAC2      | SAC8      |               2 | t         |   8.126147
+ SAC2      | SAC8      |               4 | t         |   0.155126
+ SAC2      | SAC8      |               5 | t         |  -0.059993
+ SAC2      | SAC8      |               6 | t         |   8.974298
+ SAC2      | SAC9      |               0 | f         |           
+ SAC2      | SAC9      |               1 | f         |           
+ SAC2      | SAC9      |               3 | f         |           
+ SAC2      | SAC9      |               4 | f         |           
+ SAC2      | SAC9      |               5 | f         |           
+ SAC2      | SAC10     |               0 | f         |           
+ SAC2      | SAC10     |               1 | f         |           
+ SAC2      | SAC10     |               2 | f         |           
+ SAC2      | SAC10     |               3 | f         |           
+ SAC2      | SAC10     |               5 | f         |           
+ SAC2      | SAC10     |               6 | f         |           
+ SAC2      | SAC11     |               0 | f         |           
+ SAC2      | SAC11     |               2 | f         |           
+ SAC2      | SAC11     |               3 | f         |           
+ SAC2      | SAC11     |               4 | f         |           
+ SAC2      | SAC11     |               6 | f         |           
+ SAC2      | SAC12     |               0 | f         |           
+ SAC2      | SAC12     |               1 | f         |           
+ SAC2      | SAC12     |               2 | f         |           
+ SAC2      | SAC12     |               4 | f         |           
+ SAC2      | SAC12     |               5 | f         |           
+ SAC2      | SAC12     |               6 | f         |           
+ SAC2      | SAC13     |               1 | f         |           
+ SAC2      | SAC13     |               2 | f         |           
+ SAC2      | SAC13     |               3 | f         |           
+ SAC2      | SAC13     |               5 | f         |           
+ SAC2      | SAC13     |               6 | f         |           
+ SAC2      | SAC14     |               0 | t         |   3.182628
+ SAC2      | SAC14     |               2 | t         |   0.474265
+ SAC2      | SAC14     |               3 | t         |   0.037423
+ SAC2      | SAC14     |               4 | t         |   1.687481
+ SAC2      | SAC14     |               5 | t         |   0.761916
+ SAC2      | SAC15     |               0 | t         |   5.483569
+ SAC2      | SAC15     |               1 | t         |   0.189199
+ SAC2      | SAC15     |               2 | t         |   2.109558
+ SAC2      | SAC15     |               3 | t         |   0.229748
+ SAC3      | SAC3      |               5 | f         |           
+ SAC3      | SAC4      |               0 | f         |           
+ SAC3      | SAC4      |               1 | f         |           
+ SAC3      | SAC4      |               2 | f         |           
+ SAC3      | SAC4      |               3 | f         |           
+ SAC3      | SAC4      |               5 | f         |           
+ SAC3      | SAC4      |               6 | f         |           
+ SAC3      | SAC5      |               0 | f         |           
+ SAC3      | SAC5      |               2 | f         |           
+ SAC3      | SAC5      |               3 | f         |           
+ SAC3      | SAC5      |               4 | f         |           
+ SAC3      | SAC5      |               6 | f         |           
+ SAC3      | SAC6      |               0 | f         |           
+ SAC3      | SAC6      |               1 | f         |           
+ SAC3      | SAC6      |               2 | f         |           
+ SAC3      | SAC6      |               4 | f         |           
+ SAC3      | SAC6      |               5 | f         |           
+ SAC3      | SAC6      |               6 | f         |           
+ SAC3      | SAC7      |               1 | f         |           
+ SAC3      | SAC7      |               2 | f         |           
+ SAC3      | SAC7      |               3 | f         |           
+ SAC3      | SAC7      |               5 | f         |           
+ SAC3      | SAC7      |               6 | f         |           
+ SAC3      | SAC8      |               0 | f         |           
+ SAC3      | SAC8      |               1 | f         |           
+ SAC3      | SAC8      |               3 | f         |           
+ SAC3      | SAC8      |               4 | f         |           
+ SAC3      | SAC8      |               5 | f         |           
+ SAC3      | SAC9      |               0 | f         |           
+ SAC3      | SAC9      |               1 | f         |           
+ SAC3      | SAC9      |               2 | f         |           
+ SAC3      | SAC9      |               4 | f         |           
+ SAC3      | SAC9      |               5 | f         |           
+ SAC3      | SAC9      |               6 | f         |           
+ SAC3      | SAC10     |               0 | f         |           
+ SAC3      | SAC10     |               2 | f         |           
+ SAC3      | SAC10     |               3 | f         |           
+ SAC3      | SAC10     |               4 | f         |           
+ SAC3      | SAC10     |               6 | f         |           
+ SAC3      | SAC11     |               0 | f         |           
+ SAC3      | SAC11     |               1 | f         |           
+ SAC3      | SAC11     |               3 | f         |           
+ SAC3      | SAC11     |               4 | f         |           
+ SAC3      | SAC11     |               5 | f         |           
+ SAC3      | SAC11     |               6 | f         |           
+ SAC3      | SAC12     |               1 | f         |           
+ SAC3      | SAC12     |               2 | f         |           
+ SAC3      | SAC12     |               3 | f         |           
+ SAC3      | SAC12     |               5 | f         |           
+ SAC3      | SAC12     |               6 | f         |           
+ SAC3      | SAC13     |               0 | f         |           
+ SAC3      | SAC13     |               2 | f         |           
+ SAC3      | SAC13     |               3 | f         |           
+ SAC3      | SAC13     |               4 | f         |           
+ SAC3      | SAC13     |               5 | f         |           
+ SAC3      | SAC14     |               0 | f         |           
+ SAC3      | SAC14     |               1 | f         |           
+ SAC3      | SAC14     |               2 | f         |           
+ SAC3      | SAC14     |               4 | f         |           
+ SAC3      | SAC14     |               5 | f         |           
+ SAC3      | SAC14     |               6 | f         |           
+ SAC3      | SAC15     |               1 | f         |           
+ SAC3      | SAC15     |               2 | f         |           
+ SAC3      | SAC15     |               3 | f         |           
+ SAC3      | SAC15     |               4 | f         |           
+ SAC3      | SAC15     |               6 | f         |           
+ SAC4      | SAC0      |               0 | f         |           
+ SAC4      | SAC0      |               1 | f         |           
+ SAC4      | SAC0      |               3 | f         |           
+ SAC4      | SAC0      |               4 | f         |           
+ SAC4      | SAC0      |               5 | f         |           
+ SAC4      | SAC1      |               0 | f         |           
+ SAC4      | SAC1      |               1 | f         |           
+ SAC4      | SAC1      |               2 | f         |           
+ SAC4      | SAC1      |               3 | f         |           
+ SAC4      | SAC1      |               5 | f         |           
+ SAC4      | SAC1      |               6 | f         |           
+ SAC4      | SAC2      |               1 | t         |   0.783792
+ SAC4      | SAC2      |               2 | t         |   1.951121
+ SAC4      | SAC2      |               3 | t         |   -0.34721
+ SAC4      | SAC2      |               4 | t         |    1.38049
+ SAC4      | SAC2      |               6 | t         |   0.035064
+ SAC4      | SAC3      |               0 | f         |           
+ SAC4      | SAC3      |               1 | f         |           
+ SAC4      | SAC3      |               2 | f         |           
+ SAC4      | SAC3      |               3 | f         |           
+ SAC4      | SAC3      |               5 | f         |           
+ SAC4      | SAC3      |               6 | f         |           
+ SAC4      | SAC4      |               0 | t         |     0.5368
+ SAC4      | SAC4      |               2 | t         |   1.504435
+ SAC4      | SAC4      |               3 | t         |   1.002603
+ SAC4      | SAC4      |               4 | t         |   1.830533
+ SAC4      | SAC4      |               5 | t         |   0.021049
+ SAC4      | SAC5      |               0 | f         |           
+ SAC4      | SAC5      |               1 | t         |   2.246574
+ SAC4      | SAC5      |               2 | t         |    3.10373
+ SAC4      | SAC5      |               3 | t         |  -0.377722
+ SAC4      | SAC5      |               5 | t         |  -0.072912
+ SAC4      | SAC5      |               6 | t         |   -0.00409
+ SAC4      | SAC6      |               0 | f         |           
+ SAC4      | SAC6      |               1 | f         |           
+ SAC4      | SAC6      |               3 | f         |           
+ SAC4      | SAC6      |               4 | f         |           
+ SAC4      | SAC6      |               5 | f         |           
+ SAC4      | SAC6      |               6 | f         |           
+ SAC4      | SAC7      |               1 | t         |  -0.025804
+ SAC4      | SAC7      |               2 | t         |   2.116462
+ SAC4      | SAC7      |               3 | t         |  -0.492355
+ SAC4      | SAC7      |               5 | t         |  -2.582454
+ SAC4      | SAC7      |               6 | t         |   -0.00636
+ SAC4      | SAC8      |               0 | t         | -18.256245
+ SAC4      | SAC8      |               1 | t         |   1.708434
+ SAC4      | SAC13     |               2 | f         |           
+ SAC4      | SAC13     |               4 | f         |           
+ SAC4      | SAC13     |               5 | f         |           
+ SAC4      | SAC13     |               6 | f         |           
+ SAC4      | SAC14     |               1 | t         |   0.994787
+ SAC4      | SAC14     |               2 | t         |   0.209734
+ SAC4      | SAC14     |               3 | t         |  -0.160392
+ SAC4      | SAC14     |               4 | t         |   1.793429
+ SAC4      | SAC14     |               6 | t         |   0.009229
+ SAC4      | SAC15     |               0 | t         |    0.74818
+ SAC4      | SAC15     |               1 | t         |   1.004769
+ SAC4      | SAC15     |               2 | t         |   1.916667
+ SAC4      | SAC15     |               4 | t         |   2.509244
+ SAC4      | SAC15     |               5 | t         |   0.178033
+ SAC4      | SAC15     |               6 | t         |  -0.005473
+ SAC5      | SAC0      |               0 | f         |           
+ SAC5      | SAC0      |               1 | f         |           
+ SAC5      | SAC0      |               3 | f         |           
+ SAC5      | SAC0      |               4 | f         |           
+ SAC5      | SAC0      |               5 | f         |           
+ SAC5      | SAC1      |               0 | f         |           
+ SAC5      | SAC1      |               1 | f         |           
+ SAC5      | SAC1      |               2 | f         |           
+ SAC5      | SAC1      |               4 | f         |           
+ SAC5      | SAC1      |               5 | f         |           
+ SAC5      | SAC1      |               6 | f         |           
+ SAC5      | SAC2      |               0 | f         |           
+ SAC5      | SAC2      |               2 | t         |   2.361687
+ SAC5      | SAC2      |               3 | t         |    0.03075
+ SAC5      | SAC2      |               4 | t         |   0.130649
+ SAC5      | SAC2      |               6 | t         |   0.651036
+ SAC5      | SAC3      |               0 | f         |           
+ SAC5      | SAC3      |               1 | f         |           
+ SAC5      | SAC3      |               2 | f         |           
+ SAC5      | SAC3      |               3 | f         |           
+ SAC5      | SAC3      |               5 | f         |           
+ SAC5      | SAC3      |               6 | f         |           
+ SAC5      | SAC4      |               0 | f         |           
+ SAC5      | SAC4      |               2 | t         |    3.10373
+ SAC5      | SAC4      |               3 | t         |  -0.377722
+ SAC5      | SAC4      |               4 | t         |   1.316985
+ SAC5      | SAC4      |               6 | t         |   -0.00409
+ SAC5      | SAC5      |               0 | f         |           
+ SAC5      | SAC5      |               1 | t         |   2.251816
+ SAC5      | SAC5      |               2 | t         |   1.789546
+ SAC5      | SAC5      |               4 | t         |   0.241285
+ SAC5      | SAC5      |               5 | t         |   0.075625
+ SAC5      | SAC5      |               6 | t         |    0.25212
+ SAC5      | SAC6      |               0 | f         |           
+ SAC5      | SAC6      |               1 | f         |           
+ SAC5      | SAC6      |               3 | f         |           
+ SAC5      | SAC6      |               4 | f         |           
+ SAC5      | SAC6      |               5 | f         |           
+ SAC5      | SAC7      |               0 | f         |           
+ SAC5      | SAC7      |               1 | t         |   1.916642
+ SAC5      | SAC7      |               2 | t         |   2.599568
+ SAC5      | SAC7      |               4 | t         |   0.022963
+ SAC5      | SAC7      |               5 | t         |   0.206018
+ SAC5      | SAC7      |               6 | t         |   0.374531
+ SAC5      | SAC8      |               0 | f         |           
+ SAC5      | SAC8      |               2 | t         |   1.105514
+ SAC5      | SAC8      |               3 | t         |   0.283168
+ SAC5      | SAC8      |               4 | t         |   0.345384
+ SAC5      | SAC8      |               5 | t         |   0.207389
+ SAC5      | SAC9      |               0 | f         |           
+ SAC5      | SAC9      |               1 | f         |           
+ SAC5      | SAC9      |               2 | f         |           
+ SAC5      | SAC9      |               3 | f         |           
+ SAC5      | SAC9      |               4 | f         |           
+ SAC5      | SAC9      |               6 | f         |           
+ SAC5      | SAC10     |               0 | f         |           
+ SAC5      | SAC10     |               1 | f         |           
+ SAC5      | SAC10     |               3 | f         |           
+ SAC5      | SAC10     |               4 | f         |           
+ SAC5      | SAC10     |               5 | f         |           
+ SAC5      | SAC11     |               0 | f         |           
+ SAC5      | SAC11     |               1 | f         |           
+ SAC5      | SAC11     |               2 | f         |           
+ SAC5      | SAC11     |               3 | f         |           
+ SAC5      | SAC11     |               5 | f         |           
+ SAC5      | SAC11     |               6 | f         |           
+ SAC5      | SAC12     |               0 | f         |           
+ SAC5      | SAC12     |               2 | f         |           
+ SAC5      | SAC12     |               3 | f         |           
+ SAC5      | SAC12     |               4 | f         |           
+ SAC5      | SAC12     |               6 | f         |           
+ SAC5      | SAC13     |               0 | f         |           
+ SAC5      | SAC13     |               1 | f         |           
+ SAC5      | SAC13     |               2 | f         |           
+ SAC5      | SAC13     |               4 | f         |           
+ SAC5      | SAC13     |               5 | f         |           
+ SAC5      | SAC13     |               6 | f         |           
+ SAC5      | SAC14     |               1 | t         |   2.243889
+ SAC5      | SAC14     |               2 | t         |  -0.976162
+ SAC5      | SAC14     |               3 | t         |  -0.105652
+ SAC5      | SAC14     |               5 | t         |  -3.769375
+ SAC5      | SAC14     |               6 | t         |  -0.669464
+ SAC5      | SAC15     |               0 | f         |           
+ SAC5      | SAC15     |               1 | t         |   2.251962
+ SAC5      | SAC15     |               3 | t         |   0.179776
+ SAC5      | SAC15     |               4 | t         |   0.904895
+ SAC5      | SAC15     |               5 | t         |  -0.284995
+ SAC5      | SAC15     |               6 | t         |   0.255222
+ SAC6      | SAC0      |               1 | f         |           
+ SAC6      | SAC0      |               2 | f         |           
+ SAC6      | SAC0      |               3 | f         |           
+ SAC6      | SAC0      |               4 | f         |           
+ SAC6      | SAC0      |               6 | f         |           
+ SAC6      | SAC1      |               0 | f         |           
+ SAC6      | SAC1      |               1 | f         |           
+ SAC6      | SAC1      |               3 | f         |           
+ SAC6      | SAC1      |               4 | f         |           
+ SAC6      | SAC1      |               5 | f         |           
+ SAC6      | SAC2      |               0 | f         |           
+ SAC6      | SAC2      |               1 | f         |           
+ SAC6      | SAC2      |               2 | f         |           
+ SAC6      | SAC6      |               2 | f         |           
+ SAC6      | SAC6      |               3 | f         |           
+ SAC6      | SAC6      |               5 | f         |           
+ SAC6      | SAC6      |               6 | f         |           
+ SAC6      | SAC7      |               0 | f         |           
+ SAC6      | SAC7      |               2 | f         |           
+ SAC6      | SAC7      |               3 | f         |           
+ SAC6      | SAC7      |               4 | f         |           
+ SAC6      | SAC7      |               5 | f         |           
+ SAC6      | SAC8      |               0 | f         |           
+ SAC6      | SAC8      |               1 | f         |           
+ SAC6      | SAC8      |               2 | f         |           
+ SAC6      | SAC8      |               4 | f         |           
+ SAC6      | SAC8      |               5 | f         |           
+ SAC6      | SAC8      |               6 | f         |           
+ SAC6      | SAC9      |               1 | f         |           
+ SAC6      | SAC9      |               2 | f         |           
+ SAC6      | SAC9      |               3 | f         |           
+ SAC6      | SAC9      |               4 | f         |           
+ SAC6      | SAC9      |               6 | f         |           
+ SAC6      | SAC10     |               0 | f         |           
+ SAC6      | SAC10     |               1 | f         |           
+ SAC6      | SAC10     |               3 | f         |           
+ SAC6      | SAC10     |               4 | f         |           
+ SAC6      | SAC10     |               5 | f         |           
+ SAC6      | SAC11     |               0 | f         |           
+ SAC6      | SAC11     |               1 | f         |           
+ SAC6      | SAC11     |               2 | f         |           
+ SAC6      | SAC11     |               3 | f         |           
+ SAC6      | SAC11     |               5 | f         |           
+ SAC6      | SAC11     |               6 | f         |           
+ SAC6      | SAC12     |               0 | f         |           
+ SAC6      | SAC12     |               2 | f         |           
+ SAC6      | SAC12     |               3 | f         |           
+ SAC6      | SAC12     |               4 | f         |           
+ SAC6      | SAC12     |               6 | f         |           
+ SAC6      | SAC13     |               0 | f         |           
+ SAC6      | SAC13     |               1 | f         |           
+ SAC6      | SAC13     |               2 | f         |           
+ SAC6      | SAC13     |               4 | f         |           
+ SAC6      | SAC13     |               5 | f         |           
+ SAC6      | SAC13     |               6 | f         |           
+ SAC6      | SAC14     |               1 | f         |           
+ SAC6      | SAC14     |               2 | f         |           
+ SAC6      | SAC14     |               3 | f         |           
+ SAC6      | SAC14     |               5 | f         |           
+ SAC6      | SAC14     |               6 | f         |           
+ SAC6      | SAC15     |               0 | f         |           
+ SAC6      | SAC15     |               1 | f         |           
+ SAC6      | SAC15     |               3 | f         |           
+ SAC6      | SAC15     |               4 | f         |           
+ SAC6      | SAC15     |               5 | f         |           
+ SAC7      | SAC0      |               0 | f         |           
+ SAC7      | SAC0      |               1 | f         |           
+ SAC7      | SAC0      |               2 | f         |           
+ SAC7      | SAC0      |               4 | f         |           
+ SAC7      | SAC0      |               5 | f         |           
+ SAC7      | SAC0      |               6 | f         |           
+ SAC7      | SAC1      |               0 | f         |           
+ SAC7      | SAC1      |               2 | f         |           
+ SAC7      | SAC1      |               3 | f         |           
+ SAC7      | SAC1      |               4 | f         |           
+ SAC7      | SAC1      |               6 | f         |           
+ SAC7      | SAC2      |               0 | t         |   2.883198
+ SAC7      | SAC2      |               1 | t         |     0.0019
+ SAC7      | SAC2      |               3 | t         |   0.053861
+ SAC7      | SAC2      |               4 | t         |    0.01064
+ SAC7      | SAC2      |               5 | t         |  -0.054699
+ SAC7      | SAC2      |               6 | t         |     1.2486
+ SAC7      | SAC3      |               1 | f         |           
+ SAC7      | SAC3      |               2 | f         |           
+ SAC7      | SAC3      |               3 | f         |           
+ SAC7      | SAC3      |               4 | f         |           
+ SAC7      | SAC3      |               6 | f         |           
+ SAC7      | SAC4      |               0 | t         |  19.809627
+ SAC7      | SAC4      |               2 | t         |   2.116462
+ SAC7      | SAC4      |               3 | t         |  -0.492355
+ SAC7      | SAC4      |               4 | t         |   0.513573
+ SAC7      | SAC4      |               5 | t         |  -2.582454
+ SAC7      | SAC5      |               0 | f         |           
+ SAC7      | SAC5      |               1 | t         |   1.916642
+ SAC7      | SAC5      |               2 | t         |   2.599568
+ SAC7      | SAC5      |               3 | t         |     0.0397
+ SAC7      | SAC5      |               5 | t         |   0.206018
+ SAC7      | SAC5      |               6 | t         |   0.374531
+ SAC7      | SAC6      |               0 | f         |           
+ SAC7      | SAC6      |               1 | f         |           
+ SAC7      | SAC6      |               2 | f         |           
+ SAC7      | SAC6      |               4 | f         |           
+ SAC7      | SAC6      |               5 | f         |           
+ SAC7      | SAC6      |               6 | f         |           
+ SAC7      | SAC7      |               1 | t         |   0.000112
+ SAC7      | SAC7      |               2 | t         |   2.038196
+ SAC7      | SAC7      |               3 | t         |   0.070675
+ SAC7      | SAC7      |               4 | t         |    0.00177
+ SAC7      | SAC7      |               6 | t         |   0.540389
+ SAC7      | SAC8      |               0 | t         |  14.053997
+ SAC7      | SAC8      |               1 | t         |   0.014207
+ SAC7      | SAC8      |               2 | t         |   2.550379
+ SAC7      | SAC8      |               4 | t         |    0.02702
+ SAC7      | SAC8      |               5 | t         |   0.442966
+ SAC7      | SAC8      |               6 | t         |    3.42635
+ SAC7      | SAC9      |               0 | f         |           
+ SAC7      | SAC9      |               2 | f         |           
+ SAC7      | SAC9      |               3 | f         |           
+ SAC7      | SAC9      |               4 | f         |           
+ SAC7      | SAC9      |               5 | f         |           
+ SAC7      | SAC10     |               0 | f         |           
+ SAC7      | SAC10     |               1 | f         |           
+ SAC7      | SAC10     |               2 | f         |           
+ SAC7      | SAC10     |               4 | f         |           
+ SAC7      | SAC10     |               5 | f         |           
+ SAC7      | SAC10     |               6 | f         |           
+ SAC7      | SAC11     |               1 | f         |           
+ SAC7      | SAC15     |               5 | t         |   -1.22367
+ SAC7      | SAC15     |               6 | t         |   0.410928
+ SAC8      | SAC0      |               0 | f         |           
+ SAC8      | SAC0      |               1 | f         |           
+ SAC8      | SAC0      |               2 | f         |           
+ SAC8      | SAC0      |               4 | f         |           
+ SAC8      | SAC0      |               5 | f         |           
+ SAC8      | SAC0      |               6 | f         |           
+ SAC8      | SAC1      |               1 | f         |           
+ SAC8      | SAC1      |               2 | f         |           
+ SAC8      | SAC1      |               3 | f         |           
+ SAC8      | SAC1      |               4 | f         |           
+ SAC8      | SAC1      |               6 | f         |           
+ SAC8      | SAC2      |               0 | t         |   1.613177
+ SAC8      | SAC2      |               2 | t         |   8.126147
+ SAC8      | SAC2      |               3 | t         |    2.06805
+ SAC8      | SAC2      |               4 | t         |   0.155126
+ SAC8      | SAC2      |               5 | t         |  -0.059993
+ SAC8      | SAC3      |               0 | f         |           
+ SAC8      | SAC3      |               1 | f         |           
+ SAC8      | SAC3      |               2 | f         |           
+ SAC8      | SAC3      |               3 | f         |           
+ SAC8      | SAC3      |               4 | f         |           
+ SAC8      | SAC3      |               6 | f         |           
+ SAC8      | SAC4      |               0 | t         | -18.256245
+ SAC8      | SAC4      |               1 | t         |   1.708434
+ SAC8      | SAC4      |               3 | t         |   1.549282
+ SAC8      | SAC4      |               4 | t         |   2.672868
+ SAC8      | SAC4      |               5 | t         |  -0.482674
+ SAC8      | SAC4      |               6 | t         |   0.068038
+ SAC8      | SAC5      |               1 | t         |    2.25235
+ SAC8      | SAC5      |               2 | t         |   1.105514
+ SAC8      | SAC5      |               3 | t         |   0.283168
+ SAC8      | SAC5      |               5 | t         |   0.207389
+ SAC8      | SAC5      |               6 | t         |   5.599236
+ SAC8      | SAC6      |               0 | f         |           
+ SAC8      | SAC6      |               1 | f         |           
+ SAC8      | SAC6      |               2 | f         |           
+ SAC8      | SAC6      |               4 | f         |           
+ SAC8      | SAC6      |               5 | f         |           
+ SAC8      | SAC6      |               6 | f         |           
+ SAC8      | SAC7      |               1 | t         |   0.014207
+ SAC8      | SAC7      |               2 | t         |   2.550379
+ SAC8      | SAC7      |               3 | t         |   1.817943
+ SAC8      | SAC7      |               5 | t         |   0.442966
+ SAC8      | SAC7      |               6 | t         |    3.42635
+ SAC8      | SAC8      |               0 | t         |   1.311308
+ SAC8      | SAC8      |               1 | t         |   0.369245
+ SAC8      | SAC8      |               3 | t         |   1.102326
+ SAC8      | SAC8      |               4 | t         |   0.323042
+ SAC8      | SAC8      |               5 | t         |    0.47232
+ SAC8      | SAC8      |               6 | t         |   2.107523
+ SAC8      | SAC9      |               0 | f         |           
+ SAC8      | SAC9      |               2 | f         |           
+ SAC8      | SAC9      |               3 | f         |           
+ SAC8      | SAC9      |               4 | f         |           
+ SAC8      | SAC9      |               6 | f         |           
+ SAC8      | SAC10     |               0 | f         |           
+ SAC8      | SAC10     |               1 | f         |           
+ SAC8      | SAC10     |               2 | f         |           
+ SAC8      | SAC10     |               4 | f         |           
+ SAC8      | SAC10     |               5 | f         |           
+ SAC8      | SAC10     |               6 | f         |           
+ SAC8      | SAC11     |               1 | f         |           
+ SAC8      | SAC11     |               2 | f         |           
+ SAC8      | SAC11     |               3 | f         |           
+ SAC8      | SAC11     |               5 | f         |           
+ SAC8      | SAC11     |               6 | f         |           
+ SAC8      | SAC12     |               0 | f         |           
+ SAC8      | SAC12     |               1 | f         |           
+ SAC8      | SAC12     |               3 | f         |           
+ SAC8      | SAC12     |               4 | f         |           
+ SAC8      | SAC12     |               5 | f         |           
+ SAC8      | SAC13     |               0 | f         |           
+ SAC8      | SAC13     |               1 | f         |           
+ SAC8      | SAC13     |               2 | f         |           
+ SAC8      | SAC13     |               4 | f         |           
+ SAC8      | SAC13     |               5 | f         |           
+ SAC8      | SAC13     |               6 | f         |           
+ SAC8      | SAC14     |               1 | t         |    0.45031
+ SAC8      | SAC14     |               2 | t         |  -0.050644
+ SAC8      | SAC14     |               3 | t         |  -0.157206
+ SAC8      | SAC14     |               4 | t         |   3.346001
+ SAC8      | SAC14     |               6 | t         |   1.534939
+ SAC8      | SAC15     |               0 | t         |   57.84968
+ SAC8      | SAC15     |               1 | t         |   0.856058
+ SAC8      | SAC15     |               2 | t         |  12.087898
+ SAC8      | SAC15     |               4 | t         |   0.794127
+ SAC8      | SAC15     |               5 | t         |  -1.177254
+ SAC8      | SAC15     |               6 | t         |  21.720575
+ SAC9      | SAC0      |               0 | f         |           
+ SAC9      | SAC0      |               1 | f         |           
+ SAC9      | SAC0      |               3 | f         |           
+ SAC9      | SAC0      |               4 | f         |           
+ SAC9      | SAC0      |               5 | f         |           
+ SAC9      | SAC1      |               0 | f         |           
+ SAC9      | SAC1      |               1 | f         |           
+ SAC9      | SAC1      |               2 | f         |           
+ SAC9      | SAC1      |               4 | f         |           
+ SAC9      | SAC1      |               5 | f         |           
+ SAC9      | SAC1      |               6 | f         |           
+ SAC9      | SAC2      |               0 | f         |           
+ SAC9      | SAC2      |               2 | f         |           
+ SAC9      | SAC2      |               3 | f         |           
+ SAC9      | SAC2      |               4 | f         |           
+ SAC9      | SAC2      |               6 | f         |           
+ SAC9      | SAC3      |               0 | f         |           
+ SAC9      | SAC3      |               1 | f         |           
+ SAC9      | SAC3      |               3 | f         |           
+ SAC9      | SAC3      |               4 | f         |           
+ SAC9      | SAC3      |               5 | f         |           
+ SAC9      | SAC3      |               6 | f         |           
+ SAC9      | SAC4      |               1 | f         |           
+ SAC9      | SAC4      |               2 | f         |           
+ SAC9      | SAC4      |               3 | f         |           
+ SAC9      | SAC8      |               5 | f         |           
+ SAC9      | SAC8      |               6 | f         |           
+ SAC9      | SAC9      |               1 | f         |           
+ SAC9      | SAC9      |               2 | f         |           
+ SAC9      | SAC9      |               3 | f         |           
+ SAC9      | SAC9      |               5 | f         |           
+ SAC9      | SAC9      |               6 | f         |           
+ SAC9      | SAC10     |               0 | f         |           
+ SAC9      | SAC10     |               1 | f         |           
+ SAC9      | SAC10     |               3 | f         |           
+ SAC9      | SAC10     |               4 | f         |           
+ SAC9      | SAC10     |               5 | f         |           
+ SAC9      | SAC11     |               0 | f         |           
+ SAC9      | SAC11     |               1 | f         |           
+ SAC9      | SAC11     |               2 | f         |           
+ SAC9      | SAC11     |               4 | f         |           
+ SAC9      | SAC11     |               5 | f         |           
+ SAC9      | SAC11     |               6 | f         |           
+ SAC9      | SAC12     |               0 | f         |           
+ SAC9      | SAC12     |               2 | f         |           
+ SAC9      | SAC12     |               3 | f         |           
+ SAC9      | SAC12     |               4 | f         |           
+ SAC9      | SAC12     |               6 | f         |           
+ SAC9      | SAC13     |               0 | f         |           
+ SAC9      | SAC13     |               1 | f         |           
+ SAC9      | SAC13     |               3 | f         |           
+ SAC9      | SAC13     |               4 | f         |           
+ SAC9      | SAC13     |               5 | f         |           
+ SAC9      | SAC13     |               6 | f         |           
+ SAC9      | SAC14     |               1 | f         |           
+ SAC9      | SAC14     |               2 | f         |           
+ SAC9      | SAC14     |               3 | f         |           
+ SAC9      | SAC14     |               5 | f         |           
+ SAC9      | SAC14     |               6 | f         |           
+ SAC9      | SAC15     |               0 | f         |           
+ SAC9      | SAC15     |               2 | f         |           
+ SAC9      | SAC15     |               3 | f         |           
+ SAC9      | SAC15     |               4 | f         |           
+ SAC9      | SAC15     |               5 | f         |           
+ SAC10     | SAC0      |               0 | f         |           
+ SAC10     | SAC0      |               1 | f         |           
+ SAC10     | SAC0      |               2 | f         |           
+ SAC10     | SAC0      |               4 | f         |           
+ SAC10     | SAC0      |               5 | f         |           
+ SAC10     | SAC0      |               6 | f         |           
+ SAC10     | SAC1      |               1 | f         |           
+ SAC10     | SAC1      |               2 | f         |           
+ SAC10     | SAC1      |               3 | f         |           
+ SAC10     | SAC1      |               4 | f         |           
+ SAC10     | SAC1      |               6 | f         |           
+ SAC10     | SAC2      |               0 | f         |           
+ SAC10     | SAC2      |               1 | f         |           
+ SAC10     | SAC2      |               3 | f         |           
+ SAC10     | SAC2      |               4 | f         |           
+ SAC10     | SAC2      |               5 | f         |           
+ SAC10     | SAC3      |               0 | f         |           
+ SAC10     | SAC3      |               1 | f         |           
+ SAC10     | SAC3      |               2 | f         |           
+ SAC10     | SAC3      |               3 | f         |           
+ SAC10     | SAC3      |               5 | f         |           
+ SAC10     | SAC3      |               6 | f         |           
+ SAC10     | SAC4      |               0 | f         |           
+ SAC10     | SAC4      |               2 | f         |           
+ SAC10     | SAC4      |               3 | f         |           
+ SAC10     | SAC4      |               4 | f         |           
+ SAC10     | SAC4      |               6 | f         |           
+ SAC10     | SAC5      |               0 | f         |           
+ SAC10     | SAC5      |               1 | f         |           
+ SAC10     | SAC5      |               2 | f         |           
+ SAC10     | SAC5      |               4 | f         |           
+ SAC10     | SAC5      |               5 | f         |           
+ SAC10     | SAC5      |               6 | f         |           
+ SAC10     | SAC6      |               1 | f         |           
+ SAC10     | SAC6      |               2 | f         |           
+ SAC10     | SAC6      |               3 | f         |           
+ SAC10     | SAC6      |               5 | f         |           
+ SAC10     | SAC6      |               6 | f         |           
+ SAC10     | SAC7      |               0 | f         |           
+ SAC10     | SAC7      |               1 | f         |           
+ SAC10     | SAC7      |               3 | f         |           
+ SAC10     | SAC7      |               4 | f         |           
+ SAC10     | SAC7      |               5 | f         |           
+ SAC10     | SAC8      |               0 | f         |           
+ SAC10     | SAC8      |               1 | f         |           
+ SAC10     | SAC8      |               2 | f         |           
+ SAC10     | SAC8      |               4 | f         |           
+ SAC10     | SAC8      |               5 | f         |           
+ SAC10     | SAC8      |               6 | f         |           
+ SAC10     | SAC9      |               0 | f         |           
+ SAC10     | SAC9      |               2 | f         |           
+ SAC10     | SAC9      |               3 | f         |           
+ SAC10     | SAC9      |               4 | f         |           
+ SAC10     | SAC9      |               6 | f         |           
+ SAC10     | SAC10     |               0 | f         |           
+ SAC10     | SAC10     |               1 | f         |           
+ SAC10     | SAC10     |               3 | f         |           
+ SAC10     | SAC10     |               4 | f         |           
+ SAC10     | SAC10     |               5 | f         |           
+ SAC10     | SAC10     |               6 | f         |           
+ SAC10     | SAC11     |               1 | f         |           
+ SAC10     | SAC11     |               2 | f         |           
+ SAC10     | SAC11     |               3 | f         |           
+ SAC10     | SAC11     |               5 | f         |           
+ SAC10     | SAC11     |               6 | f         |           
+ SAC10     | SAC12     |               0 | f         |           
+ SAC10     | SAC12     |               2 | f         |           
+ SAC11     | SAC3      |               1 | f         |           
+ SAC11     | SAC3      |               2 | f         |           
+ SAC11     | SAC3      |               4 | f         |           
+ SAC11     | SAC3      |               5 | f         |           
+ SAC11     | SAC3      |               6 | f         |           
+ SAC11     | SAC4      |               1 | f         |           
+ SAC11     | SAC4      |               2 | f         |           
+ SAC11     | SAC4      |               3 | f         |           
+ SAC11     | SAC4      |               4 | f         |           
+ SAC11     | SAC4      |               6 | f         |           
+ SAC11     | SAC5      |               0 | f         |           
+ SAC11     | SAC5      |               1 | f         |           
+ SAC11     | SAC5      |               3 | f         |           
+ SAC11     | SAC5      |               4 | f         |           
+ SAC11     | SAC5      |               5 | f         |           
+ SAC11     | SAC6      |               0 | f         |           
+ SAC11     | SAC6      |               1 | f         |           
+ SAC11     | SAC6      |               2 | f         |           
+ SAC11     | SAC6      |               3 | f         |           
+ SAC11     | SAC6      |               5 | f         |           
+ SAC11     | SAC6      |               6 | f         |           
+ SAC11     | SAC7      |               0 | f         |           
+ SAC11     | SAC7      |               2 | f         |           
+ SAC11     | SAC7      |               3 | f         |           
+ SAC11     | SAC7      |               4 | f         |           
+ SAC11     | SAC7      |               6 | f         |           
+ SAC11     | SAC8      |               0 | f         |           
+ SAC11     | SAC8      |               1 | f         |           
+ SAC11     | SAC8      |               2 | f         |           
+ SAC11     | SAC8      |               4 | f         |           
+ SAC11     | SAC8      |               5 | f         |           
+ SAC11     | SAC8      |               6 | f         |           
+ SAC11     | SAC9      |               1 | f         |           
+ SAC11     | SAC9      |               2 | f         |           
+ SAC11     | SAC9      |               3 | f         |           
+ SAC11     | SAC9      |               5 | f         |           
+ SAC11     | SAC9      |               6 | f         |           
+ SAC11     | SAC10     |               0 | f         |           
+ SAC11     | SAC10     |               1 | f         |           
+ SAC11     | SAC10     |               3 | f         |           
+ SAC11     | SAC10     |               4 | f         |           
+ SAC11     | SAC10     |               5 | f         |           
+ SAC11     | SAC11     |               0 | f         |           
+ SAC11     | SAC11     |               1 | f         |           
+ SAC11     | SAC11     |               2 | f         |           
+ SAC11     | SAC11     |               4 | f         |           
+ SAC11     | SAC11     |               5 | f         |           
+ SAC11     | SAC11     |               6 | f         |           
+ SAC11     | SAC12     |               0 | f         |           
+ SAC11     | SAC12     |               2 | f         |           
+ SAC11     | SAC12     |               3 | f         |           
+ SAC11     | SAC12     |               4 | f         |           
+ SAC11     | SAC12     |               6 | f         |           
+ SAC11     | SAC13     |               0 | f         |           
+ SAC11     | SAC13     |               1 | f         |           
+ SAC11     | SAC13     |               3 | f         |           
+ SAC11     | SAC13     |               4 | f         |           
+ SAC11     | SAC13     |               5 | f         |           
+ SAC11     | SAC13     |               6 | f         |           
+ SAC11     | SAC14     |               1 | f         |           
+ SAC11     | SAC14     |               2 | f         |           
+ SAC11     | SAC14     |               3 | f         |           
+ SAC11     | SAC14     |               5 | f         |           
+ SAC11     | SAC14     |               6 | f         |           
+ SAC11     | SAC15     |               0 | f         |           
+ SAC11     | SAC15     |               2 | f         |           
+ SAC11     | SAC15     |               3 | f         |           
+ SAC11     | SAC15     |               4 | f         |           
+ SAC11     | SAC15     |               5 | f         |           
+ SAC12     | SAC0      |               0 | f         |           
+ SAC12     | SAC0      |               1 | f         |           
+ SAC12     | SAC0      |               2 | f         |           
+ SAC12     | SAC0      |               4 | f         |           
+ SAC12     | SAC0      |               5 | f         |           
+ SAC12     | SAC0      |               6 | f         |           
+ SAC12     | SAC1      |               1 | f         |           
+ SAC12     | SAC1      |               2 | f         |           
+ SAC12     | SAC1      |               3 | f         |           
+ SAC12     | SAC1      |               4 | f         |           
+ SAC12     | SAC1      |               6 | f         |           
+ SAC12     | SAC2      |               0 | f         |           
+ SAC12     | SAC2      |               1 | f         |           
+ SAC12     | SAC2      |               3 | f         |           
+ SAC12     | SAC2      |               4 | f         |           
+ SAC12     | SAC2      |               5 | f         |           
+ SAC12     | SAC3      |               0 | f         |           
+ SAC12     | SAC3      |               1 | f         |           
+ SAC12     | SAC3      |               2 | f         |           
+ SAC12     | SAC3      |               3 | f         |           
+ SAC12     | SAC3      |               5 | f         |           
+ SAC12     | SAC3      |               6 | f         |           
+ SAC12     | SAC4      |               0 | f         |           
+ SAC12     | SAC4      |               2 | f         |           
+ SAC12     | SAC4      |               3 | f         |           
+ SAC12     | SAC4      |               4 | f         |           
+ SAC12     | SAC4      |               6 | f         |           
+ SAC12     | SAC5      |               0 | f         |           
+ SAC12     | SAC5      |               1 | f         |           
+ SAC12     | SAC5      |               2 | f         |           
+ SAC12     | SAC5      |               4 | f         |           
+ SAC12     | SAC5      |               5 | f         |           
+ SAC12     | SAC5      |               6 | f         |           
+ SAC12     | SAC6      |               1 | f         |           
+ SAC12     | SAC6      |               2 | f         |           
+ SAC12     | SAC6      |               3 | f         |           
+ SAC12     | SAC6      |               5 | f         |           
+ SAC12     | SAC13     |               4 | f         |           
+ SAC12     | SAC13     |               5 | f         |           
+ SAC12     | SAC14     |               0 | f         |           
+ SAC12     | SAC14     |               1 | f         |           
+ SAC12     | SAC14     |               2 | f         |           
+ SAC12     | SAC14     |               4 | f         |           
+ SAC12     | SAC14     |               5 | f         |           
+ SAC12     | SAC14     |               6 | f         |           
+ SAC12     | SAC15     |               0 | f         |           
+ SAC12     | SAC15     |               2 | f         |           
+ SAC12     | SAC15     |               3 | f         |           
+ SAC12     | SAC15     |               4 | f         |           
+ SAC12     | SAC15     |               6 | f         |           
+ SAC13     | SAC0      |               0 | f         |           
+ SAC13     | SAC0      |               1 | f         |           
+ SAC13     | SAC0      |               3 | f         |           
+ SAC13     | SAC0      |               4 | f         |           
+ SAC13     | SAC0      |               5 | f         |           
+ SAC13     | SAC0      |               6 | f         |           
+ SAC13     | SAC1      |               1 | f         |           
+ SAC13     | SAC1      |               2 | f         |           
+ SAC13     | SAC1      |               3 | f         |           
+ SAC13     | SAC1      |               5 | f         |           
+ SAC13     | SAC1      |               6 | f         |           
+ SAC13     | SAC2      |               0 | f         |           
+ SAC13     | SAC2      |               2 | f         |           
+ SAC13     | SAC2      |               3 | f         |           
+ SAC13     | SAC2      |               4 | f         |           
+ SAC13     | SAC2      |               5 | f         |           
+ SAC13     | SAC3      |               0 | f         |           
+ SAC13     | SAC3      |               1 | f         |           
+ SAC13     | SAC3      |               2 | f         |           
+ SAC13     | SAC3      |               4 | f         |           
+ SAC13     | SAC3      |               5 | f         |           
+ SAC13     | SAC3      |               6 | f         |           
+ SAC13     | SAC4      |               1 | f         |           
+ SAC13     | SAC4      |               2 | f         |           
+ SAC13     | SAC4      |               3 | f         |           
+ SAC13     | SAC4      |               4 | f         |           
+ SAC13     | SAC4      |               6 | f         |           
+ SAC13     | SAC5      |               0 | f         |           
+ SAC13     | SAC5      |               1 | f         |           
+ SAC13     | SAC5      |               3 | f         |           
+ SAC13     | SAC5      |               4 | f         |           
+ SAC13     | SAC5      |               5 | f         |           
+ SAC13     | SAC6      |               0 | f         |           
+ SAC13     | SAC6      |               1 | f         |           
+ SAC13     | SAC6      |               2 | f         |           
+ SAC13     | SAC6      |               3 | f         |           
+ SAC13     | SAC6      |               5 | f         |           
+ SAC13     | SAC6      |               6 | f         |           
+ SAC13     | SAC7      |               0 | f         |           
+ SAC13     | SAC7      |               2 | f         |           
+ SAC13     | SAC7      |               3 | f         |           
+ SAC13     | SAC7      |               4 | f         |           
+ SAC13     | SAC7      |               6 | f         |           
+ SAC13     | SAC8      |               0 | f         |           
+ SAC13     | SAC8      |               1 | f         |           
+ SAC13     | SAC8      |               2 | f         |           
+ SAC13     | SAC8      |               4 | f         |           
+ SAC13     | SAC8      |               5 | f         |           
+ SAC13     | SAC8      |               6 | f         |           
+ SAC13     | SAC9      |               1 | f         |           
+ SAC13     | SAC9      |               2 | f         |           
+ SAC13     | SAC9      |               3 | f         |           
+ SAC13     | SAC9      |               5 | f         |           
+ SAC13     | SAC9      |               6 | f         |           
+ SAC13     | SAC10     |               0 | f         |           
+ SAC13     | SAC10     |               1 | f         |           
+ SAC13     | SAC10     |               3 | f         |           
+ SAC13     | SAC10     |               4 | f         |           
+ SAC13     | SAC10     |               5 | f         |           
+ SAC13     | SAC11     |               0 | f         |           
+ SAC13     | SAC11     |               1 | f         |           
+ SAC13     | SAC11     |               2 | f         |           
+ SAC13     | SAC11     |               4 | f         |           
+ SAC13     | SAC11     |               5 | f         |           
+ SAC13     | SAC11     |               6 | f         |           
+ SAC13     | SAC12     |               0 | f         |           
+ SAC13     | SAC12     |               2 | f         |           
+ SAC13     | SAC12     |               3 | f         |           
+ SAC13     | SAC12     |               4 | f         |           
+ SAC13     | SAC12     |               6 | f         |           
+ SAC13     | SAC13     |               0 | f         |           
+ SAC13     | SAC13     |               1 | f         |           
+ SAC13     | SAC13     |               3 | f         |           
+ SAC13     | SAC13     |               4 | f         |           
+ SAC13     | SAC13     |               5 | f         |           
+ SAC13     | SAC13     |               6 | f         |           
+ SAC13     | SAC14     |               1 | f         |           
+ SAC13     | SAC14     |               2 | f         |           
+ SAC13     | SAC14     |               3 | f         |           
+ SAC13     | SAC14     |               5 | f         |           
+ SAC13     | SAC14     |               6 | f         |           
+ SAC13     | SAC15     |               0 | f         |           
+ SAC13     | SAC15     |               2 | f         |           
+ SAC13     | SAC15     |               3 | f         |           
+ SAC13     | SAC15     |               4 | f         |           
+ SAC13     | SAC15     |               5 | f         |           
+ SAC14     | SAC0      |               0 | f         |           
+ SAC14     | SAC0      |               1 | f         |           
+ SAC14     | SAC0      |               2 | f         |           
+ SAC14     | SAC0      |               4 | f         |           
+ SAC14     | SAC0      |               5 | f         |           
+ SAC14     | SAC0      |               6 | f         |           
+ SAC14     | SAC1      |               1 | f         |           
+ SAC14     | SAC1      |               2 | f         |           
+ SAC14     | SAC1      |               3 | f         |           
+ SAC14     | SAC1      |               4 | f         |           
+ SAC14     | SAC1      |               6 | f         |           
+ SAC14     | SAC7      |               3 | t         |   0.052133
+ SAC14     | SAC7      |               5 | t         |   2.289207
+ SAC14     | SAC7      |               6 | t         |  -1.463613
+ SAC14     | SAC8      |               0 | t         |   4.478956
+ SAC14     | SAC8      |               1 | t         |    0.45031
+ SAC14     | SAC8      |               3 | t         |  -0.157206
+ SAC14     | SAC8      |               4 | t         |   3.346001
+ SAC14     | SAC8      |               5 | t         |   2.965443
+ SAC14     | SAC8      |               6 | t         |   1.534939
+ SAC14     | SAC9      |               0 | f         |           
+ SAC14     | SAC9      |               2 | f         |           
+ SAC14     | SAC9      |               3 | f         |           
+ SAC14     | SAC9      |               4 | f         |           
+ SAC14     | SAC9      |               6 | f         |           
+ SAC14     | SAC10     |               0 | f         |           
+ SAC14     | SAC10     |               1 | f         |           
+ SAC14     | SAC10     |               3 | f         |           
+ SAC14     | SAC10     |               4 | f         |           
+ SAC14     | SAC10     |               5 | f         |           
+ SAC14     | SAC10     |               6 | f         |           
+ SAC14     | SAC11     |               1 | f         |           
+ SAC14     | SAC11     |               2 | f         |           
+ SAC14     | SAC11     |               3 | f         |           
+ SAC14     | SAC11     |               5 | f         |           
+ SAC14     | SAC11     |               6 | f         |           
+ SAC14     | SAC12     |               0 | f         |           
+ SAC14     | SAC12     |               2 | f         |           
+ SAC14     | SAC12     |               3 | f         |           
+ SAC14     | SAC12     |               4 | f         |           
+ SAC14     | SAC12     |               5 | f         |           
+ SAC14     | SAC13     |               0 | f         |           
+ SAC14     | SAC13     |               1 | f         |           
+ SAC14     | SAC13     |               2 | f         |           
+ SAC14     | SAC13     |               4 | f         |           
+ SAC14     | SAC13     |               5 | f         |           
+ SAC14     | SAC13     |               6 | f         |           
+ SAC14     | SAC14     |               1 | t         |   0.388939
+ SAC14     | SAC14     |               2 | t         |   0.009627
+ SAC14     | SAC14     |               3 | t         |    0.00766
+ SAC14     | SAC14     |               4 | t         |   1.753931
+ SAC14     | SAC14     |               6 | t         |   0.529642
+ SAC14     | SAC15     |               0 | t         |   1.299408
+ SAC14     | SAC15     |               1 | t         |   0.552662
+ SAC14     | SAC15     |               2 | t         |    0.44082
+ SAC14     | SAC15     |               4 | t         |    2.68516
+ SAC14     | SAC15     |               5 | t         |   1.409397
+ SAC14     | SAC15     |               6 | t         |  -0.432862
+ SAC15     | SAC0      |               0 | f         |           
+ SAC15     | SAC0      |               2 | f         |           
+ SAC15     | SAC0      |               3 | f         |           
+ SAC15     | SAC0      |               4 | f         |           
+ SAC15     | SAC0      |               5 | f         |           
+ SAC15     | SAC1      |               0 | f         |           
+ SAC15     | SAC1      |               1 | f         |           
+ SAC15     | SAC1      |               2 | f         |           
+ SAC15     | SAC1      |               4 | f         |           
+ SAC15     | SAC1      |               5 | f         |           
+ SAC15     | SAC1      |               6 | f         |           
+ SAC15     | SAC2      |               1 | t         |   0.189199
+ SAC15     | SAC2      |               2 | t         |   2.109558
+ SAC15     | SAC2      |               3 | t         |   0.229748
+ SAC15     | SAC2      |               4 | t         |   0.458268
+ SAC15     | SAC2      |               6 | t         |   0.199999
+ SAC15     | SAC3      |               0 | f         |           
+ SAC15     | SAC3      |               1 | f         |           
+ SAC15     | SAC3      |               2 | f         |           
+ SAC15     | SAC3      |               4 | f         |           
+ SAC15     | SAC3      |               5 | f         |           
+ SAC15     | SAC3      |               6 | f         |           
+ SAC15     | SAC4      |               1 | t         |   1.004769
+ SAC15     | SAC4      |               2 | t         |   1.916667
+ SAC15     | SAC4      |               3 | t         |  -9.507274
+ SAC15     | SAC4      |               4 | t         |   2.509244
+ SAC15     | SAC4      |               6 | t         |  -0.005473
+ SAC15     | SAC5      |               0 | f         |           
+ SAC15     | SAC5      |               1 | t         |   2.251962
+ SAC15     | SAC5      |               2 | t         |   2.400557
+ SAC15     | SAC5      |               4 | t         |   0.904895
+ SAC15     | SAC5      |               5 | t         |  -0.284995
+ SAC15     | SAC5      |               6 | t         |   0.255222
+ SAC15     | SAC6      |               0 | f         |           
+ SAC15     | SAC6      |               1 | f         |           
+ SAC15     | SAC6      |               3 | f         |           
+ SAC15     | SAC6      |               4 | f         |           
+ SAC15     | SAC6      |               5 | f         |           
+ SAC15     | SAC7      |               0 | t         |   1.651894
+ SAC15     | SAC7      |               1 | t         |  -0.018207
+ SAC15     | SAC7      |               2 | t         |   2.275601
+ SAC15     | SAC7      |               4 | t         |   0.090212
+ SAC15     | SAC7      |               5 | t         |   -1.22367
+ SAC15     | SAC7      |               6 | t         |   0.410928
+ SAC15     | SAC8      |               0 | t         |   57.84968
+ SAC15     | SAC8      |               2 | t         |  12.087898
+ SAC15     | SAC8      |               3 | t         |   2.305673
+ SAC15     | SAC8      |               4 | t         |   0.794127
+ SAC15     | SAC8      |               5 | t         |  -1.177254
+ SAC15     | SAC9      |               0 | f         |           
+ SAC15     | SAC9      |               1 | f         |           
+ SAC15     | SAC9      |               2 | f         |           
+ SAC15     | SAC9      |               3 | f         |           
+ SAC15     | SAC9      |               5 | f         |           
+ SAC15     | SAC9      |               6 | f         |           
+ SAC15     | SAC10     |               0 | f         |           
+ SAC15     | SAC10     |               1 | f         |           
+ SAC15     | SAC10     |               3 | f         |           
+ SAC15     | SAC10     |               4 | f         |           
+ SAC15     | SAC10     |               5 | f         |           
+ SAC15     | SAC11     |               0 | f         |           
+ SAC15     | SAC11     |               1 | f         |           
+ SAC15     | SAC11     |               2 | f         |           
+ SAC15     | SAC11     |               4 | f         |           
+ SAC15     | SAC11     |               5 | f         |           
+ SAC15     | SAC11     |               6 | f         |           
+ SAC15     | SAC12     |               0 | f         |           
+ SAC15     | SAC12     |               2 | f         |           
+ SAC15     | SAC12     |               3 | f         |           
+ SAC15     | SAC12     |               4 | f         |           
+ SAC15     | SAC12     |               6 | f         |           
+ SAC15     | SAC13     |               0 | f         |           
+ SAC0      | SAC0      |               0 | f         |           
+ SAC0      | SAC0      |               3 | f         |           
+ SAC0      | SAC1      |               0 | f         |           
+ SAC0      | SAC1      |               5 | f         |           
+ SAC0      | SAC2      |               2 | f         |           
+ SAC0      | SAC2      |               6 | f         |           
+ SAC0      | SAC3      |               4 | f         |           
+ SAC0      | SAC4      |               1 | f         |           
+ SAC0      | SAC4      |               5 | f         |           
+ SAC0      | SAC5      |               3 | f         |           
+ SAC0      | SAC6      |               0 | f         |           
+ SAC0      | SAC6      |               4 | f         |           
+ SAC0      | SAC7      |               2 | f         |           
+ SAC0      | SAC7      |               6 | f         |           
+ SAC0      | SAC8      |               3 | f         |           
+ SAC0      | SAC9      |               1 | f         |           
+ SAC0      | SAC9      |               5 | f         |           
+ SAC0      | SAC10     |               2 | f         |           
+ SAC0      | SAC11     |               0 | f         |           
+ SAC0      | SAC11     |               4 | f         |           
+ SAC0      | SAC12     |               1 | f         |           
+ SAC0      | SAC12     |               6 | f         |           
+ SAC0      | SAC13     |               3 | f         |           
+ SAC0      | SAC14     |               0 | f         |           
+ SAC0      | SAC14     |               5 | f         |           
+ SAC0      | SAC15     |               2 | f         |           
+ SAC0      | SAC15     |               6 | f         |           
+ SAC1      | SAC0      |               4 | f         |           
+ SAC1      | SAC1      |               1 | f         |           
+ SAC1      | SAC1      |               5 | f         |           
+ SAC1      | SAC2      |               3 | f         |           
+ SAC1      | SAC3      |               0 | f         |           
+ SAC1      | SAC3      |               4 | f         |           
+ SAC1      | SAC3      |               6 | f         |           
+ SAC1      | SAC4      |               0 | f         |           
+ SAC1      | SAC4      |               1 | f         |           
+ SAC1      | SAC4      |               2 | f         |           
+ SAC1      | SAC4      |               3 | f         |           
+ SAC1      | SAC4      |               4 | f         |           
+ SAC1      | SAC4      |               5 | f         |           
+ SAC1      | SAC4      |               6 | f         |           
+ SAC1      | SAC5      |               0 | f         |           
+ SAC1      | SAC5      |               1 | f         |           
+ SAC1      | SAC5      |               2 | f         |           
+ SAC1      | SAC5      |               3 | f         |           
+ SAC1      | SAC5      |               4 | f         |           
+ SAC1      | SAC5      |               5 | f         |           
+ SAC1      | SAC5      |               6 | f         |           
+ SAC1      | SAC6      |               0 | f         |           
+ SAC1      | SAC6      |               1 | f         |           
+ SAC1      | SAC6      |               2 | f         |           
+ SAC1      | SAC6      |               3 | f         |           
+ SAC1      | SAC6      |               4 | f         |           
+ SAC1      | SAC6      |               5 | f         |           
+ SAC1      | SAC6      |               6 | f         |           
+ SAC1      | SAC7      |               0 | f         |           
+ SAC1      | SAC7      |               1 | f         |           
+ SAC1      | SAC7      |               2 | f         |           
+ SAC1      | SAC7      |               3 | f         |           
+ SAC1      | SAC7      |               4 | f         |           
+ SAC1      | SAC7      |               5 | f         |           
+ SAC1      | SAC7      |               6 | f         |           
+ SAC1      | SAC8      |               0 | f         |           
+ SAC1      | SAC8      |               1 | f         |           
+ SAC1      | SAC8      |               2 | f         |           
+ SAC1      | SAC8      |               3 | f         |           
+ SAC1      | SAC8      |               4 | f         |           
+ SAC1      | SAC8      |               5 | f         |           
+ SAC1      | SAC8      |               6 | f         |           
+ SAC1      | SAC9      |               0 | f         |           
+ SAC1      | SAC9      |               1 | f         |           
+ SAC1      | SAC9      |               2 | f         |           
+ SAC1      | SAC9      |               3 | f         |           
+ SAC1      | SAC9      |               4 | f         |           
+ SAC1      | SAC9      |               5 | f         |           
+ SAC1      | SAC9      |               6 | f         |           
+ SAC1      | SAC10     |               0 | f         |           
+ SAC1      | SAC10     |               1 | f         |           
+ SAC1      | SAC10     |               2 | f         |           
+ SAC1      | SAC10     |               3 | f         |           
+ SAC1      | SAC11     |               0 | f         |           
+ SAC1      | SAC11     |               4 | f         |           
+ SAC1      | SAC12     |               2 | f         |           
+ SAC1      | SAC12     |               6 | f         |           
+ SAC1      | SAC13     |               3 | f         |           
+ SAC1      | SAC14     |               1 | f         |           
+ SAC1      | SAC14     |               5 | f         |           
+ SAC1      | SAC15     |               2 | f         |           
+ SAC2      | SAC0      |               0 | f         |           
+ SAC2      | SAC0      |               4 | f         |           
+ SAC2      | SAC1      |               1 | f         |           
+ SAC2      | SAC1      |               6 | f         |           
+ SAC2      | SAC2      |               2 | t         |   2.120769
+ SAC2      | SAC3      |               1 | f         |           
+ SAC2      | SAC3      |               5 | f         |           
+ SAC2      | SAC4      |               2 | t         |   1.951121
+ SAC2      | SAC5      |               1 | t         |   2.248017
+ SAC2      | SAC5      |               5 | t         |  -0.022907
+ SAC2      | SAC6      |               4 | f         |           
+ SAC2      | SAC7      |               0 | t         |   2.883198
+ SAC2      | SAC7      |               5 | t         |  -0.054699
+ SAC2      | SAC8      |               3 | t         |    2.06805
+ SAC2      | SAC9      |               2 | f         |           
+ SAC2      | SAC9      |               6 | f         |           
+ SAC2      | SAC10     |               4 | f         |           
+ SAC2      | SAC11     |               1 | f         |           
+ SAC2      | SAC11     |               5 | f         |           
+ SAC2      | SAC12     |               3 | f         |           
+ SAC2      | SAC13     |               0 | f         |           
+ SAC2      | SAC13     |               4 | f         |           
+ SAC2      | SAC14     |               1 | t         |   0.077741
+ SAC2      | SAC14     |               6 | t         |  -0.579819
+ SAC2      | SAC15     |               4 | t         |   0.458268
+ SAC2      | SAC15     |               5 | t         |   0.074652
+ SAC2      | SAC15     |               6 | t         |   0.199999
+ SAC3      | SAC0      |               0 | f         |           
+ SAC3      | SAC0      |               1 | f         |           
+ SAC3      | SAC0      |               2 | f         |           
+ SAC3      | SAC0      |               3 | f         |           
+ SAC3      | SAC0      |               4 | f         |           
+ SAC3      | SAC0      |               5 | f         |           
+ SAC3      | SAC0      |               6 | f         |           
+ SAC3      | SAC1      |               0 | f         |           
+ SAC3      | SAC1      |               1 | f         |           
+ SAC3      | SAC1      |               2 | f         |           
+ SAC3      | SAC1      |               3 | f         |           
+ SAC3      | SAC1      |               4 | f         |           
+ SAC3      | SAC1      |               5 | f         |           
+ SAC3      | SAC1      |               6 | f         |           
+ SAC3      | SAC2      |               0 | f         |           
+ SAC3      | SAC2      |               1 | f         |           
+ SAC3      | SAC2      |               2 | f         |           
+ SAC3      | SAC2      |               3 | f         |           
+ SAC3      | SAC2      |               4 | f         |           
+ SAC3      | SAC2      |               5 | f         |           
+ SAC3      | SAC2      |               6 | f         |           
+ SAC3      | SAC3      |               0 | f         |           
+ SAC3      | SAC3      |               1 | f         |           
+ SAC3      | SAC3      |               2 | f         |           
+ SAC3      | SAC3      |               3 | f         |           
+ SAC3      | SAC3      |               4 | f         |           
+ SAC3      | SAC3      |               6 | f         |           
+ SAC3      | SAC4      |               4 | f         |           
+ SAC3      | SAC5      |               1 | f         |           
+ SAC3      | SAC5      |               5 | f         |           
+ SAC3      | SAC6      |               3 | f         |           
+ SAC3      | SAC7      |               0 | f         |           
+ SAC3      | SAC7      |               4 | f         |           
+ SAC3      | SAC8      |               2 | f         |           
+ SAC3      | SAC8      |               6 | f         |           
+ SAC3      | SAC9      |               3 | f         |           
+ SAC3      | SAC10     |               1 | f         |           
+ SAC3      | SAC10     |               5 | f         |           
+ SAC3      | SAC11     |               2 | f         |           
+ SAC3      | SAC12     |               0 | f         |           
+ SAC3      | SAC12     |               4 | f         |           
+ SAC3      | SAC13     |               1 | f         |           
+ SAC3      | SAC13     |               6 | f         |           
+ SAC3      | SAC14     |               3 | f         |           
+ SAC3      | SAC15     |               0 | f         |           
+ SAC3      | SAC15     |               5 | f         |           
+ SAC4      | SAC0      |               2 | f         |           
+ SAC4      | SAC0      |               6 | f         |           
+ SAC4      | SAC1      |               4 | f         |           
+ SAC4      | SAC2      |               0 | t         |  10.108369
+ SAC4      | SAC2      |               5 | t         |   0.045037
+ SAC4      | SAC3      |               4 | f         |           
+ SAC4      | SAC4      |               1 | t         |   1.360234
+ SAC4      | SAC4      |               6 | t         |    5.4e-05
+ SAC4      | SAC5      |               4 | t         |   1.316985
+ SAC4      | SAC6      |               2 | f         |           
+ SAC4      | SAC7      |               0 | t         |  19.809627
+ SAC4      | SAC7      |               4 | t         |   0.513573
+ SAC4      | SAC8      |               2 | t         |  -1.959745
+ SAC4      | SAC8      |               3 | t         |   1.549282
+ SAC4      | SAC8      |               4 | t         |   2.672868
+ SAC4      | SAC8      |               5 | t         |  -0.482674
+ SAC4      | SAC8      |               6 | t         |   0.068038
+ SAC4      | SAC9      |               0 | f         |           
+ SAC4      | SAC9      |               1 | f         |           
+ SAC4      | SAC9      |               2 | f         |           
+ SAC4      | SAC9      |               3 | f         |           
+ SAC4      | SAC9      |               4 | f         |           
+ SAC4      | SAC9      |               5 | f         |           
+ SAC4      | SAC9      |               6 | f         |           
+ SAC4      | SAC10     |               0 | f         |           
+ SAC4      | SAC10     |               1 | f         |           
+ SAC4      | SAC10     |               2 | f         |           
+ SAC4      | SAC10     |               3 | f         |           
+ SAC4      | SAC10     |               4 | f         |           
+ SAC4      | SAC10     |               5 | f         |           
+ SAC4      | SAC10     |               6 | f         |           
+ SAC4      | SAC11     |               0 | f         |           
+ SAC4      | SAC11     |               1 | f         |           
+ SAC4      | SAC11     |               2 | f         |           
+ SAC4      | SAC11     |               3 | f         |           
+ SAC4      | SAC11     |               4 | f         |           
+ SAC4      | SAC11     |               5 | f         |           
+ SAC4      | SAC11     |               6 | f         |           
+ SAC4      | SAC12     |               0 | f         |           
+ SAC4      | SAC12     |               1 | f         |           
+ SAC4      | SAC12     |               2 | f         |           
+ SAC4      | SAC12     |               3 | f         |           
+ SAC4      | SAC12     |               4 | f         |           
+ SAC4      | SAC12     |               5 | f         |           
+ SAC4      | SAC12     |               6 | f         |           
+ SAC4      | SAC13     |               0 | f         |           
+ SAC4      | SAC13     |               1 | f         |           
+ SAC4      | SAC13     |               3 | f         |           
+ SAC4      | SAC14     |               0 | t         |   1.145235
+ SAC4      | SAC14     |               5 | t         |   0.327674
+ SAC4      | SAC15     |               3 | t         |  -9.507274
+ SAC5      | SAC0      |               2 | f         |           
+ SAC5      | SAC0      |               6 | f         |           
+ SAC5      | SAC1      |               3 | f         |           
+ SAC5      | SAC2      |               1 | t         |   2.248017
+ SAC5      | SAC2      |               5 | t         |  -0.022907
+ SAC5      | SAC3      |               4 | f         |           
+ SAC5      | SAC4      |               1 | t         |   2.246574
+ SAC5      | SAC4      |               5 | t         |  -0.072912
+ SAC5      | SAC5      |               3 | t         |   0.015813
+ SAC5      | SAC6      |               2 | f         |           
+ SAC5      | SAC6      |               6 | f         |           
+ SAC5      | SAC7      |               3 | t         |     0.0397
+ SAC5      | SAC8      |               1 | t         |    2.25235
+ SAC5      | SAC8      |               6 | t         |   5.599236
+ SAC5      | SAC9      |               5 | f         |           
+ SAC5      | SAC10     |               2 | f         |           
+ SAC5      | SAC10     |               6 | f         |           
+ SAC5      | SAC11     |               4 | f         |           
+ SAC5      | SAC12     |               1 | f         |           
+ SAC5      | SAC12     |               5 | f         |           
+ SAC5      | SAC13     |               3 | f         |           
+ SAC5      | SAC14     |               0 | f         |           
+ SAC5      | SAC14     |               4 | t         |   1.390655
+ SAC5      | SAC15     |               2 | t         |   2.400557
+ SAC6      | SAC0      |               0 | f         |           
+ SAC6      | SAC0      |               5 | f         |           
+ SAC6      | SAC1      |               2 | f         |           
+ SAC6      | SAC1      |               6 | f         |           
+ SAC6      | SAC2      |               3 | f         |           
+ SAC6      | SAC2      |               4 | f         |           
+ SAC6      | SAC2      |               5 | f         |           
+ SAC6      | SAC2      |               6 | f         |           
+ SAC6      | SAC3      |               0 | f         |           
+ SAC6      | SAC3      |               1 | f         |           
+ SAC6      | SAC3      |               2 | f         |           
+ SAC6      | SAC3      |               3 | f         |           
+ SAC6      | SAC3      |               4 | f         |           
+ SAC6      | SAC3      |               5 | f         |           
+ SAC6      | SAC3      |               6 | f         |           
+ SAC6      | SAC4      |               0 | f         |           
+ SAC6      | SAC4      |               1 | f         |           
+ SAC6      | SAC4      |               2 | f         |           
+ SAC6      | SAC4      |               3 | f         |           
+ SAC6      | SAC4      |               4 | f         |           
+ SAC6      | SAC4      |               5 | f         |           
+ SAC6      | SAC4      |               6 | f         |           
+ SAC6      | SAC5      |               0 | f         |           
+ SAC6      | SAC5      |               1 | f         |           
+ SAC6      | SAC5      |               2 | f         |           
+ SAC6      | SAC5      |               3 | f         |           
+ SAC6      | SAC5      |               4 | f         |           
+ SAC6      | SAC5      |               5 | f         |           
+ SAC6      | SAC5      |               6 | f         |           
+ SAC6      | SAC6      |               0 | f         |           
+ SAC6      | SAC6      |               1 | f         |           
+ SAC6      | SAC6      |               4 | f         |           
+ SAC6      | SAC7      |               1 | f         |           
+ SAC6      | SAC7      |               6 | f         |           
+ SAC6      | SAC8      |               3 | f         |           
+ SAC6      | SAC9      |               0 | f         |           
+ SAC6      | SAC9      |               5 | f         |           
+ SAC6      | SAC10     |               2 | f         |           
+ SAC6      | SAC10     |               6 | f         |           
+ SAC6      | SAC11     |               4 | f         |           
+ SAC6      | SAC12     |               1 | f         |           
+ SAC6      | SAC12     |               5 | f         |           
+ SAC6      | SAC13     |               3 | f         |           
+ SAC6      | SAC14     |               0 | f         |           
+ SAC6      | SAC14     |               4 | f         |           
+ SAC6      | SAC15     |               2 | f         |           
+ SAC6      | SAC15     |               6 | f         |           
+ SAC7      | SAC0      |               3 | f         |           
+ SAC7      | SAC1      |               1 | f         |           
+ SAC7      | SAC1      |               5 | f         |           
+ SAC7      | SAC2      |               2 | t         |   2.287525
+ SAC7      | SAC3      |               0 | f         |           
+ SAC7      | SAC3      |               5 | f         |           
+ SAC7      | SAC4      |               1 | t         |  -0.025804
+ SAC7      | SAC4      |               6 | t         |   -0.00636
+ SAC7      | SAC5      |               4 | t         |   0.022963
+ SAC7      | SAC6      |               3 | f         |           
+ SAC7      | SAC7      |               0 | t         |   0.419394
+ SAC7      | SAC7      |               5 | t         |   0.401201
+ SAC7      | SAC8      |               3 | t         |   1.817943
+ SAC7      | SAC9      |               1 | f         |           
+ SAC7      | SAC9      |               6 | f         |           
+ SAC7      | SAC10     |               3 | f         |           
+ SAC7      | SAC11     |               0 | f         |           
+ SAC7      | SAC11     |               2 | f         |           
+ SAC7      | SAC11     |               3 | f         |           
+ SAC7      | SAC11     |               4 | f         |           
+ SAC7      | SAC11     |               5 | f         |           
+ SAC7      | SAC11     |               6 | f         |           
+ SAC7      | SAC12     |               0 | f         |           
+ SAC7      | SAC12     |               1 | f         |           
+ SAC7      | SAC12     |               2 | f         |           
+ SAC7      | SAC12     |               3 | f         |           
+ SAC7      | SAC12     |               4 | f         |           
+ SAC7      | SAC12     |               5 | f         |           
+ SAC7      | SAC12     |               6 | f         |           
+ SAC7      | SAC13     |               0 | f         |           
+ SAC7      | SAC13     |               1 | f         |           
+ SAC7      | SAC13     |               2 | f         |           
+ SAC7      | SAC13     |               3 | f         |           
+ SAC7      | SAC13     |               4 | f         |           
+ SAC7      | SAC13     |               5 | f         |           
+ SAC7      | SAC13     |               6 | f         |           
+ SAC7      | SAC14     |               0 | t         |   1.724538
+ SAC7      | SAC14     |               1 | t         |  -0.069595
+ SAC7      | SAC14     |               2 | t         |   9.018064
+ SAC7      | SAC14     |               3 | t         |   0.052133
+ SAC7      | SAC14     |               4 | t         |   0.938292
+ SAC7      | SAC14     |               5 | t         |   2.289207
+ SAC7      | SAC14     |               6 | t         |  -1.463613
+ SAC7      | SAC15     |               0 | t         |   1.651894
+ SAC7      | SAC15     |               1 | t         |  -0.018207
+ SAC7      | SAC15     |               2 | t         |   2.275601
+ SAC7      | SAC15     |               3 | t         |   0.294469
+ SAC7      | SAC15     |               4 | t         |   0.090212
+ SAC8      | SAC0      |               3 | f         |           
+ SAC8      | SAC1      |               0 | f         |           
+ SAC8      | SAC1      |               5 | f         |           
+ SAC8      | SAC2      |               1 | t         |   0.060384
+ SAC8      | SAC2      |               6 | t         |   8.974298
+ SAC8      | SAC3      |               5 | f         |           
+ SAC8      | SAC4      |               2 | t         |  -1.959745
+ SAC8      | SAC5      |               0 | f         |           
+ SAC8      | SAC5      |               4 | t         |   0.345384
+ SAC8      | SAC6      |               3 | f         |           
+ SAC8      | SAC7      |               0 | t         |  14.053997
+ SAC8      | SAC7      |               4 | t         |    0.02702
+ SAC8      | SAC8      |               2 | t         |   0.212602
+ SAC8      | SAC9      |               1 | f         |           
+ SAC8      | SAC9      |               5 | f         |           
+ SAC8      | SAC10     |               3 | f         |           
+ SAC8      | SAC11     |               0 | f         |           
+ SAC8      | SAC11     |               4 | f         |           
+ SAC8      | SAC12     |               2 | f         |           
+ SAC8      | SAC12     |               6 | f         |           
+ SAC8      | SAC13     |               3 | f         |           
+ SAC8      | SAC14     |               0 | t         |   4.478956
+ SAC8      | SAC14     |               5 | t         |   2.965443
+ SAC8      | SAC15     |               3 | t         |   2.305673
+ SAC9      | SAC0      |               2 | f         |           
+ SAC9      | SAC0      |               6 | f         |           
+ SAC9      | SAC1      |               3 | f         |           
+ SAC9      | SAC2      |               1 | f         |           
+ SAC9      | SAC2      |               5 | f         |           
+ SAC9      | SAC3      |               2 | f         |           
+ SAC9      | SAC4      |               0 | f         |           
+ SAC9      | SAC4      |               4 | f         |           
+ SAC9      | SAC4      |               5 | f         |           
+ SAC9      | SAC4      |               6 | f         |           
+ SAC9      | SAC5      |               0 | f         |           
+ SAC9      | SAC5      |               1 | f         |           
+ SAC9      | SAC5      |               2 | f         |           
+ SAC9      | SAC5      |               3 | f         |           
+ SAC9      | SAC5      |               4 | f         |           
+ SAC9      | SAC5      |               5 | f         |           
+ SAC9      | SAC5      |               6 | f         |           
+ SAC9      | SAC6      |               0 | f         |           
+ SAC9      | SAC6      |               1 | f         |           
+ SAC9      | SAC6      |               2 | f         |           
+ SAC9      | SAC6      |               3 | f         |           
+ SAC9      | SAC6      |               4 | f         |           
+ SAC9      | SAC6      |               5 | f         |           
+ SAC9      | SAC6      |               6 | f         |           
+ SAC9      | SAC7      |               0 | f         |           
+ SAC9      | SAC7      |               1 | f         |           
+ SAC9      | SAC7      |               2 | f         |           
+ SAC9      | SAC7      |               3 | f         |           
+ SAC9      | SAC7      |               4 | f         |           
+ SAC9      | SAC7      |               5 | f         |           
+ SAC9      | SAC7      |               6 | f         |           
+ SAC9      | SAC8      |               0 | f         |           
+ SAC9      | SAC8      |               1 | f         |           
+ SAC9      | SAC8      |               2 | f         |           
+ SAC9      | SAC8      |               3 | f         |           
+ SAC9      | SAC8      |               4 | f         |           
+ SAC9      | SAC9      |               0 | f         |           
+ SAC9      | SAC9      |               4 | f         |           
+ SAC9      | SAC10     |               2 | f         |           
+ SAC9      | SAC10     |               6 | f         |           
+ SAC9      | SAC11     |               3 | f         |           
+ SAC9      | SAC12     |               1 | f         |           
+ SAC9      | SAC12     |               5 | f         |           
+ SAC9      | SAC13     |               2 | f         |           
+ SAC9      | SAC14     |               0 | f         |           
+ SAC9      | SAC14     |               4 | f         |           
+ SAC9      | SAC15     |               1 | f         |           
+ SAC9      | SAC15     |               6 | f         |           
+ SAC10     | SAC0      |               3 | f         |           
+ SAC10     | SAC1      |               0 | f         |           
+ SAC10     | SAC1      |               5 | f         |           
+ SAC10     | SAC2      |               2 | f         |           
+ SAC10     | SAC2      |               6 | f         |           
+ SAC10     | SAC3      |               4 | f         |           
+ SAC10     | SAC4      |               1 | f         |           
+ SAC10     | SAC4      |               5 | f         |           
+ SAC10     | SAC5      |               3 | f         |           
+ SAC10     | SAC6      |               0 | f         |           
+ SAC10     | SAC6      |               4 | f         |           
+ SAC10     | SAC7      |               2 | f         |           
+ SAC10     | SAC7      |               6 | f         |           
+ SAC10     | SAC8      |               3 | f         |           
+ SAC10     | SAC9      |               1 | f         |           
+ SAC10     | SAC9      |               5 | f         |           
+ SAC10     | SAC10     |               2 | f         |           
+ SAC10     | SAC11     |               0 | f         |           
+ SAC10     | SAC11     |               4 | f         |           
+ SAC10     | SAC12     |               1 | f         |           
+ SAC10     | SAC12     |               3 | f         |           
+ SAC10     | SAC12     |               4 | f         |           
+ SAC10     | SAC12     |               5 | f         |           
+ SAC10     | SAC12     |               6 | f         |           
+ SAC10     | SAC13     |               0 | f         |           
+ SAC10     | SAC13     |               1 | f         |           
+ SAC10     | SAC13     |               2 | f         |           
+ SAC10     | SAC13     |               3 | f         |           
+ SAC10     | SAC13     |               4 | f         |           
+ SAC10     | SAC13     |               5 | f         |           
+ SAC10     | SAC13     |               6 | f         |           
+ SAC10     | SAC14     |               0 | f         |           
+ SAC10     | SAC14     |               1 | f         |           
+ SAC10     | SAC14     |               2 | f         |           
+ SAC10     | SAC14     |               3 | f         |           
+ SAC10     | SAC14     |               4 | f         |           
+ SAC10     | SAC14     |               5 | f         |           
+ SAC10     | SAC14     |               6 | f         |           
+ SAC10     | SAC15     |               0 | f         |           
+ SAC10     | SAC15     |               1 | f         |           
+ SAC10     | SAC15     |               2 | f         |           
+ SAC10     | SAC15     |               3 | f         |           
+ SAC10     | SAC15     |               4 | f         |           
+ SAC10     | SAC15     |               5 | f         |           
+ SAC10     | SAC15     |               6 | f         |           
+ SAC11     | SAC0      |               0 | f         |           
+ SAC11     | SAC0      |               1 | f         |           
+ SAC11     | SAC0      |               2 | f         |           
+ SAC11     | SAC0      |               3 | f         |           
+ SAC11     | SAC0      |               4 | f         |           
+ SAC11     | SAC0      |               5 | f         |           
+ SAC11     | SAC0      |               6 | f         |           
+ SAC11     | SAC1      |               0 | f         |           
+ SAC11     | SAC1      |               1 | f         |           
+ SAC11     | SAC1      |               2 | f         |           
+ SAC11     | SAC1      |               3 | f         |           
+ SAC11     | SAC1      |               4 | f         |           
+ SAC11     | SAC1      |               5 | f         |           
+ SAC11     | SAC1      |               6 | f         |           
+ SAC11     | SAC2      |               0 | f         |           
+ SAC11     | SAC2      |               1 | f         |           
+ SAC11     | SAC2      |               2 | f         |           
+ SAC11     | SAC2      |               3 | f         |           
+ SAC11     | SAC2      |               4 | f         |           
+ SAC11     | SAC2      |               5 | f         |           
+ SAC11     | SAC2      |               6 | f         |           
+ SAC11     | SAC3      |               0 | f         |           
+ SAC11     | SAC3      |               3 | f         |           
+ SAC11     | SAC4      |               0 | f         |           
+ SAC11     | SAC4      |               5 | f         |           
+ SAC11     | SAC5      |               2 | f         |           
+ SAC11     | SAC5      |               6 | f         |           
+ SAC11     | SAC6      |               4 | f         |           
+ SAC11     | SAC7      |               1 | f         |           
+ SAC11     | SAC7      |               5 | f         |           
+ SAC11     | SAC8      |               3 | f         |           
+ SAC11     | SAC9      |               0 | f         |           
+ SAC11     | SAC9      |               4 | f         |           
+ SAC11     | SAC10     |               2 | f         |           
+ SAC11     | SAC10     |               6 | f         |           
+ SAC11     | SAC11     |               3 | f         |           
+ SAC11     | SAC12     |               1 | f         |           
+ SAC11     | SAC12     |               5 | f         |           
+ SAC11     | SAC13     |               2 | f         |           
+ SAC11     | SAC14     |               0 | f         |           
+ SAC11     | SAC14     |               4 | f         |           
+ SAC11     | SAC15     |               1 | f         |           
+ SAC11     | SAC15     |               6 | f         |           
+ SAC12     | SAC0      |               3 | f         |           
+ SAC12     | SAC1      |               0 | f         |           
+ SAC12     | SAC1      |               5 | f         |           
+ SAC12     | SAC2      |               2 | f         |           
+ SAC12     | SAC2      |               6 | f         |           
+ SAC12     | SAC3      |               4 | f         |           
+ SAC12     | SAC4      |               1 | f         |           
+ SAC12     | SAC4      |               5 | f         |           
+ SAC12     | SAC5      |               3 | f         |           
+ SAC12     | SAC6      |               0 | f         |           
+ SAC12     | SAC6      |               4 | f         |           
+ SAC12     | SAC6      |               6 | f         |           
+ SAC12     | SAC7      |               0 | f         |           
+ SAC12     | SAC7      |               1 | f         |           
+ SAC12     | SAC7      |               2 | f         |           
+ SAC12     | SAC7      |               3 | f         |           
+ SAC12     | SAC7      |               4 | f         |           
+ SAC12     | SAC7      |               5 | f         |           
+ SAC12     | SAC7      |               6 | f         |           
+ SAC12     | SAC8      |               0 | f         |           
+ SAC12     | SAC8      |               1 | f         |           
+ SAC12     | SAC8      |               2 | f         |           
+ SAC12     | SAC8      |               3 | f         |           
+ SAC12     | SAC8      |               4 | f         |           
+ SAC12     | SAC8      |               5 | f         |           
+ SAC12     | SAC8      |               6 | f         |           
+ SAC12     | SAC9      |               0 | f         |           
+ SAC12     | SAC9      |               1 | f         |           
+ SAC12     | SAC9      |               2 | f         |           
+ SAC12     | SAC9      |               3 | f         |           
+ SAC12     | SAC9      |               4 | f         |           
+ SAC12     | SAC9      |               5 | f         |           
+ SAC12     | SAC9      |               6 | f         |           
+ SAC12     | SAC10     |               0 | f         |           
+ SAC12     | SAC10     |               1 | f         |           
+ SAC12     | SAC10     |               2 | f         |           
+ SAC12     | SAC10     |               3 | f         |           
+ SAC12     | SAC10     |               4 | f         |           
+ SAC12     | SAC10     |               5 | f         |           
+ SAC12     | SAC10     |               6 | f         |           
+ SAC12     | SAC11     |               0 | f         |           
+ SAC12     | SAC11     |               1 | f         |           
+ SAC12     | SAC11     |               2 | f         |           
+ SAC12     | SAC11     |               3 | f         |           
+ SAC12     | SAC11     |               4 | f         |           
+ SAC12     | SAC11     |               5 | f         |           
+ SAC12     | SAC11     |               6 | f         |           
+ SAC12     | SAC12     |               0 | f         |           
+ SAC12     | SAC12     |               1 | f         |           
+ SAC12     | SAC12     |               2 | f         |           
+ SAC12     | SAC12     |               3 | f         |           
+ SAC12     | SAC12     |               4 | f         |           
+ SAC12     | SAC12     |               5 | f         |           
+ SAC12     | SAC12     |               6 | f         |           
+ SAC12     | SAC13     |               0 | f         |           
+ SAC12     | SAC13     |               1 | f         |           
+ SAC12     | SAC13     |               2 | f         |           
+ SAC12     | SAC13     |               3 | f         |           
+ SAC12     | SAC13     |               6 | f         |           
+ SAC12     | SAC14     |               3 | f         |           
+ SAC12     | SAC15     |               1 | f         |           
+ SAC12     | SAC15     |               5 | f         |           
+ SAC13     | SAC0      |               2 | f         |           
+ SAC13     | SAC1      |               0 | f         |           
+ SAC13     | SAC1      |               4 | f         |           
+ SAC13     | SAC2      |               1 | f         |           
+ SAC13     | SAC2      |               6 | f         |           
+ SAC13     | SAC3      |               3 | f         |           
+ SAC13     | SAC4      |               0 | f         |           
+ SAC13     | SAC4      |               5 | f         |           
+ SAC13     | SAC5      |               2 | f         |           
+ SAC13     | SAC5      |               6 | f         |           
+ SAC13     | SAC6      |               4 | f         |           
+ SAC13     | SAC7      |               1 | f         |           
+ SAC13     | SAC7      |               5 | f         |           
+ SAC13     | SAC8      |               3 | f         |           
+ SAC13     | SAC9      |               0 | f         |           
+ SAC13     | SAC9      |               4 | f         |           
+ SAC13     | SAC10     |               2 | f         |           
+ SAC13     | SAC10     |               6 | f         |           
+ SAC13     | SAC11     |               3 | f         |           
+ SAC13     | SAC12     |               1 | f         |           
+ SAC13     | SAC12     |               5 | f         |           
+ SAC13     | SAC13     |               2 | f         |           
+ SAC13     | SAC14     |               0 | f         |           
+ SAC13     | SAC14     |               4 | f         |           
+ SAC13     | SAC15     |               1 | f         |           
+ SAC13     | SAC15     |               6 | f         |           
+ SAC14     | SAC0      |               3 | f         |           
+ SAC14     | SAC1      |               0 | f         |           
+ SAC14     | SAC1      |               5 | f         |           
+ SAC14     | SAC2      |               0 | t         |   3.182628
+ SAC14     | SAC2      |               1 | t         |   0.077741
+ SAC14     | SAC2      |               2 | t         |   0.474265
+ SAC14     | SAC2      |               3 | t         |   0.037423
+ SAC14     | SAC2      |               4 | t         |   1.687481
+ SAC14     | SAC2      |               5 | t         |   0.761916
+ SAC14     | SAC2      |               6 | t         |  -0.579819
+ SAC14     | SAC3      |               0 | f         |           
+ SAC14     | SAC3      |               1 | f         |           
+ SAC14     | SAC3      |               2 | f         |           
+ SAC14     | SAC3      |               3 | f         |           
+ SAC14     | SAC3      |               4 | f         |           
+ SAC14     | SAC3      |               5 | f         |           
+ SAC14     | SAC3      |               6 | f         |           
+ SAC14     | SAC4      |               0 | t         |   1.145235
+ SAC14     | SAC4      |               1 | t         |   0.994787
+ SAC14     | SAC4      |               2 | t         |   0.209734
+ SAC14     | SAC4      |               3 | t         |  -0.160392
+ SAC14     | SAC4      |               4 | t         |   1.793429
+ SAC14     | SAC4      |               5 | t         |   0.327674
+ SAC14     | SAC4      |               6 | t         |   0.009229
+ SAC14     | SAC5      |               0 | f         |           
+ SAC14     | SAC5      |               1 | t         |   2.243889
+ SAC14     | SAC5      |               2 | t         |  -0.976162
+ SAC14     | SAC5      |               3 | t         |  -0.105652
+ SAC14     | SAC5      |               4 | t         |   1.390655
+ SAC14     | SAC5      |               5 | t         |  -3.769375
+ SAC14     | SAC5      |               6 | t         |  -0.669464
+ SAC14     | SAC6      |               0 | f         |           
+ SAC14     | SAC6      |               1 | f         |           
+ SAC14     | SAC6      |               2 | f         |           
+ SAC14     | SAC6      |               3 | f         |           
+ SAC14     | SAC6      |               4 | f         |           
+ SAC14     | SAC6      |               5 | f         |           
+ SAC14     | SAC6      |               6 | f         |           
+ SAC14     | SAC7      |               0 | t         |   1.724538
+ SAC14     | SAC7      |               1 | t         |  -0.069595
+ SAC14     | SAC7      |               2 | t         |   9.018064
+ SAC14     | SAC7      |               4 | t         |   0.938292
+ SAC14     | SAC8      |               2 | t         |  -0.050644
+ SAC14     | SAC9      |               1 | f         |           
+ SAC14     | SAC9      |               5 | f         |           
+ SAC14     | SAC10     |               2 | f         |           
+ SAC14     | SAC11     |               0 | f         |           
+ SAC14     | SAC11     |               4 | f         |           
+ SAC14     | SAC12     |               1 | f         |           
+ SAC14     | SAC12     |               6 | f         |           
+ SAC14     | SAC13     |               3 | f         |           
+ SAC14     | SAC14     |               0 | t         |   1.641457
+ SAC14     | SAC14     |               5 | t         |   1.696698
+ SAC14     | SAC15     |               3 | t         |   0.200466
+ SAC15     | SAC0      |               1 | f         |           
+ SAC15     | SAC0      |               6 | f         |           
+ SAC15     | SAC1      |               3 | f         |           
+ SAC15     | SAC2      |               0 | t         |   5.483569
+ SAC15     | SAC2      |               5 | t         |   0.074652
+ SAC15     | SAC3      |               3 | f         |           
+ SAC15     | SAC4      |               0 | t         |    0.74818
+ SAC15     | SAC4      |               5 | t         |   0.178033
+ SAC15     | SAC5      |               3 | t         |   0.179776
+ SAC15     | SAC6      |               2 | f         |           
+ SAC15     | SAC6      |               6 | f         |           
+ SAC15     | SAC7      |               3 | t         |   0.294469
+ SAC15     | SAC8      |               1 | t         |   0.856058
+ SAC15     | SAC8      |               6 | t         |  21.720575
+ SAC15     | SAC9      |               4 | f         |           
+ SAC15     | SAC10     |               2 | f         |           
+ SAC15     | SAC10     |               6 | f         |           
+ SAC15     | SAC11     |               3 | f         |           
+ SAC15     | SAC12     |               1 | f         |           
+ SAC15     | SAC12     |               5 | f         |           
+ SAC15     | SAC13     |               1 | f         |           
+ SAC15     | SAC13     |               2 | f         |           
+ SAC15     | SAC13     |               3 | f         |           
+ SAC15     | SAC13     |               4 | f         |           
+ SAC15     | SAC13     |               5 | f         |           
+ SAC15     | SAC13     |               6 | f         |           
+ SAC15     | SAC14     |               0 | t         |   1.299408
+ SAC15     | SAC14     |               1 | t         |   0.552662
+ SAC15     | SAC14     |               2 | t         |    0.44082
+ SAC15     | SAC14     |               3 | t         |   0.200466
+ SAC15     | SAC14     |               4 | t         |    2.68516
+ SAC15     | SAC14     |               5 | t         |   1.409397
+ SAC15     | SAC14     |               6 | t         |  -0.432862
+ SAC15     | SAC15     |               0 | t         |   0.909568
+ SAC15     | SAC15     |               1 | t         |   0.639066
+ SAC15     | SAC15     |               2 | t         |   2.096016
+ SAC15     | SAC15     |               3 | t         |   0.924225
+ SAC15     | SAC15     |               4 | t         |   1.426446
+ SAC15     | SAC15     |               5 | t         |   0.593004
+ SAC15     | SAC15     |               6 | t         |   0.174004
+(1792 rows)
+

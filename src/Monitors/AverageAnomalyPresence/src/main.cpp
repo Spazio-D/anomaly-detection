@@ -12,21 +12,19 @@ int main() {
     // Read data from the database
     std::map<std::string, std::vector<Data>> dataVector;
     std::map<std::string, std::vector<Average>> averages;
-    std::vector<std::vector<std::vector<Covariance>>> covariances{};
-    if(!readDataSQL(dataVector, averages, covariances, conn)){
+    if(!readDataSQL(dataVector, averages, conn)){
         PQfinish(conn);
         return 1;
     }
-
-    covariances.shrink_to_fit();
     
-    std::vector<std::vector<std::vector<AnomalyCovariance>>> covarianceAnomalyVector = calculateAnomaly(dataVector, averages, covariances);
+    // Detect the presence of anomalies
+    detectAnomaly(dataVector, averages);
 
-    if(!saveAnomalySQL(covarianceAnomalyVector, conn)){
+    // write the results to the database
+    if(!saveAnomalySQL(averages, dataVector, conn)){
         PQfinish(conn);
         return 1;
     }
-
 
     PQfinish(conn);
     return 0;

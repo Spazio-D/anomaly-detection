@@ -21,9 +21,11 @@
 
 // Struct for data read, in the format read time, sensor ID, read value.
 struct Data {
-    std::string sampleTime;
     std::string sensorID;
     std::string value;
+    std::string sampleTime;
+    double averageAnomalyValue;
+    bool isAverageAnomaly;
 };
 
 struct Average {
@@ -31,12 +33,13 @@ struct Average {
     double value;
     int firstSampleTime;
     int lastSampleTime;
-    bool isAnomaly;
 };
 
 bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages, PGconn *conn);
 
 void detectAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages);
+
+bool saveAnomalySQL(std::map<std::string, std::vector<Average>> &averages, std::map<std::string, std::vector<Data>> &dataVector, PGconn *conn);
 
 
 #endif // MAIN_H

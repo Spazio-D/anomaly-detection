@@ -25,7 +25,7 @@ int main() {
     // Send streams to Redis
     redisReply *reply;
     std::string command;
-    for (const Data &data : dataVector) {
+    for (Data data : dataVector) {
 
         command = "XADD " + data.sensorID + " * sampleTime " + data.sampleTime + " value " + data.value;
         reply = (redisReply *)redisCommand(context, command.c_str());

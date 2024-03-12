@@ -24,13 +24,13 @@ std::map<std::string, double> averageValue(std::map<std::string, std::vector<Dat
         if(numberOfValue == 0){
 
             averages[element.first] = std::nan("");
-            std::cout << element.first << "\t" << "NaN" << std::endl;
+            //std::cout << element.first << "\t" << "NaN" << std::endl;
 
         }else{
 
             average = totalSum/numberOfValue;
             averages[element.first] = average;
-            std::cout << element.first << "\t" << average << std::endl;
+            //std::cout << element.first << "\t" << average << std::endl;
 
         }
         

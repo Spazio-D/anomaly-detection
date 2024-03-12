@@ -19,7 +19,7 @@ PGconn* connessioneAlDatabase() {
         return nullptr;
     }
 
-    std::cout << "Connessione al database PostgreSQL riuscita." << std::endl;
+    //std::cout << "Connessione al database PostgreSQL riuscita." << std::endl;
     return conn;
 }
 
@@ -69,7 +69,7 @@ void monitorTempoRispostaDatabase(PGconn* conn) {
     //Valuta e segnala deviazioni significative nel tempi di risposta
     for (const QueryTempoRisposta& qr : queryTempoRisposte) {
         if (qr.tempoRisposta > sogliaTempoRispostaAlta) {
-            std::cout << "Avviso: Tempo di risposta elevato per la query '" << qr.query << "' con tempo " << qr.tempoRisposta << " ms" << std::endl;
+            //std::cout << "Avviso: Tempo di risposta elevato per la query '" << qr.query << "' con tempo " << qr.tempoRisposta << " ms" << std::endl;
 
             //Inserisci i risultati nel database
             inserisciRisultatoMonitoraggio(conn, qr.query, qr.tempoRisposta);

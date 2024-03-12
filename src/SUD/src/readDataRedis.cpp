@@ -5,8 +5,9 @@ bool readDataRedis(redisContext *context, std::vector<std::string> &sensors, std
 
     Data data;
 
-    for (std::string &sensor : sensors) {
+    for (std::string sensor : sensors) {
 
+        //std::cout << sensor << std::endl;
         std::string command = "XRANGE " + sensor + " - +";
         redisReply *reply = (redisReply *)redisCommand(context, command.c_str());
 
@@ -22,7 +23,7 @@ bool readDataRedis(redisContext *context, std::vector<std::string> &sensors, std
             data.sensorID = sensor;
             dataVector[sensor].push_back(data);
 
-            std::cout << dataVector[sensor][i].sensorID << "\t" << dataVector[sensor][i].sampleTime << "\t" << dataVector[sensor][i].value << std::endl;
+            //std::cout << dataVector[sensor][i].sensorID << "\t" << dataVector[sensor][i].sampleTime << "\t" << dataVector[sensor][i].value << std::endl;
 
         }
 

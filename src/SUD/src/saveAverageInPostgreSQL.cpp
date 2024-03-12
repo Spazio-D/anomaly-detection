@@ -4,19 +4,20 @@ bool saveAverageInPostgreSQL(std::map<std::string, double> &averages, size_t fir
 
     PGresult *res;
     std::string value;
+    std::string query;
     
     for (auto average : averages) {
         
-        std::cout << average.second << std::endl;
+        //std::cout << average.second << std::endl;
         if(std::isnan(average.second)){
             value = "NULL";
         }else{
             value = std::to_string(average.second);
         }
         
-        std::string query = "INSERT INTO averageTable (sensorID, value, firstSampleTime, lastSampleTime) VALUES ('"
-                            + average.first + "', " + value + ", " + std::to_string(firstSampleTime) 
-                            + ", " + std::to_string(firstSampleTime + W-1) + ")";
+        query = "INSERT INTO averageTable (sensorID, value, firstSampleTime, lastSampleTime) VALUES ('"
+                + average.first + "', " + value + ", " + std::to_string(firstSampleTime) 
+                + ", " + std::to_string(firstSampleTime + W-1) + ")";
     
         res = PQexec(conn, query.c_str());
         if (PQresultStatus(res) != PGRES_COMMAND_OK) {

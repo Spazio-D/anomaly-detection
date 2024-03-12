@@ -2,12 +2,11 @@
 
 bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages, PGconn *conn){
 
-    PGresult *resSensorsID = PQexec(conn, "SELECT DISTINCT sensorID FROM datatable ORDER BY sensorID;");
+    PGresult *resSensorsID = PQexec(conn, "SELECT DISTINCT sensorID FROM datatable;");
 
     if (PQresultStatus(resSensorsID) != PGRES_TUPLES_OK) {
         std::cerr << "Errore nell'esecuzione della select su dataTable dei sensorID: " << PQresultErrorMessage(resSensorsID) << std::endl;
         PQclear(resSensorsID);
-        PQfinish(conn);
         return false;
     }
 
@@ -27,7 +26,6 @@ bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<
             std::cerr << "Errore nell'esecuzione della select su dataTable del sensorID " + sensorID + ": " << PQresultErrorMessage(resSensorData) << std::endl;
             PQclear(resSensorData);
             PQclear(resSensorsID);
-            PQfinish(conn);
             return false;
         }
 
@@ -48,7 +46,6 @@ bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<
             std::cerr << "Errore nell'esecuzione della select su averageTable del sensorID " + sensorID + ": " << PQresultErrorMessage(resSensorData) << std::endl;
             PQclear(resSensorData);
             PQclear(resSensorsID);
-            PQfinish(conn);
             return false;
         }
 
@@ -66,7 +63,7 @@ bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<
             average.firstSampleTime = std::stoi(PQgetvalue(resSensorData, j, 1));
             average.lastSampleTime = std::stoi(PQgetvalue(resSensorData, j, 2));
             averageVector.push_back(average);
-            std::cout << "sensorID:" << average.sensorID << " value:" << average.value << " firstSampleTime:" << average.firstSampleTime << " lastSampleTime:" << average.lastSampleTime << std::endl;
+            //std::cout << "sensorID:" << average.sensorID << " value:" << average.value << " firstSampleTime:" << average.firstSampleTime << " lastSampleTime:" << average.lastSampleTime << std::endl;
 
         }
 
@@ -76,7 +73,6 @@ bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<
     }
 
     PQclear(resSensorsID);
-    PQfinish(conn);
     return true;
 
 }

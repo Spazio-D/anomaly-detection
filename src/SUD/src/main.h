@@ -42,5 +42,7 @@ bool saveAverageInPostgreSQL(std::map<std::string, double> &averages, size_t fir
 
 bool saveCovarianceInPostgreSQL(std::vector<std::vector<double>> &covariances, size_t firstSampleTime, PGconn *conn);
 
+bool sensorSorting(const std::string &str1, const std::string &str2);
+
 
 #endif // MAIN_H

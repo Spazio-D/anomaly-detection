@@ -40,7 +40,7 @@ PGconn* connessioneAlDatabase() {
     // }
     // PQclear(createTableResult);
 
-    std::cout << "Connessione al database PostgreSQL riuscita." << std::endl;
+    //std::cout << "Connessione al database PostgreSQL riuscita." << std::endl;
     return conn;
 }
 
@@ -105,7 +105,7 @@ std::vector<PeriodoMancante> monitorMancanzaDati(const std::map<std::string, std
                 if (inPeriodoMancante) {
                     //Se sta uscendo da un periodo mancante, memorrizza le informazioni sul periodo mancante
                     if (consecutiveMancanti >= sogliaMancanzaDati) {
-                        //std::cout << "Allarme: Mancanza di dati nel sensor " << sensor << " dal periodo " << periodoInizio << " al periodo " << dato.sampleTime << std::endl;
+                        ////std::cout << "Allarme: Mancanza di dati nel sensor " << sensor << " dal periodo " << periodoInizio << " al periodo " << dato.sampleTime << std::endl;
                         PeriodoMancante periodo;
                         periodo.sensor = sensor;
                         periodo.periodoInizio = periodoInizio;

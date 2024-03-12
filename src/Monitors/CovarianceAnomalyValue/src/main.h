@@ -17,13 +17,20 @@
 #include <limits>
 #include <cmath>
 
-#define theta 0.5
-
 // Struct for data read, in the format read time, sensor ID, read value.
 struct Data {
-    std::string sampleTime;
     std::string sensorID;
     std::string value;
+    std::string sampleTime;
+    double averageAnomalyValue;
+    bool isAverageAnomaly;
+};
+
+struct Average {
+    std::string sensorID;
+    double value;
+    int firstSampleTime;
+    int lastSampleTime;
 };
 
 struct Covariance {
@@ -34,7 +41,20 @@ struct Covariance {
     int lastSampleTime;
 };
 
-bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::vector<std::vector<Covariance>> &covariances, PGconn *conn);
+struct AnomalyCovariance {
+    std::string sensorID1;
+    std::string sensorID2;
+    double value;
+    bool isAnomaly;
+    int sampleTime;
+};
 
+bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages, std::vector<std::vector<std::vector<Covariance>>> &covariances, PGconn *conn);
+
+bool sensorSorting(const std::string &str1, const std::string &str2);
+
+std::vector<std::vector<std::vector<AnomalyCovariance>>> calculateAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages, std::vector<std::vector<std::vector<Covariance>>> &covariances);
+
+bool saveAnomalySQL(std::vector<std::vector<std::vector<AnomalyCovariance>>> &covarianceAnomalyVector, PGconn *conn);
 
 #endif // MAIN_H

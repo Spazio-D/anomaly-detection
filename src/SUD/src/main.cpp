@@ -30,7 +30,7 @@ int main() {
 
     freeReplyObject(reply_sensors);
 
-    std::sort(sensors.begin(), sensors.end());
+    std::sort(sensors.begin(), sensors.end(), sensorSorting);
 
     // Read data from Redis streams
     std::map<std::string, std::vector<Data>> dataVector;
@@ -50,25 +50,32 @@ int main() {
     }
 
     if (!saveDataInPostgreSQL(dataVector, conn)){
+        PQfinish(conn);
         return 1;
     }
 
-    for(size_t i = 0; i<dataVector["SAC0"].size() - W+1 ; i++){
-        
+    for(size_t i = 0; i<dataVector[sensors[0]].size() - W+1 ; i++){
+        //std::cout << "CREANDO LE FINESTRE" << std::endl;
         dataWindow = createDataWindow(dataVector, i, W + i-1);
+        //std::cout << "CALCOLANDO LE MEDIE" << std::endl;
         averages = averageValue(dataWindow);
+        //std::cout << "CALCOLANDO LE COVARIANZE" << std::endl;
         covariances = covarianceValue(sensors, dataWindow, averages);
-
+        //std::cout << "SALVANDO LE MEDIE" << std::endl;
         if(!saveAverageInPostgreSQL(averages, i, conn)){
-            return false;
+            PQfinish(conn);
+            return 1;
         }
-        
+        //std::cout << "SALVANDO LE COVARIANZE" << std::endl;
+        // CI METTE TANTISSIMO A SALVARE LA COVARIANZE
         if(!saveCovarianceInPostgreSQL(covariances, i, conn)){
-            return false;
+            PQfinish(conn);
+            return 1;
         }
 
     }
 
+    PQfinish(conn);
     redisFree(context);
     return 0;
 }

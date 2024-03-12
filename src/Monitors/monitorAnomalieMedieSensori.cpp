@@ -14,7 +14,7 @@ PGconn *connessioneAlDatabase() {
         return nullptr;
     }
 
-    std::cout << "Connessione al database PostgreSQL riuscita." << std::endl;
+    //std::cout << "Connessione al database PostgreSQL riuscita." << std::endl;
     return conn;
 }
 
@@ -33,15 +33,15 @@ std::map<std::string, double> leggiDatiMedieDalDatabase(PGconn *conn) {
 
     int righe = PQntuples(result);
     if (righe == 0) {
-        std::cout << "Nessun dato trovato nella tabella_medie." << std::endl;
+        //std::cout << "Nessun dato trovato nella tabella_medie." << std::endl;
     } else {
-        //std::cout << "Dati storici delle medie dei sensors:" << std::endl;
+        ////std::cout << "Dati storici delle medie dei sensors:" << std::endl;
         for (int i = 0; i < righe; ++i) {
             std::string sensorID = PQgetvalue(result, i, 0);
             double valoreMedio = std::stod(PQgetvalue(result, i, 1));
             medie[sensorID] = valoreMedio;
 
-            //std::cout << "sensor ID: " << sensorID << ", Valore Medio: " << valoreMedio << std::endl;
+            ////std::cout << "sensor ID: " << sensorID << ", Valore Medio: " << valoreMedio << std::endl;
         }
     }
     PQclear(result);
@@ -60,7 +60,7 @@ std::map<std::string, double> rilevaAnomalieMedie(const std::map<std::string, do
     }
     mediaGlobale /= medie.size(); 
 
-    //std::cout << "Media globale: " << mediaGlobale << std::endl;
+    ////std::cout << "Media globale: " << mediaGlobale << std::endl;
 
     //Calcola la deviazione standard globale
     double deviazioneStandardGlobale = 0.0;
@@ -69,18 +69,18 @@ std::map<std::string, double> rilevaAnomalieMedie(const std::map<std::string, do
     }
     deviazioneStandardGlobale = std::sqrt(deviazioneStandardGlobale / medie.size());
 
-    //std::cout << "Deviazione Standard Globale: " << deviazioneStandardGlobale << std::endl;
+    ////std::cout << "Deviazione Standard Globale: " << deviazioneStandardGlobale << std::endl;
 
     //Definisce una soglia per le anomalie (ad esempio, 2 deviazioni standard)
     double sogliaAnomalie = 2.0 * deviazioneStandardGlobale;
 
-    //std::cout << "Soglia per anomalie: " << sogliaAnomalie << std::endl;
+    ////std::cout << "Soglia per anomalie: " << sogliaAnomalie << std::endl;
 
     //Rileva e segnala le anomalie
-    //std::cout << "Anomalie rilevate: " << std::endl;
+    ////std::cout << "Anomalie rilevate: " << std::endl;
     for (const auto& coppia : medie) {
         if (std::abs(coppia.second - mediaGlobale) > sogliaAnomalie) {
-            //std::cout << "sensor: " << coppia.first << ", Valore Medio: " << coppia.second << std::endl;
+            ////std::cout << "sensor: " << coppia.first << ", Valore Medio: " << coppia.second << std::endl;
 
             //Aggiunge il sensor anomalo alla mappa
             sensorsAnomali[coppia.first] = coppia.second;
@@ -98,7 +98,7 @@ void inviaAnomalieAlDatabase(PGconn *conn, const std::map<std::string, double>& 
         if (PQresultStatus(result) != PGRES_COMMAND_OK) {
             std::cerr << "errore durante l'inserimento dei dati sulle anomalie: " << PQerrorMessage(conn) << std::endl;
         } //else {
-        //     std::cout << "Dati sul sensor anomalo inseriti corretamente nel database." << std::endl;
+        //     //std::cout << "Dati sul sensor anomalo inseriti corretamente nel database." << std::endl;
         // }
 
         PQclear(result);
@@ -123,9 +123,9 @@ int main() {
     inviaAnomalieAlDatabase(conn, sensorsAnomali);
 
     // //Stampa le anomalie
-    // std::cout << "Anomalie rilevate: " << std::endl;
+    // //std::cout << "Anomalie rilevate: " << std::endl;
     // for (const auto& coppia : sensorsAnomali) {
-    //     std::cout << "sensor: " << coppia.first << ", Valore Medio: " << coppia.second << std::endl;
+    //     //std::cout << "sensor: " << coppia.first << ", Valore Medio: " << coppia.second << std::endl;
     // }
 
     //Chiude la connessione al database
