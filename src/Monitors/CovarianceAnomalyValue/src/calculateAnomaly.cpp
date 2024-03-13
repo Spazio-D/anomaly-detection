@@ -31,10 +31,9 @@ std::vector<std::vector<std::vector<AnomalyCovariance>>> calculateAnomaly(std::m
                 if(valS1 == "" || valS2 == ""){
                     covarianceAnomalyVector[i][j][k].value = std::nan("");
                     std::cout << covarianceAnomalyVector[i][j][k].sensorID1 << " " << covarianceAnomalyVector[i][j][k].sensorID2 << " " << covarianceAnomalyVector[i][j][k].value << " " << covarianceAnomalyVector[i][j][k].sampleTime << std::endl;
-
                     continue;
                 }
-
+                
                 averageS1 = averages["SAC" + std::to_string(i)][k].value;
                 averageS2 = averages["SAC" + std::to_string(j)][k].value;
                 anomalyValue = ((std::stod(valS1) - averageS1) * (std::stod(valS2) - averageS2)) / covariance.value;

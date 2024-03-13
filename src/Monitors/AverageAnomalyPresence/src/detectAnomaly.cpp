@@ -5,28 +5,26 @@ void detectAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::ma
     // AL POSTO DI SAC0 METTERE IL PARAMETRO CONFIGURABILE DEL PRIMO SENSORE
     int windowSize = averages["SAC0"][0].lastSampleTime + 1;
     double standardDeviation;
-    double devation;
+    double deviation;
     Average average;
-    double sensorValue;
-    std::string check;
     int numberOfValues;
-
+    double sensorValue;
+    
     for(auto sensor : dataVector){
         for(size_t i = 0; i<sensor.second.size() - windowSize + 1; i++){
 
             numberOfValues = 0;
             average = averages[sensor.first][i];
-            devation = 0;
+            deviation = 0;
 
             for(int j = i; j < windowSize; j++){
 
-                check = sensor.second[j].value;
-                if(check == ""){
+                if(sensor.second[j].value == ""){
                     continue;
                 }
+                sensorValue = std::stod(sensor.second[j].value);
+                deviation += std::pow(sensorValue - average.value, 2);
                 
-                devation += std::pow(std::stod(check) - average.value, 2);
-                sensorValue = std::stod(check);
                 numberOfValues++;
 
             }
@@ -36,7 +34,7 @@ void detectAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::ma
                 continue;
             }
 
-            standardDeviation = std::sqrt(devation / numberOfValues);
+            standardDeviation = std::sqrt(deviation / numberOfValues);
 
             if(average.value - (theta * standardDeviation) < sensorValue && average.value + (theta * standardDeviation) > sensorValue){
                 dataVector[sensor.first][average.lastSampleTime].isAverageAnomaly = false;

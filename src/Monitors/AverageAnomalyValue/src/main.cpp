@@ -17,11 +17,11 @@ int main() {
         return 1;
     }
     
-    // Detect the presence of anomalies
-    detectAnomaly(dataVector, averages);
+    // calculate the anomalies
+    calculateAnomaly(dataVector, averages);
 
-    // write the results to the database
-    if(!saveAnomalySQL(averages, dataVector, conn)){
+    // write the value of the anomalies to the database
+    if(!saveAnomalySQL(dataVector, conn)){
         PQfinish(conn);
         return 1;
     }

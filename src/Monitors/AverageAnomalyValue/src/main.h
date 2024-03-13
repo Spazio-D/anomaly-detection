@@ -37,9 +37,9 @@ struct Average {
 
 bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages, PGconn *conn);
 
-void detectAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages);
+void calculateAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages);
 
-bool saveAnomalySQL(std::map<std::string, std::vector<Average>> &averages, std::map<std::string, std::vector<Data>> &dataVector, PGconn *conn);
+bool saveAnomalySQL(std::map<std::string, std::vector<Data>> &dataVector, PGconn *conn);
 
 
 #endif // MAIN_H

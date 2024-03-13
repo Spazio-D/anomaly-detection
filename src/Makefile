@@ -27,7 +27,8 @@ OBJ = $(patsubst %.cpp, $(ODIR)/%.o, $(SRC))
 # Makefile principale
 
 # Lista delle sotto-directory contenenti i Makefile da includere ed eseguire
-SUBDIRS := SUD/src TestGenerator/src Monitors/AverageAnomalyPresence/src Monitors/CovarianceAnomalyValue/src Monitors/CovarianceAnomalyPresence/src
+SUBDIRS := SUD/src TestGenerator/src Monitors/AverageAnomalyPresence/src Monitors/CovarianceAnomalyValue/src Monitors/CovarianceAnomalyPresence/src Monitors/AverageAnomalyValue/src
+
 
 # Target predefinito: esegui tutti i Makefile nelle sotto-directory
 all:
@@ -44,7 +45,7 @@ run:
 	Monitors/AverageAnomalyPresence/bin/main
 	Monitors/CovarianceAnomalyValue/bin/main
 	Monitors/CovarianceAnomalyPresence/bin/main
-
+	Monitors/AverageAnomalyValue/bin/main
 
 $(ODIR)/%.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
