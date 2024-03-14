@@ -23,7 +23,7 @@ bool readFileCSV(std::string fileName, std::vector<Data> &dataVector) {
         std::istringstream lineStream(line);
         lineStream >> data.sampleTime >> data.sensorID >> data.value;
         
-        if ((data.sensorID.length()<=4 || data.sensorID == "SAC10"|| data.sensorID == "SAC11" || data.sensorID == "SAC12" || data.sensorID == "SAC13" || data.sensorID == "SAC14" || data.sensorID == "SAC15") && std::stoi(data.sampleTime)<20){
+        if ((data.sensorID.length()<=4 || data.sensorID == "SAC10" || data.sensorID == "SAC11" || data.sensorID == "SAC12" || data.sensorID == "SAC13" || data.sensorID == "SAC14" || data.sensorID == "SAC15") && std::stoi(data.sampleTime)<20){
             dataVector.push_back(data);
         }
 

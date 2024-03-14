@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS dataTable(
         sensorID VARCHAR(10) NOT NULL,
         sampleTime INT NOT NULL,
         value DOUBLE PRECISION,
+        readTime TIME DEFAULT CURRENT_TIME,
         PRIMARY KEY (sensorID, sampleTime)
 );
 
@@ -33,6 +34,9 @@ CREATE TABLE IF NOT EXISTS anomalyAverageTable(
         firstSampleTime INT NOT NULL,
         isAnomaly BOOLEAN,
         value DOUBLE PRECISION,
+        detectionTime TIME DEFAULT CURRENT_TIME,
+        deltaTime INTERVAL,
+        exceededTime BOOLEAN,
         FOREIGN KEY (sensorID, firstSampleTime) REFERENCES averageTable(sensorID, firstSampleTime)
 );
 
@@ -42,6 +46,9 @@ CREATE TABLE IF NOT EXISTS anomalyCovarianceTable(
         firstSampleTime INT NOT NULL,
         isAnomaly BOOLEAN,
         value DOUBLE PRECISION,
+        detectionTime TIME,
+        deltaTime INTERVAL,
+        exceededTime BOOLEAN,
         FOREIGN KEY (sensorID1, sensorID2, firstSampleTime) REFERENCES covarianceTable(sensorID1, sensorID2, firstSampleTime)
 );
 

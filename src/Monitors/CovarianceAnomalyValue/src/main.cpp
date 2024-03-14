@@ -27,7 +27,6 @@ int main() {
         return 1;
     }
 
-
     PQfinish(conn);
     return 0;
 }
