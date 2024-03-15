@@ -27,7 +27,7 @@ OBJ = $(patsubst %.cpp, $(ODIR)/%.o, $(SRC))
 # Makefile principale
 
 # Lista delle sotto-directory contenenti i Makefile da includere ed eseguire
-SUBDIRS := SUD/src TestGenerator/src Monitors/CovarianceAnomalyValue/src Monitors/AverageAnomalyValue/src Monitors/CovarianceAnomalyPresence/src Monitors/AverageAnomalyPresence/src Monitors/AverageDetectionTime/src Monitors/CovarianceDetectionTime/src
+SUBDIRS := SUD/src TestGenerator/src Monitors/Functional/CovarianceAnomalyValue/src Monitors/Functional/AverageAnomalyValue/src Monitors/Functional/CovarianceAnomalyPresence/src Monitors/Functional/AverageAnomalyPresence/src Monitors/NonFunctional/AverageDetectionTime/src Monitors/NonFunctional/CovarianceDetectionTime/src Monitors/NonFunctional/AverageAnomalyTime/src Monitors/NonFunctional/CovarianceAnomalyTime/src
 
 
 # Target predefinito: esegui tutti i Makefile nelle sotto-directory
@@ -42,12 +42,14 @@ run:
 	TestGenerator/bin/main
 	../ScriptsDB/create.sh
 	SUD/bin/main
-	Monitors/AverageAnomalyPresence/bin/main
-	Monitors/CovarianceAnomalyValue/bin/main
-	Monitors/AverageAnomalyValue/bin/main
-	Monitors/CovarianceAnomalyPresence/bin/main
-	Monitors/AverageDetectionTime/bin/main
-	Monitors/CovarianceDetectionTime/bin/main
+	Monitors/Functional/AverageAnomalyPresence/bin/main
+	Monitors/Functional/CovarianceAnomalyValue/bin/main
+	Monitors/Functional/AverageAnomalyValue/bin/main
+	Monitors/Functional/CovarianceAnomalyPresence/bin/main
+	Monitors/NonFunctional/AverageDetectionTime/bin/main
+	Monitors/NonFunctional/CovarianceDetectionTime/bin/main
+	Monitors/NonFunctional/AverageAnomalyTime/bin/main
+	Monitors/NonFunctional/CovarianceAnomalyTime/bin/main
 	
 	
 
