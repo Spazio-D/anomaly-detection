@@ -1,0 +1,10 @@
+generale:
+- Tutte le table sono disordinate.
+
+anomalyCovarianceTable:
+- Value non è presente in nessuna riga.
+
+anomalyAverageTable:
+- Praticamente tutte anomaly. Possibile?
+- Value tutti a 0.
+

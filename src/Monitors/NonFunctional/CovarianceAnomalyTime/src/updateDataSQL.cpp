@@ -17,16 +17,16 @@ bool updateDataSQL(PGconn *conn){
         std::string firstSampleTime = PQgetvalue(resSelect, i, 2);
 
         std::string deltaTime = PQgetvalue(resSelect, i, 3);
-        std::cout << "deltaTime: " << deltaTime << std::endl;
+        //std::cout << "deltaTime: " << deltaTime << std::endl;
         int hours, minutes, seconds, milliseconds;
         sscanf(deltaTime.c_str(), "%d:%d:%d", &hours, &minutes, &seconds);
         milliseconds = std::stoi(deltaTime.substr(9,3));
-        std::cout << "hours: " << hours << " minutes: " << minutes << " seconds: " << seconds << " milliseconds: " << milliseconds << std::endl;
+        //std::cout << "hours: " << hours << " minutes: " << minutes << " seconds: " << seconds << " milliseconds: " << milliseconds << std::endl;
         milliseconds += (hours * 3600 + minutes * 60 + seconds) * 1000;
-        std::cout << "milliseconds: " << milliseconds << std::endl;
+        //std::cout << "milliseconds: " << milliseconds << std::endl;
 
         std::string exceededTime = milliseconds > MAXTIME ? "TRUE" : "FALSE";
-        std::cout << "exceededTime: " << exceededTime << std::endl;
+        //std::cout << "exceededTime: " << exceededTime << std::endl;
 
         query = "UPDATE anomalyCovarianceTable SET exceededTime = " + exceededTime + " WHERE sensorID1 = '" + sensorID1 + "' AND sensorID2 = '" + sensorID2 + "' AND firstSampleTime = " + firstSampleTime + ";";
         PGresult *resUpdate = PQexec(conn, query.c_str());

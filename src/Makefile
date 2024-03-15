@@ -27,7 +27,7 @@ OBJ = $(patsubst %.cpp, $(ODIR)/%.o, $(SRC))
 # Makefile principale
 
 # Lista delle sotto-directory contenenti i Makefile da includere ed eseguire
-SUBDIRS := SUD/src TestGenerator/src Monitors/Functional/CovarianceAnomalyValue/src Monitors/Functional/AverageAnomalyValue/src Monitors/Functional/CovarianceAnomalyPresence/src Monitors/Functional/AverageAnomalyPresence/src Monitors/NonFunctional/AverageDetectionTime/src Monitors/NonFunctional/CovarianceDetectionTime/src Monitors/NonFunctional/AverageAnomalyTime/src Monitors/NonFunctional/CovarianceAnomalyTime/src
+SUBDIRS := SUD/src TestGenerator/src Monitors/Functional/CovarianceAnomalyValue/src Monitors/Functional/AverageAnomalyValue/src Monitors/Functional/CovarianceAnomalyPresence/src Monitors/Functional/AverageAnomalyPresence/src Monitors/NonFunctional/AverageDetectionTime/src Monitors/NonFunctional/CovarianceDetectionTime/src Monitors/NonFunctional/AverageAnomalyTime/src Monitors/NonFunctional/CovarianceAnomalyTime/src Monitors/Functional/NullDataDetection/src Monitors/Functional/NullDataAnomaly/src
 
 
 # Target predefinito: esegui tutti i Makefile nelle sotto-directory
@@ -50,6 +50,8 @@ run:
 	Monitors/NonFunctional/CovarianceDetectionTime/bin/main
 	Monitors/NonFunctional/AverageAnomalyTime/bin/main
 	Monitors/NonFunctional/CovarianceAnomalyTime/bin/main
+	Monitors/Functional/NullDataDetection/bin/main
+	Monitors/Functional/NullDataAnomaly/bin/main
 	
 	
 

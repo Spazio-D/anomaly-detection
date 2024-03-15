@@ -56,5 +56,7 @@ CREATE TABLE IF NOT EXISTS missingDataTable(
         sensorID VARCHAR(10) NOT NULL,
         firstSampleTime INT NOT NULL,
         lastSampleTime INT NOT NULL,
+        nullStreak INT NOT NULL,
+        isAnomaly BOOLEAN,
         PRIMARY KEY (sensorID, firstSampleTime)
 );
