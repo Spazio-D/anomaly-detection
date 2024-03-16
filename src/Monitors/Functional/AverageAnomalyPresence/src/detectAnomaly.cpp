@@ -2,8 +2,8 @@
 
 void detectAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages){
 
-    // AL POSTO DI SAC0 METTERE IL PARAMETRO CONFIGURABILE DEL PRIMO SENSORE
-    int windowSize = averages["SAC0"][0].lastSampleTime + 1;
+    std::string key = averages.begin()->first;
+    int windowSize = averages[key][0].lastSampleTime + 1;
     double standardDeviation;
     double deviation;
     Average average;

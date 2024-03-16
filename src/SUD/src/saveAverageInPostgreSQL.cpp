@@ -1,25 +1,22 @@
 #include "main.h"
 
 bool saveAverageInPostgreSQL(std::map<std::string, double> &averages, size_t firstSampleTime, PGconn *conn){
-
-    PGresult *res;
-    std::string value;
-    std::string query;
     
+    // Scorrimento delle medie
     for (auto average : averages) {
         
-        //std::cout << average.second << std::endl;
+        std::string value;
         if(std::isnan(average.second)){
             value = "NULL";
         }else{
             value = std::to_string(average.second);
         }
         
-        query = "INSERT INTO averageTable (sensorID, value, firstSampleTime, lastSampleTime) VALUES ('"
+        // Creazione query e inserimento media nel Database
+        std::string query = "INSERT INTO averageTable (sensorID, value, firstSampleTime, lastSampleTime) VALUES ('"
                 + average.first + "', " + value + ", " + std::to_string(firstSampleTime) 
-                + ", " + std::to_string(firstSampleTime + W-1) + ")";
-    
-        res = PQexec(conn, query.c_str());
+                + ", " + std::to_string(firstSampleTime + WINDOW_SIZE-1) + ")";
+        PGresult *res = PQexec(conn, query.c_str());
         if (PQresultStatus(res) != PGRES_COMMAND_OK) {
             std::cerr << "Errore durante l'esecuzione della query: " << PQresultErrorMessage(res) << std::endl;
             PQclear(res);
@@ -27,7 +24,6 @@ bool saveAverageInPostgreSQL(std::map<std::string, double> &averages, size_t fir
         }
         
         PQclear(res);
-    
     }
 
     return true;

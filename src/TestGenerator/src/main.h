@@ -17,16 +17,25 @@
 #include <iomanip>
 #include <tuple>
 
-
+// Path del file CSV contenente i dati
 #define FILE_NAME_CSV "../Data/data1273117654.csv"
 
-// Struct for data read, in the format read time, sensor ID, read value.
+// Numero di sensori da leggere
+#define SENSOR 15
+
+// Numero di sampletime da leggere
+#define SAMPLETIME 15
+
+
+// Struttura per i dati letti dal file CSV
 struct Data {
     std::string sampleTime;
     std::string sensorID;
     std::string value;
 };
 
+
+// Legge un file CSV e salva il contenuto in un vettore di dati
 bool readFileCSV(std::string fileName, std::vector<Data> &dataVector);
 
 #endif 

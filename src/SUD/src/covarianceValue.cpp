@@ -3,42 +3,34 @@
 std::vector<std::vector<double>> covarianceValue(std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataWindow, std::map<std::string, double> &averages){
 
     std::vector<std::vector<double>> covariances(sensors.size(), std::vector<double>(sensors.size()));
-    std::string sensor1;
-    std::string sensor2;
-    int numberOfValue;
-    double totalSum;
 
+    // Scorrimento dei sensori per la creazione della matrice di covarianza
     for(size_t i = 0; i<sensors.size(); i++){
 
-        sensor1 = sensors[i];
+        std::string sensor1 = sensors[i];
 
         for(size_t j = 0; j<sensors.size(); j++){
 
-            sensor2 = sensors[j];
-            numberOfValue = 0;
-            totalSum = 0;
+            std::string sensor2 = sensors[j];
+            int numberOfValue = 0;
+            double totalSum = 0;
 
-            for(size_t k = 0; k<W; k++){
-
+            // Scorrimento dei dati della finestra temporale e calcolo della covarianza
+            for(size_t k = 0; k<WINDOW_SIZE; k++){
+                
                 if(dataWindow[sensor1][k].value == "NULL" || dataWindow[sensor2][k].value == "NULL"){
                     continue;
                 }
 
                 totalSum += (std::stod(dataWindow[sensor1][k].value) - averages[sensor1]) * (std::stod(dataWindow[sensor2][k].value) - averages[sensor2]);
                 numberOfValue++;
-
             }
 
+            // Salvataggio dei dati nella matrice di covarianza
             if(numberOfValue == 0){
-
                 covariances[i][j] = std::nan("");
-                //std::cout << sensor1 + " " + sensor2 + " NaN" << std::endl;
-
             }else{
-
-                covariances[i][j] = totalSum/(numberOfValue - 1);
-                //std::cout << sensor1 + " " + sensor2 + " " << totalSum/(numberOfValue - 1) << std::endl;
-                
+                covariances[i][j] = totalSum/(numberOfValue - 1);                
             }
 
         }

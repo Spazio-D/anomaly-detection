@@ -38,7 +38,7 @@ all:
 	done
 	
 run:
-	TestGenerator/src/delRedisDB.sh
+	../delRedisDB.sh
 	TestGenerator/bin/main
 	../ScriptsDB/create.sh
 	SUD/bin/main

@@ -2,6 +2,7 @@
 
 bool updateDataSQL(PGconn *conn){
     
+    // Query per la selezione dei deltaTime dalla tabella averageTable
     std::string query = "SELECT sensorID, firstSampleTime, deltaTime FROM anomalyAverageTable";
     PGresult *resSelect = PQexec(conn, query.c_str());
     if (PQresultStatus(resSelect) != PGRES_TUPLES_OK || PQntuples(resSelect) == 0) {
@@ -10,23 +11,21 @@ bool updateDataSQL(PGconn *conn){
         return false;
     }
 
+    // Scorrimento delle tuple restituite dalla query dei deltaTime
     for(int i = 0; i < PQntuples(resSelect); i++){
 
         std::string sensorID = PQgetvalue(resSelect, i, 0);
         std::string firstSampleTime = PQgetvalue(resSelect, i, 1);
-
         std::string deltaTime = PQgetvalue(resSelect, i, 2);
-        //std::cout << "deltaTime: " << deltaTime << std::endl;
+
+        // Calcolo del deltaTime in millisecondi
         int hours, minutes, seconds, milliseconds;
         sscanf(deltaTime.c_str(), "%d:%d:%d", &hours, &minutes, &seconds);
         milliseconds = std::stoi(deltaTime.substr(9,3));
-        //std::cout << "hours: " << hours << " minutes: " << minutes << " seconds: " << seconds << " milliseconds: " << milliseconds << std::endl;
         milliseconds += (hours * 3600 + minutes * 60 + seconds) * 1000;
-        //std::cout << "milliseconds: " << milliseconds << std::endl;
 
+        // Rivelamento dell'anomalia di tempo e aggiornamento del campo exceededTime nella tabella delle anomalie delle medie
         std::string exceededTime = milliseconds > MAXTIME ? "TRUE" : "FALSE";
-        //std::cout << "exceededTime: " << exceededTime << std::endl;
-
         query = "UPDATE anomalyAverageTable SET exceededTime = " + exceededTime + " WHERE sensorID = '" + sensorID + "' AND firstSampleTime = " + firstSampleTime + ";";
         PGresult *resUpdate = PQexec(conn, query.c_str());
         if( PQresultStatus(resUpdate) != PGRES_COMMAND_OK){
@@ -36,7 +35,6 @@ bool updateDataSQL(PGconn *conn){
         }
 
         PQclear(resUpdate);
-        
     }
 
     PQclear(resSelect);

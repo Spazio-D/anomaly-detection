@@ -3,35 +3,25 @@
 std::map<std::string, double> averageValue(std::map<std::string, std::vector<Data>> &dataWindow){
 
     std::map<std::string, double> averages;
-    double totalSum;
-    int numberOfValue;
-    double average;
 
+    // Scorrimento dei dati della finestra temporale
     for(auto element : dataWindow){
 
-        totalSum = 0;
-        numberOfValue = 0;
-
-        for(Data data : dataWindow[element.first]){
-
+        // Calcolo della media con esclusione dei valori NULL
+        double totalSum = 0;
+        int numberOfValue = 0;
+        for(Data data : element.second){
             if(data.value != "NULL"){
                 totalSum += std::stod(data.value);
                 numberOfValue++;
             }
-
         }
 
+        // Salvataggio della media
         if(numberOfValue == 0){
-
             averages[element.first] = std::nan("");
-            //std::cout << element.first << "\t" << "NaN" << std::endl;
-
         }else{
-
-            average = totalSum/numberOfValue;
-            averages[element.first] = average;
-            //std::cout << element.first << "\t" << average << std::endl;
-
+            averages[element.first] = totalSum/numberOfValue;
         }
         
     }

@@ -2,13 +2,13 @@
 
 int main() {
 
-    // Read file
+    // Lettura file CSV e salvataggio dati
     std::vector<Data> dataVector;
     if(!readFileCSV(FILE_NAME_CSV, dataVector)){
         return 1;
     }
 
-    // Connection to Redis
+    // Connessione a Redis
     redisContext *context = redisConnect("127.0.0.1", 6379);
     if (context == NULL || context->err) {
 
@@ -22,15 +22,11 @@ int main() {
         return 1;
     }
 
-    // Send streams to Redis
-    redisReply *reply;
-    std::string command;
+    // Invio stream di dati a Redis
     for (Data data : dataVector) {
 
-        command = "XADD " + data.sensorID + " * sampleTime " + data.sampleTime + " value " + data.value;
-        reply = (redisReply *)redisCommand(context, command.c_str());
-        //std::cout << data.sensorID << " " << data.sampleTime << " " << data.value <<std::endl;
-
+        std::string command = "XADD " + data.sensorID + " * sampleTime " + data.sampleTime + " value " + data.value;
+        redisReply *reply = (redisReply *)redisCommand(context, command.c_str());
         if (reply == NULL) {
             std::cerr << "Errore nell'invio del command a Redis." << std::endl;
             return 1;

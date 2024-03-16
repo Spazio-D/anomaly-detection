@@ -1,5 +1,6 @@
-generale:
+DA FARE:
 - Tutte le table sono disordinate.
+- Commentare tutto.
 
 anomalyCovarianceTable:
 - Value non è presente in nessuna riga.
@@ -8,3 +9,13 @@ anomalyAverageTable:
 - Praticamente tutte anomaly. Possibile?
 - Value tutti a 0.
 
+
+
+DOMANDE:
+- Si può fare un main.h gerarchico?
+
+
+
+CONSIDERAZIONI:
+- Ho provato a fare un range di selezione sensori (ad esempio da SAC5 a SAC10). Non si può fare a causa della struttura della matrice di covarianza.
+- Problema simile nel provare a fare un range di sampleTime (ad esempio da sampleTime 50 a sampleTime 100) oltre a peccare di coerenza con la traccia.

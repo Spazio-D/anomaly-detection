@@ -8,7 +8,6 @@ int main() {
         PQfinish(conn);
         return 1;
     }
-
     // Read data from the database
     std::map<std::string, std::vector<Data>> dataVector;
     std::map<std::string, std::vector<Average>> averages;
@@ -16,16 +15,13 @@ int main() {
         PQfinish(conn);
         return 1;
     }
-    
     // Detect the presence of anomalies
     detectAnomaly(dataVector, averages);
-
     // write the results to the database
     if(!saveAnomalySQL(averages, dataVector, conn)){
         PQfinish(conn);
         return 1;
     }
-
     PQfinish(conn);
     return 0;
 }

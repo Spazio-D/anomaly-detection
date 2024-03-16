@@ -17,15 +17,16 @@ int main() {
         PQfinish(conn);
         return 1;
     }
-
+    //std::cout << "ciao" << std::endl;
     covariances.shrink_to_fit();
     
     std::vector<std::vector<std::vector<AnomalyCovariance>>> covarianceAnomalyVector = calculateAnomaly(dataVector, averages, covariances);
-
+    //std::cout << "ciao" << std::endl;
     if(!saveAnomalySQL(covarianceAnomalyVector, conn)){
         PQfinish(conn);
         return 1;
     }
+    //std::cout << "ciao" << std::endl;
 
     PQfinish(conn);
     return 0;
