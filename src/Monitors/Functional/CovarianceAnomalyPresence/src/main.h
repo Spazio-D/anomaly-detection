@@ -17,6 +17,7 @@
 #include <limits>
 #include <cmath>
 
+// Struttura per i dati delle anomalie delle covarianze
 struct AnomalyCovariance {
     std::string sensorID1;
     std::string sensorID2;
@@ -25,10 +26,13 @@ struct AnomalyCovariance {
     int sampleTime;
 };
 
+// Valore limite configurabile
 #define theta 0.5
 
+// Legge un valore e calcola se è anomalo
 bool detectAnomaly(double anomalyValue);
 
+// Aggiorna i dati sul database SQL
 bool updateDataSQL(PGconn *conn);
 
 

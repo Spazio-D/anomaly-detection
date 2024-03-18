@@ -2,6 +2,7 @@
 
 int main() {
     
+    // Connessione al database
     PGconn *conn = PQconnectdb("dbname=anomalydetection user=ned password=47002 hostaddr=127.0.0.1 port=5432");
     if (PQstatus(conn) != CONNECTION_OK) {
         std::cerr << "Errore nella connessione a PostgreSQL: " << PQerrorMessage(conn) << std::endl;
@@ -9,8 +10,7 @@ int main() {
         return 1;
     }
 
-    // Read anomalies values from the database
- 
+    // Aggiornamento del della tabella delle anomalie delle covarianze
     if(!updateDataSQL(conn)){
         PQfinish(conn);
         return 1;

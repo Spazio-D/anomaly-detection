@@ -13,9 +13,28 @@ anomalyAverageTable:
 
 DOMANDE:
 - Si può fare un main.h gerarchico?
+- Per correttezza e rispetto della matrice di covarianza, nella table della covarianza vengono caricati dati duplicati. Anche per possibilità di trovare valore chiedendo sia 'SACX' 'SACY' che 'SACY' 'SACX'; è giusto?
+
 
 
 
 CONSIDERAZIONI:
 - Ho provato a fare un range di selezione sensori (ad esempio da SAC5 a SAC10). Non si può fare a causa della struttura della matrice di covarianza.
 - Problema simile nel provare a fare un range di sampleTime (ad esempio da sampleTime 50 a sampleTime 100) oltre a peccare di coerenza con la traccia.
+
+
+
+
+
+ANALISI TABLE:
+
+- dataTalbe:    numero valori OK
+                correttezza valori OK
+                ordinata NO
+
+- averageTable:     numero valori OK
+                    correttezza valori OK
+                    ordinata PENNIENTE
+
+- covarianceTable:      numero valori OK
+                        correttezza valori 

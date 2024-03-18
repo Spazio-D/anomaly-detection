@@ -17,9 +17,10 @@
 #include <limits>
 #include <cmath>
 
+// Valore configurabile per rilevazione anomalie
 #define theta 0.5
 
-// Struct for data read, in the format read time, sensor ID, read value.
+// Struttura dati per i valori dei sensori con valore e presenza medie
 struct Data {
     std::string sensorID;
     std::string value;
@@ -28,6 +29,7 @@ struct Data {
     bool isAverageAnomaly;
 };
 
+// Struttura per i dati delle medie
 struct Average {
     std::string sensorID;
     double value;
@@ -35,11 +37,14 @@ struct Average {
     int lastSampleTime;
 };
 
+// Legge i dati da un database SQL e li salva nelle strutture dati
 bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages, PGconn *conn);
 
+// Calcola la presenza delle anomalie nelle medie
 void detectAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages);
 
+// Salva i dati calcolati nel database SQL
 bool saveAnomalySQL(std::map<std::string, std::vector<Average>> &averages, std::map<std::string, std::vector<Data>> &dataVector, PGconn *conn);
 
 
-#endif // MAIN_H
+#endif

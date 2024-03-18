@@ -2,6 +2,7 @@
 
 int main() {
     
+    // Connessione al database
     PGconn *conn = PQconnectdb("dbname=anomalydetection user=ned password=47002 hostaddr=127.0.0.1 port=5432");
     if (PQstatus(conn) != CONNECTION_OK) {
         std::cerr << "Errore nella connessione a PostgreSQL: " << PQerrorMessage(conn) << std::endl;
@@ -9,7 +10,7 @@ int main() {
         return 1;
     }
 
-    // Read data from the database
+    // Lettura dei dati dal database e creazione e popolazione della struttura dei dati e le medie
     std::map<std::string, std::vector<Data>> dataVector;
     std::map<std::string, std::vector<Average>> averages;
     if(!readDataSQL(dataVector, averages, conn)){
@@ -17,10 +18,10 @@ int main() {
         return 1;
     }
     
-    // calculate the anomalies
+    // Calcolo del valore dell'anomalia
     calculateAnomaly(dataVector, averages);
 
-    // write the value of the anomalies to the database
+    // Salvataggio dati sul database
     if(!saveAnomalySQL(dataVector, conn)){
         PQfinish(conn);
         return 1;

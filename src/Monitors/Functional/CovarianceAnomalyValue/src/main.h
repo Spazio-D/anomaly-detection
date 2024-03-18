@@ -17,7 +17,7 @@
 #include <limits>
 #include <cmath>
 
-// Struct for data read, in the format read time, sensor ID, read value.
+// Struttura per i dati dei sensori con presenza e valore anomalia delle medie
 struct Data {
     std::string sensorID;
     std::string value;
@@ -26,6 +26,7 @@ struct Data {
     bool isAverageAnomaly;
 };
 
+// Struttura per i dati delle medie
 struct Average {
     std::string sensorID;
     double value;
@@ -33,6 +34,7 @@ struct Average {
     int lastSampleTime;
 };
 
+// Struttura per i dati delle covarianze
 struct Covariance {
     std::string sensorID1;
     std::string sensorID2;
@@ -41,6 +43,7 @@ struct Covariance {
     int lastSampleTime;
 };
 
+// Struttura per i dati delle anomalie delle covarianze
 struct AnomalyCovariance {
     std::string sensorID1;
     std::string sensorID2;
@@ -49,12 +52,16 @@ struct AnomalyCovariance {
     int sampleTime;
 };
 
+// Legge i dati da SQL e li salva in una struttura dati
 bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages, std::vector<std::vector<std::vector<Covariance>>> &covariances, PGconn *conn);
 
+// Ordina i sensori in modo crescente per le cifre dell'id
 bool sensorSorting(const std::string &str1, const std::string &str2);
 
+// Calcola il valore dell'anomalia di una matrice di covarianze
 std::vector<std::vector<std::vector<AnomalyCovariance>>> calculateAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages, std::vector<std::vector<std::vector<Covariance>>> &covariances);
 
+// Salva i dati su SQL
 bool saveAnomalySQL(std::vector<std::vector<std::vector<AnomalyCovariance>>> &covarianceAnomalyVector, PGconn *conn);
 
 #endif // MAIN_H
