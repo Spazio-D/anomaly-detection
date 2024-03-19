@@ -2,9 +2,8 @@
 
 std::vector<std::vector<double>> covarianceValue(std::vector<std::string> &sensors, std::map<std::string, std::vector<Data>> &dataWindow, std::map<std::string, double> &averages){
 
-    std::vector<std::vector<double>> covariances(sensors.size(), std::vector<double>(sensors.size()));
-
     // Scorrimento dei sensori per la creazione della matrice di covarianza
+    std::vector<std::vector<double>> covariances(sensors.size(), std::vector<double>(sensors.size()));
     for(size_t i = 0; i<sensors.size(); i++){
 
         std::string sensor1 = sensors[i];
@@ -17,7 +16,7 @@ std::vector<std::vector<double>> covarianceValue(std::vector<std::string> &senso
 
             // Scorrimento dei dati della finestra temporale e calcolo della covarianza
             for(size_t k = 0; k<WINDOW_SIZE; k++){
-                
+
                 if(dataWindow[sensor1][k].value == "NULL" || dataWindow[sensor2][k].value == "NULL"){
                     continue;
                 }
@@ -30,7 +29,7 @@ std::vector<std::vector<double>> covarianceValue(std::vector<std::string> &senso
             if(numberOfValue == 0){
                 covariances[i][j] = std::nan("");
             }else{
-                covariances[i][j] = totalSum/(numberOfValue - 1);                
+                covariances[i][j] = totalSum/numberOfValue;                
             }
 
         }

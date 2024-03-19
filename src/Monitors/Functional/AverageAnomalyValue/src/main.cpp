@@ -22,7 +22,9 @@ int main() {
     calculateAnomaly(dataVector, averages);
 
     // Salvataggio dati sul database
-    if(!saveAnomalySQL(dataVector, conn)){
+    std::string key = averages.begin()->first;
+    int windowSize = averages[key][0].lastSampleTime + 1; 
+    if(!saveAnomalySQL(dataVector, windowSize, conn)){
         PQfinish(conn);
         return 1;
     }

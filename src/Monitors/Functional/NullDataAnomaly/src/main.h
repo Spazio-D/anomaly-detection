@@ -17,8 +17,10 @@
 #include <limits>
 #include <cmath>
 
-#define MAXNULLDATASTREAK 30
+// Valore configurabile per la rilevazione delle anomalie delle streak null
+#define MAXNULLDATASTREAK 15
 
+// Aggiorna i dati sul database SQL
 bool updateDataSQL(PGconn *conn);
 
-#endif // MAIN_H
+#endif

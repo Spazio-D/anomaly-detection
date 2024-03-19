@@ -17,6 +17,7 @@
 #include <limits>
 #include <cmath>
 
+// Aggiorna i dati su SQL
 bool updateDataSQL(PGconn *conn);
 
-#endif // MAIN_H
+#endif

@@ -14,7 +14,7 @@ void detectAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::ma
 
             // Scorrimento sulla finestra temporale e calcolo della deviazione standard
             double sensorValue;
-            for(int j = i; j < windowSize; j++){
+            for(int j = i; j < windowSize + i; j++){
 
                 if(sensor.second[j].value == ""){
                     continue;
@@ -27,12 +27,13 @@ void detectAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::ma
             }
 
             if(numberOfValues == 0){
+                dataVector[sensor.first][average.lastSampleTime].isAverageAnomaly = false;
                 continue;
             }
 
             double standardDeviation = std::sqrt(deviation / numberOfValues);
 
-            if(average.value - (theta * standardDeviation) < sensorValue && average.value + (theta * standardDeviation) > sensorValue){
+            if(average.value - (theta * standardDeviation) <= sensorValue && average.value + (theta * standardDeviation) >= sensorValue){
                 dataVector[sensor.first][average.lastSampleTime].isAverageAnomaly = false;
             }else{
                 dataVector[sensor.first][average.lastSampleTime].isAverageAnomaly = true;

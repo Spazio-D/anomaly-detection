@@ -1,6 +1,6 @@
 DA FARE:
 - Tutte le table sono disordinate.
-- Commentare tutto.
+- Commentare tutto. FATTO
 
 anomalyCovarianceTable:
 - Value non è presente in nessuna riga.
@@ -37,4 +37,11 @@ ANALISI TABLE:
                     ordinata PENNIENTE
 
 - covarianceTable:      numero valori OK
-                        correttezza valori 
+                        correttezza valori OK
+                        ordinata CHETODICOAFA
+
+- anomalyAverageTable:      numero valori OK
+                            correttezza valori OK
+                            correttezza anomaly OK
+                            ordinata NO
+                            

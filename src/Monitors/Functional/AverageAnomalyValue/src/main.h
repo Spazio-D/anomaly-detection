@@ -44,7 +44,7 @@ bool readDataSQL(std::map<std::string, std::vector<Data>> &dataVector, std::map<
 void calculateAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::map<std::string, std::vector<Average>> &averages);
 
 // Salva il valore delle anomalie nel database
-bool saveAnomalySQL(std::map<std::string, std::vector<Data>> &dataVector, PGconn *conn);
+bool saveAnomalySQL(std::map<std::string, std::vector<Data>> &dataVector, int windowSize, PGconn *conn);
 
 
 #endif
