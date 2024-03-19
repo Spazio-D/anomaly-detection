@@ -17,10 +17,10 @@
 #include <limits>
 #include <cmath>
 
-// Struct for data read, in the format read time, sensor ID, read value.
-
+// Tempo massimo di deltaTime in millisecondi
 #define MAXTIME 6300
 
+// Aggiorna il database SQL
 bool updateDataSQL(PGconn *conn);
 
 #endif // MAIN_H

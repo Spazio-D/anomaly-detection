@@ -65,4 +65,7 @@ $(BDIR)/main: $(OBJ) $(DEPS)
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o $(BDIR)/*  *~ $(IDIR)/*~ core 
+	@for dir in $(SUBDIRS); do \
+    	echo "Esecuzione di Makefile in $$dir..."; \
+    	$(MAKE) -C $$dir clean; \
+	done

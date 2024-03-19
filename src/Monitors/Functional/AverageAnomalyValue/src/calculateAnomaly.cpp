@@ -38,7 +38,6 @@ void calculateAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std:
             }
 
             dataVector[sensor.first][average.lastSampleTime].averageAnomalyValue = (std::stod(dataVector[sensor.first][average.lastSampleTime].value) - average.value) / standardDeviation;
-            std::cout << "Anomalia media: " << dataVector[sensor.first][average.lastSampleTime].averageAnomalyValue << " sensore: " << sensor.first << " tempo: " << dataVector[sensor.first][average.lastSampleTime].sampleTime << std::endl; 
         }
     }
 
