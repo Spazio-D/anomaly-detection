@@ -27,6 +27,8 @@ struct Data {
     std::string sampleTime;
     double averageAnomalyValue;
     bool isAverageAnomaly;
+    double upperThreshold;
+    double lowerThreshold;
 };
 
 // Struttura per i dati delle medie

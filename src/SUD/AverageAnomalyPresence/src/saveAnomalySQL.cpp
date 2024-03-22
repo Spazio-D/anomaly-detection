@@ -6,10 +6,12 @@ bool saveAnomalySQL(std::map<std::string, std::vector<Average>> &averages, std::
     for(auto element : averages){
         for(Average average : element.second){
 
-            // Query per il salvataggio del controllo anomalie sul database
+            // Query per il salvataggio sul database del controllo anomalie e delle threshold
             std::string isAnomaly = dataVector[element.first][average.lastSampleTime].isAverageAnomaly ? "TRUE" : "FALSE";
-            std::string query = "INSERT INTO anomalyAverageTable (sensorID, firstSampleTime, isAnomaly) VALUES ('"+ average.sensorID 
-                    + "', " + std::to_string(average.firstSampleTime) + ", " + isAnomaly + ")";
+            std::string upperThreshold = std::isnan(dataVector[element.first][average.lastSampleTime].upperThreshold) ? "NULL" : std::to_string(dataVector[element.first][average.lastSampleTime].upperThreshold);
+            std::string lowerThreshold = std::isnan(dataVector[element.first][average.lastSampleTime].lowerThreshold) ? "NULL" : std::to_string(dataVector[element.first][average.lastSampleTime].lowerThreshold);
+            std::string query = "INSERT INTO anomalyAverageTable (sensorID, firstSampleTime, isAnomaly, upperThreshold, lowerThreshold) VALUES ('"+ average.sensorID 
+                    + "', " + std::to_string(average.firstSampleTime) + ", " + isAnomaly + ", " + upperThreshold + ", " + lowerThreshold + ")";
         
             PGresult *res = PQexec(conn, query.c_str());
             if (PQresultStatus(res) != PGRES_COMMAND_OK) {

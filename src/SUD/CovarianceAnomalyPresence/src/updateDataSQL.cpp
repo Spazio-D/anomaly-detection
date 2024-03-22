@@ -29,7 +29,7 @@ bool updateDataSQL(PGconn *conn){
         }
 
         // Query per l'aggiornamento della tabella delle anomalie delle covarianze
-        query = "UPDATE anomalyCovarianceTable SET isAnomaly = " + isAnomaly + ", detectionTime = CURRENT_TIME WHERE sensorID1 = '" + sensorID1 + "' AND sensorID2 = '" + sensorID2 + "' AND firstSampleTime = " + sampleTime + ";";
+        query = "UPDATE anomalyCovarianceTable SET isAnomaly = " + isAnomaly + ", threshold = " + std::to_string(theta) + ", detectionTime = CURRENT_TIME WHERE sensorID1 = '" + sensorID1 + "' AND sensorID2 = '" + sensorID2 + "' AND firstSampleTime = " + sampleTime + ";";
         PGresult *resUpdate = PQexec(conn, query.c_str());
         if (PQresultStatus(resUpdate) != PGRES_COMMAND_OK) {
             std::cerr << "Errore durante l'esecuzione della query di aggiornamento anomalie di covarianza: " << PQresultErrorMessage(resUpdate) << std::endl;

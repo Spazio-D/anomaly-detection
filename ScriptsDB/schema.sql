@@ -55,11 +55,26 @@ CREATE TABLE IF NOT EXISTS anomalyCovarianceTable(
         FOREIGN KEY (sensorID1, sensorID2, firstSampleTime) REFERENCES covarianceTable(sensorID1, sensorID2, firstSampleTime)
 );
 
-CREATE TABLE IF NOT EXISTS missingDataTable(
+CREATE TABLE IF NOT EXISTS MonitorMissingDataTable(
         sensorID VARCHAR(10) NOT NULL,
         firstSampleTime INT NOT NULL,
         lastSampleTime INT NOT NULL,
         nullStreak INT NOT NULL,
         isAnomaly BOOLEAN,
         PRIMARY KEY (sensorID, firstSampleTime)
+);
+
+CREATE TABLE IF NOT EXISTS MonitorAnomalyAverageTable(
+        sensorID VARCHAR(10) NOT NULL,
+        firstSampleTime INT NOT NULL,
+        isRight BOOLEAN,
+        FOREIGN KEY (sensorID, firstSampleTime) REFERENCES averageTable(sensorID, firstSampleTime)
+);
+
+CREATE TABLE IF NOT EXISTS MonitorAnomalyCovarianceTable(
+        sensorID1 VARCHAR(10) NOT NULL,
+        sensorID2 VARCHAR(10) NOT NULL,
+        firstSampleTime INT NOT NULL,
+        isRight BOOLEAN,
+        FOREIGN KEY (sensorID1, sensorID2, firstSampleTime) REFERENCES covarianceTable(sensorID1, sensorID2, firstSampleTime)
 );

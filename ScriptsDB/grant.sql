@@ -10,7 +10,7 @@ ALTER TABLE averageTable OWNER TO :username ;
 ALTER TABLE covarianceTable OWNER TO :username ;
 ALTER TABLE anomalyAverageTable OWNER TO :username ;
 ALTER TABLE anomalyCovarianceTable OWNER TO :username ;
-ALTER TABLE missingDataTable OWNER TO :username ;
+ALTER TABLE MonitorMissingDataTable OWNER TO :username ;
 
 -- grant all privileges on all tables in schema public to :username ;
 -- grant all privileges on all sequences in schema public to :username ;

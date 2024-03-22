@@ -48,9 +48,9 @@ bool updateDataSQL(PGconn *conn){
                 continue;
             }
 
-            // Inserimento della streak di dati mancanti in missingDataTable
+            // Inserimento della streak di dati mancanti in MonitorMissingDataTable
             std::string firstSampleTime = std::to_string(std::stoi(sampleTime) - nullStreak);
-            query = "INSERT INTO missingDataTable (sensorID, firstSampleTime, lastSampleTime, nullStreak) VALUES ('" + sensorID + "', " + firstSampleTime + ", " + sampleTime + ", " + std::to_string(nullStreak) + ");";
+            query = "INSERT INTO MonitorMissingDataTable (sensorID, firstSampleTime, lastSampleTime, nullStreak) VALUES ('" + sensorID + "', " + firstSampleTime + ", " + sampleTime + ", " + std::to_string(nullStreak) + ");";
             PGresult *res3 = PQexec(conn, query.c_str());
             if (PQresultStatus(res3) != PGRES_COMMAND_OK) {
                 std::cerr << "Errore nell'inserimento dei dati mancanti: " << PQerrorMessage(conn) << std::endl;

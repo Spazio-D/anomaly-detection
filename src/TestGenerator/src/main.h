@@ -21,7 +21,7 @@
 #define FILE_NAME_CSV "../Data/data1273117654.csv"
 
 // Numero di sensori da leggere
-#define SENSOR 15
+#define SENSOR 10
 
 // Numero di sampletime da leggere
 #define SAMPLETIME 50

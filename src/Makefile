@@ -35,7 +35,7 @@ SUBDIRS := TestGenerator/src \
 			SUD/CovarianceAnomalyPresence/src \
 			Monitors/Functional/CheckAnomalyAverage/src \
 			Monitors/Functional/CheckAnomalyCovariance/src \
-			Monitors/Functional/NullDataAnomaly/src \
+			Monitors/Functional/RangeNullData/src \
 			Monitors/Functional/NullDataAnomaly/src \
 			Monitors/NonFunctional/AverageDetectionTime/src \
 			Monitors/NonFunctional/CovarianceDetectionTime/src \
@@ -64,7 +64,7 @@ run:
 
 	Monitors/Functional/CheckAnomalyAverage/bin/main
 	Monitors/Functional/CheckAnomalyCovariance/bin/main
-	Monitors/Functional/NullDataAnomaly/bin/main
+	Monitors/Functional/RangeNullData/bin/main
 	Monitors/Functional/NullDataAnomaly/bin/main
 
 	Monitors/NonFunctional/AverageDetectionTime/bin/main

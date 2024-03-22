@@ -3,7 +3,7 @@
 bool updateDataSQL(PGconn *conn){
 
     // Query per la selezione delle streak di dati mancanti
-    std::string query = "SELECT sensorID, firstsampletime, nullStreak FROM missingDataTable;";
+    std::string query = "SELECT sensorID, firstsampletime, nullStreak FROM MonitorMissingDataTable;";
     PGresult *resSelect = PQexec(conn, query.c_str());
     if (PQresultStatus(resSelect) != PGRES_TUPLES_OK) {
         std::cerr << "Errore nella query di selezione della nullStreak: " << PQerrorMessage(conn) << std::endl;
@@ -21,7 +21,7 @@ bool updateDataSQL(PGconn *conn){
 
         // Calcolo della presenza dell'anomalia e aggiornamento del database
         std::string isAnomaly = std::stoi(nullStreak) > MAXNULLDATASTREAK ? "TRUE" : "FALSE";
-        query = "UPDATE missingDataTable SET isAnomaly = " + isAnomaly + " WHERE sensorID = '" + sensorID + "' AND firstSampleTime = " + firstsampletime + ";";
+        query = "UPDATE MonitorMissingDataTable SET isAnomaly = " + isAnomaly + " WHERE sensorID = '" + sensorID + "' AND firstSampleTime = " + firstsampletime + ";";
         PGresult *resUpdate = PQexec(conn, query.c_str());
         if (PQresultStatus(resUpdate) != PGRES_COMMAND_OK) {
             std::cerr << "Errore nell'aggiornamento della nullStreak: " << PQerrorMessage(conn) << std::endl;

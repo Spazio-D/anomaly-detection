@@ -28,6 +28,8 @@ void detectAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::ma
 
             if(numberOfValues == 0){
                 dataVector[sensor.first][average.lastSampleTime].isAverageAnomaly = false;
+                dataVector[sensor.first][average.lastSampleTime].upperThreshold = std::nan("");
+                dataVector[sensor.first][average.lastSampleTime].lowerThreshold = std::nan("");
                 continue;
             }
 
@@ -35,8 +37,12 @@ void detectAnomaly(std::map<std::string, std::vector<Data>> &dataVector, std::ma
 
             if(average.value - (theta * standardDeviation) <= sensorValue && average.value + (theta * standardDeviation) >= sensorValue){
                 dataVector[sensor.first][average.lastSampleTime].isAverageAnomaly = false;
+                dataVector[sensor.first][average.lastSampleTime].upperThreshold = average.value + (theta * standardDeviation);
+                dataVector[sensor.first][average.lastSampleTime].lowerThreshold = average.value - (theta * standardDeviation);
             }else{
                 dataVector[sensor.first][average.lastSampleTime].isAverageAnomaly = true;
+                dataVector[sensor.first][average.lastSampleTime].upperThreshold = average.value + (theta * standardDeviation);
+                dataVector[sensor.first][average.lastSampleTime].lowerThreshold = average.value - (theta * standardDeviation);
             }
 
         }
