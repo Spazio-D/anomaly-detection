@@ -37,6 +37,8 @@ CREATE TABLE IF NOT EXISTS anomalyAverageTable(
         detectionTime TIME DEFAULT CURRENT_TIME,
         deltaTime INTERVAL,
         exceededTime BOOLEAN,
+        upperThreshold DOUBLE PRECISION,
+        lowerThreshold DOUBLE PRECISION,
         FOREIGN KEY (sensorID, firstSampleTime) REFERENCES averageTable(sensorID, firstSampleTime)
 );
 
@@ -49,6 +51,7 @@ CREATE TABLE IF NOT EXISTS anomalyCovarianceTable(
         detectionTime TIME,
         deltaTime INTERVAL,
         exceededTime BOOLEAN,
+        threshold DOUBLE PRECISION,
         FOREIGN KEY (sensorID1, sensorID2, firstSampleTime) REFERENCES covarianceTable(sensorID1, sensorID2, firstSampleTime)
 );
 

@@ -1,5 +1,4 @@
 *.o
 *:Zone*
 *.csv
-bin/*
-
+.ToDo

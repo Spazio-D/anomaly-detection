@@ -27,7 +27,20 @@ OBJ = $(patsubst %.cpp, $(ODIR)/%.o, $(SRC))
 # Makefile principale
 
 # Lista delle sotto-directory contenenti i Makefile da includere ed eseguire
-SUBDIRS := SUD/src TestGenerator/src Monitors/Functional/CovarianceAnomalyValue/src Monitors/Functional/AverageAnomalyValue/src Monitors/Functional/CovarianceAnomalyPresence/src Monitors/Functional/AverageAnomalyPresence/src Monitors/NonFunctional/AverageDetectionTime/src Monitors/NonFunctional/CovarianceDetectionTime/src Monitors/NonFunctional/AverageAnomalyTime/src Monitors/NonFunctional/CovarianceAnomalyTime/src Monitors/Functional/NullDataDetection/src Monitors/Functional/NullDataAnomaly/src
+SUBDIRS := TestGenerator/src \
+			SUD/AverageAndCovariance/src \
+			SUD/AverageAnomalyPresence/src \
+			SUD/CovarianceAnomalyValue/src \
+			SUD/AverageAnomalyValue/src \
+			SUD/CovarianceAnomalyPresence/src \
+			Monitors/Functional/CheckAnomalyAverage/src \
+			Monitors/Functional/CheckAnomalyCovariance/src \
+			Monitors/Functional/NullDataAnomaly/src \
+			Monitors/Functional/NullDataAnomaly/src \
+			Monitors/NonFunctional/AverageDetectionTime/src \
+			Monitors/NonFunctional/CovarianceDetectionTime/src \
+			Monitors/NonFunctional/AverageAnomalyTime/src \
+			Monitors/NonFunctional/CovarianceAnomalyTime/src \
 
 
 # Target predefinito: esegui tutti i Makefile nelle sotto-directory
@@ -39,19 +52,27 @@ all:
 	
 run:
 	../delRedisDB.sh
-	TestGenerator/bin/main
 	../ScriptsDB/create.sh
-	SUD/bin/main
-	Monitors/Functional/AverageAnomalyPresence/bin/main
-	Monitors/Functional/CovarianceAnomalyValue/bin/main
-	Monitors/Functional/AverageAnomalyValue/bin/main
-	Monitors/Functional/CovarianceAnomalyPresence/bin/main
+
+	TestGenerator/bin/main
+
+	SUD/AverageAndCovariance/bin/main
+	SUD/AverageAnomalyPresence/bin/main
+	SUD/CovarianceAnomalyValue/bin/main
+	SUD/AverageAnomalyValue/bin/main
+	SUD/CovarianceAnomalyPresence/bin/main
+
+	Monitors/Functional/CheckAnomalyAverage/bin/main
+	Monitors/Functional/CheckAnomalyCovariance/bin/main
+	Monitors/Functional/NullDataAnomaly/bin/main
+	Monitors/Functional/NullDataAnomaly/bin/main
+
 	Monitors/NonFunctional/AverageDetectionTime/bin/main
 	Monitors/NonFunctional/CovarianceDetectionTime/bin/main
 	Monitors/NonFunctional/AverageAnomalyTime/bin/main
 	Monitors/NonFunctional/CovarianceAnomalyTime/bin/main
-	Monitors/Functional/NullDataDetection/bin/main
-	Monitors/Functional/NullDataAnomaly/bin/main
+	
+	
 	
 	
 

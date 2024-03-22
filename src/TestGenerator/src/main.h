@@ -24,7 +24,7 @@
 #define SENSOR 15
 
 // Numero di sampletime da leggere
-#define SAMPLETIME 20
+#define SAMPLETIME 50
 
 
 // Struttura per i dati letti dal file CSV

@@ -52,7 +52,7 @@ int main() {
         return 1;
     }
 
-    // Creazione finestre temporali, calcolo medie e covarianze e salvataggio in PostgreSQL
+    // Scorrimento dei dati letti
     for(size_t i = 0; i<dataVector[sensors[0]].size() - WINDOW_SIZE+1 ; i++){
 
         std::map<std::string, std::vector<Data>> dataWindow = createDataWindow(dataVector, i, WINDOW_SIZE + i-1);
@@ -68,6 +68,9 @@ int main() {
             PQfinish(conn);
             return 1;
         }
+
+
+
 
     }
 

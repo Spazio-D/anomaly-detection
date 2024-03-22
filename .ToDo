@@ -44,4 +44,8 @@ ANALISI TABLE:
                             correttezza valori OK
                             correttezza anomaly OK
                             ordinata NO
-                            
+
+- anomalyCovarianceTable:       numero valori OK
+                                correttezza valori OK
+                                correttezza anomaly OK
+                                ordinato NOPE
